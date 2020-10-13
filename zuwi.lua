@@ -25,7 +25,7 @@ encoding.default = 'CP1251'
 u8 = encoding.UTF8
 -- if not doesDirectoryExist("moonloader\\config\\zuwi") then
 -- 	createDirectory("moonloader\\config\\zuwi")
--- end 
+-- end
 local ps = {
 	actor = {
 		infRun 				= true,
@@ -1139,7 +1139,7 @@ function imgui.OnDrawFrame(args)
 					imgui.ToggleButton('30', 'Check update', checkupdate)
 					imgui.SameLine(nil, x)
 					if imgui.Button('Download last update') then
-						downloadUrlToFile('https://github.com/PanSeek/zuwi/blob/master/zuwi.lua', 'moonloader/zuwi.lua')
+						downloadUrlToFile('https://raw.githubusercontent.com/PanSeek/zuwi/master/zuwi.lua', 'moonloader/zuwi.lua')
 						if lang_chat.v then sampAddChatMessage(tag..'Обновление {0E8604}загружено', main_color)
 						elseif not lang_chat.v then sampAddChatMessage(tag..'Update {0E8604}download', main_color) end
 					end
@@ -1157,7 +1157,7 @@ function imgui.OnDrawFrame(args)
 					imgui.ToggleButton('30', 'Проверка обновлений', checkupdate)
 					imgui.SameLine(nil, x)
 					if imgui.Button(u8'Скачать последнее обновление') then
-						downloadUrlToFile('https://github.com/PanSeek/zuwi/blob/master/zuwi.lua', 'moonloader/zuwi.lua')
+						downloadUrlToFile('https://raw.githubusercontent.com/PanSeek/zuwi/master/zuwi.lua', 'moonloader/zuwi.lua')
 						if lang_chat.v then sampAddChatMessage(tag..'Обновление {0E8604}загружено', main_color)
 						elseif not lang_chat.v then sampAddChatMessage(tag..'Update {0E8604}download', main_color) end
 					end
@@ -2360,7 +2360,7 @@ function cmd_update()
 	elseif version_script ~= response.text then
 		if lang_chat.v then sampAddChatMessage(tag..'{0E8604}Обновляемся..', main_color)
 		elseif not lang_chat.v then sampAddChatMessage(tag..'{0E8604}Updating..', main_color) end
-		downloadUrlToFile('https://github.com/PanSeek/zuwi/blob/master/zuwi.lua', 'moonloader/zuwi.lua', function(id, status)
+		downloadUrlToFile('https://raw.githubusercontent.com/PanSeek/zuwi/master/zuwi.lua', 'moonloader/zuwi.lua', function(id, status)
 			if status == dlstatus.STATUS_DOWNLOADINGDATA then
 			elseif status == dlstatus.STATUS_ENDDOWNLOADDATA then
 				if lang_chat.v then sampAddChatMessage(tag..'Загрузка обновления {0E8604}завершена', main_color)
