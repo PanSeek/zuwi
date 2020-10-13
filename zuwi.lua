@@ -25,7 +25,7 @@ encoding.default = 'CP1251'
 u8 = encoding.UTF8
 -- if not doesDirectoryExist("moonloader\\config\\zuwi") then
 -- 	createDirectory("moonloader\\config\\zuwi")
--- end
+-- end 
 local ps = {
 	actor = {
 		infRun 				= true,
