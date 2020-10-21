@@ -1,6 +1,6 @@
 script_name('zuwi')
 script_authors('PanSeek')
-version_script = '1.2'
+version_script = '1.1'
 script_properties('work-in-pause')
 
 --ToggleButton 51 last
@@ -98,18 +98,18 @@ mainIni = inicfg.load({
 }, 'zuwi.ini')
 if not doesFileExist('zuwi.ini') then inicfg.save(mainIni, 'zuwi.ini') end
 
---ТЕГИ И ПРОЧЕЕ
+--Г’Г…ГѓГ€ Г€ ГЏГђГЋГ—Г…Г…
 local tag = '{F9D82F}zuwi {888EA0}- '
-local authorsRUS = [[{B31A06}PanSeek {888EA0}- {F9D82F}Создатель
+local authorsRUS = [[{B31A06}PanSeek {888EA0}- {F9D82F}Г‘Г®Г§Г¤Г ГІГҐГ«Гј
 
-{0E8604}Благодарности{888EA0}:
-{B31A06}fran9 {888EA0}- {F9D82F}Помогал с цветами и расположением меню/AdminTools для Revent-RP
-{B31A06}FBenz {888EA0}- {F9D82F}Помогал в некоторых вопросах/советовал
-{B31A06}qrlk {888EA0}- {F9D82F}Автообновление
-{B31A06}FYP {888EA0}- {F9D82F}Исходный код
-{B31A06}cover {888EA0}- {F9D82F}Исходный код
+{0E8604}ГЃГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ{888EA0}:
+{B31A06}fran9 {888EA0}- {F9D82F}ГЏГ®Г¬Г®ГЈГ Г« Г± Г¶ГўГҐГІГ Г¬ГЁ ГЁ Г°Г Г±ГЇГ®Г«Г®Г¦ГҐГ­ГЁГҐГ¬ Г¬ГҐГ­Гѕ/AdminTools Г¤Г«Гї Revent-RP
+{B31A06}FBenz {888EA0}- {F9D82F}ГЏГ®Г¬Г®ГЈГ Г« Гў Г­ГҐГЄГ®ГІГ®Г°Г»Гµ ГўГ®ГЇГ°Г®Г±Г Гµ/Г±Г®ГўГҐГІГ®ГўГ Г«
+{B31A06}qrlk {888EA0}- {F9D82F}ГЂГўГІГ®Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ
+{B31A06}FYP {888EA0}- {F9D82F}Г€Г±ГµГ®Г¤Г­Г»Г© ГЄГ®Г¤
+{B31A06}cover {888EA0}- {F9D82F}Г€Г±ГµГ®Г¤Г­Г»Г© ГЄГ®Г¤
 
-{0E8604}А также спасибо всем, кто тестировал скрипт и сообщал о некоторых проблемах/багах]]
+{0E8604}ГЂ ГІГ ГЄГ¦ГҐ Г±ГЇГ Г±ГЁГЎГ® ГўГ±ГҐГ¬, ГЄГІГ® ГІГҐГ±ГІГЁГ°Г®ГўГ Г« Г±ГЄГ°ГЁГЇГІ ГЁ Г±Г®Г®ГЎГ№Г Г« Г® Г­ГҐГЄГ®ГІГ®Г°Г»Гµ ГЇГ°Г®ГЎГ«ГҐГ¬Г Гµ/ГЎГ ГЈГ Гµ]]
 local authorsENG = [[{B31A06}PanSeek {888EA0}- {F9D82F}Creator
 
 {0E8604}Thanks{888EA0}:
@@ -120,26 +120,26 @@ local authorsENG = [[{B31A06}PanSeek {888EA0}- {F9D82F}Creator
 {B31A06}cover {888EA0}- {F9D82F}Source
 
 {0E8604}And also thanks to everyone who tested the script and reported some problems/bugs]]
-imgIntGameRUS = {[[Приветствуем Вас, дорогой пользователь! В данном проекте есть вспомогательные функции для Вашей игры в SA-MP.
-Поможем Вам разобраться в zuwi: Вы сверху видите вкладки, такие как, "Персонаж", "Транспорт", "Оружие" и т.д.
-Эти вкладки отвечают за определенную "сферу".]],
-[[*Персонаж - эта вкладка отвечает за "читы" для Вашего игрока, другие здесь не касаются;
-*Транспорт - эта вкладка отвечает за "читы" для Вашего транспорта, в котором вы находитесь;
-*Оружие - эта вкладка отвечает за "читы" только для Вашего оружия, которое у Вас в руках;
-*Разное - эта вкладка отвечает за прочие функции, они могут быть как "читы", или чтобы, "глазу было приятно".
-Также есть подвкладка "Телепорты", там Вы сможете телепортироваться на любое место, которое есть в списке;
-*Визуалы - эта вкладка отвечает за любую отрисовку в zuwi. То есть вне игровые отрисовки, к примеру,
-открыты ли транспортные средства или же нет и тому подобное;
-*Настройки - эта вкладка отвечает за Ваши настройки zuwi.
-Там Вы можете настроить все что возможно, также обратите внимания на подвкладки;
-*Помощь - эта вкладка отвечает за Вашу помощь. Если Вы забыли что-либо, либо же не понимаете что-то,
-можете открывать данную вкладку и там Вы скорее всего найдете решение Вашей проблемы;
-*Еще есть вкладки ниже под всеми основными вкладками. Там находятся сервера.
-Вы можете нажать на вкладку Вашего сервера и там будут некоторые полезные функции.]],
+imgIntGameRUS = {[[ГЏГ°ГЁГўГҐГІГ±ГІГўГіГҐГ¬ Г‚Г Г±, Г¤Г®Г°Г®ГЈГ®Г© ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гј! Г‚ Г¤Г Г­Г­Г®Г¬ ГЇГ°Г®ГҐГЄГІГҐ ГҐГ±ГІГј ГўГ±ГЇГ®Г¬Г®ГЈГ ГІГҐГ«ГјГ­Г»ГҐ ГґГіГ­ГЄГ¶ГЁГЁ Г¤Г«Гї Г‚Г ГёГҐГ© ГЁГЈГ°Г» Гў SA-MP.
+ГЏГ®Г¬Г®Г¦ГҐГ¬ Г‚Г Г¬ Г°Г Г§Г®ГЎГ°Г ГІГјГ±Гї Гў zuwi: Г‚Г» Г±ГўГҐГ°ГµГі ГўГЁГ¤ГЁГІГҐ ГўГЄГ«Г Г¤ГЄГЁ, ГІГ ГЄГЁГҐ ГЄГ ГЄ, "ГЏГҐГ°Г±Г®Г­Г Г¦", "Г’Г°Г Г­Г±ГЇГ®Г°ГІ", "ГЋГ°ГіГ¦ГЁГҐ" ГЁ ГІ.Г¤.
+ГќГІГЁ ГўГЄГ«Г Г¤ГЄГЁ Г®ГІГўГҐГ·Г ГѕГІ Г§Г  Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­Г­ГіГѕ "Г±ГґГҐГ°Гі".]],
+[[*ГЏГҐГ°Г±Г®Г­Г Г¦ - ГЅГІГ  ГўГЄГ«Г Г¤ГЄГ  Г®ГІГўГҐГ·Г ГҐГІ Г§Г  "Г·ГЁГІГ»" Г¤Г«Гї Г‚Г ГёГҐГЈГ® ГЁГЈГ°Г®ГЄГ , Г¤Г°ГіГЈГЁГҐ Г§Г¤ГҐГ±Гј Г­ГҐ ГЄГ Г±Г ГѕГІГ±Гї;
+*Г’Г°Г Г­Г±ГЇГ®Г°ГІ - ГЅГІГ  ГўГЄГ«Г Г¤ГЄГ  Г®ГІГўГҐГ·Г ГҐГІ Г§Г  "Г·ГЁГІГ»" Г¤Г«Гї Г‚Г ГёГҐГЈГ® ГІГ°Г Г­Г±ГЇГ®Г°ГІГ , Гў ГЄГ®ГІГ®Г°Г®Г¬ ГўГ» Г­Г ГµГ®Г¤ГЁГІГҐГ±Гј;
+*ГЋГ°ГіГ¦ГЁГҐ - ГЅГІГ  ГўГЄГ«Г Г¤ГЄГ  Г®ГІГўГҐГ·Г ГҐГІ Г§Г  "Г·ГЁГІГ»" ГІГ®Г«ГјГЄГ® Г¤Г«Гї Г‚Г ГёГҐГЈГ® Г®Г°ГіГ¦ГЁГї, ГЄГ®ГІГ®Г°Г®ГҐ Гі Г‚Г Г± Гў Г°ГіГЄГ Гµ;
+*ГђГ Г§Г­Г®ГҐ - ГЅГІГ  ГўГЄГ«Г Г¤ГЄГ  Г®ГІГўГҐГ·Г ГҐГІ Г§Г  ГЇГ°Г®Г·ГЁГҐ ГґГіГ­ГЄГ¶ГЁГЁ, Г®Г­ГЁ Г¬Г®ГЈГіГІ ГЎГ»ГІГј ГЄГ ГЄ "Г·ГЁГІГ»", ГЁГ«ГЁ Г·ГІГ®ГЎГ», "ГЈГ«Г Г§Гі ГЎГ»Г«Г® ГЇГ°ГЁГїГІГ­Г®".
+Г’Г ГЄГ¦ГҐ ГҐГ±ГІГј ГЇГ®Г¤ГўГЄГ«Г Г¤ГЄГ  "Г’ГҐГ«ГҐГЇГ®Г°ГІГ»", ГІГ Г¬ Г‚Г» Г±Г¬Г®Г¦ГҐГІГҐ ГІГҐГ«ГҐГЇГ®Г°ГІГЁГ°Г®ГўГ ГІГјГ±Гї Г­Г  Г«ГѕГЎГ®ГҐ Г¬ГҐГ±ГІГ®, ГЄГ®ГІГ®Г°Г®ГҐ ГҐГ±ГІГј Гў Г±ГЇГЁГ±ГЄГҐ;
+*Г‚ГЁГ§ГіГ Г«Г» - ГЅГІГ  ГўГЄГ«Г Г¤ГЄГ  Г®ГІГўГҐГ·Г ГҐГІ Г§Г  Г«ГѕГЎГіГѕ Г®ГІГ°ГЁГ±Г®ГўГЄГі Гў zuwi. Г’Г® ГҐГ±ГІГј ГўГ­ГҐ ГЁГЈГ°Г®ГўГ»ГҐ Г®ГІГ°ГЁГ±Г®ГўГЄГЁ, ГЄ ГЇГ°ГЁГ¬ГҐГ°Гі,
+Г®ГІГЄГ°Г»ГІГ» Г«ГЁ ГІГ°Г Г­Г±ГЇГ®Г°ГІГ­Г»ГҐ Г±Г°ГҐГ¤Г±ГІГўГ  ГЁГ«ГЁ Г¦ГҐ Г­ГҐГІ ГЁ ГІГ®Г¬Гі ГЇГ®Г¤Г®ГЎГ­Г®ГҐ;
+*ГЌГ Г±ГІГ°Г®Г©ГЄГЁ - ГЅГІГ  ГўГЄГ«Г Г¤ГЄГ  Г®ГІГўГҐГ·Г ГҐГІ Г§Г  Г‚Г ГёГЁ Г­Г Г±ГІГ°Г®Г©ГЄГЁ zuwi.
+Г’Г Г¬ Г‚Г» Г¬Г®Г¦ГҐГІГҐ Г­Г Г±ГІГ°Г®ГЁГІГј ГўГ±ГҐ Г·ГІГ® ГўГ®Г§Г¬Г®Г¦Г­Г®, ГІГ ГЄГ¦ГҐ Г®ГЎГ°Г ГІГЁГІГҐ ГўГ­ГЁГ¬Г Г­ГЁГї Г­Г  ГЇГ®Г¤ГўГЄГ«Г Г¤ГЄГЁ;
+*ГЏГ®Г¬Г®Г№Гј - ГЅГІГ  ГўГЄГ«Г Г¤ГЄГ  Г®ГІГўГҐГ·Г ГҐГІ Г§Г  Г‚Г ГёГі ГЇГ®Г¬Г®Г№Гј. Г…Г±Г«ГЁ Г‚Г» Г§Г ГЎГ»Г«ГЁ Г·ГІГ®-Г«ГЁГЎГ®, Г«ГЁГЎГ® Г¦ГҐ Г­ГҐ ГЇГ®Г­ГЁГ¬Г ГҐГІГҐ Г·ГІГ®-ГІГ®,
+Г¬Г®Г¦ГҐГІГҐ Г®ГІГЄГ°Г»ГўГ ГІГј Г¤Г Г­Г­ГіГѕ ГўГЄГ«Г Г¤ГЄГі ГЁ ГІГ Г¬ Г‚Г» Г±ГЄГ®Г°ГҐГҐ ГўГ±ГҐГЈГ® Г­Г Г©Г¤ГҐГІГҐ Г°ГҐГёГҐГ­ГЁГҐ Г‚Г ГёГҐГ© ГЇГ°Г®ГЎГ«ГҐГ¬Г»;
+*Г…Г№ГҐ ГҐГ±ГІГј ГўГЄГ«Г Г¤ГЄГЁ Г­ГЁГ¦ГҐ ГЇГ®Г¤ ГўГ±ГҐГ¬ГЁ Г®Г±Г­Г®ГўГ­Г»Г¬ГЁ ГўГЄГ«Г Г¤ГЄГ Г¬ГЁ. Г’Г Г¬ Г­Г ГµГ®Г¤ГїГІГ±Гї Г±ГҐГ°ГўГҐГ°Г .
+Г‚Г» Г¬Г®Г¦ГҐГІГҐ Г­Г Г¦Г ГІГј Г­Г  ГўГЄГ«Г Г¤ГЄГі Г‚Г ГёГҐГЈГ® Г±ГҐГ°ГўГҐГ°Г  ГЁ ГІГ Г¬ ГЎГіГ¤ГіГІ Г­ГҐГЄГ®ГІГ®Г°Г»ГҐ ГЇГ®Г«ГҐГ§Г­Г»ГҐ ГґГіГ­ГЄГ¶ГЁГЁ.]],
 [[
-Это краткая помощь. Надеемся на то, что Вы разберетесь в данном творении.
-Помните, что за "читы" могут выдать наказания, за которые мы не несем ответственности, используйте на свой СТРАХ И РИСК!
-Будем очень благодарны за любую помощь! С любовью проект zuwi :3]]}
+ГќГІГ® ГЄГ°Г ГІГЄГ Гї ГЇГ®Г¬Г®Г№Гј. ГЌГ Г¤ГҐГҐГ¬Г±Гї Г­Г  ГІГ®, Г·ГІГ® Г‚Г» Г°Г Г§ГЎГҐГ°ГҐГІГҐГ±Гј Гў Г¤Г Г­Г­Г®Г¬ ГІГўГ®Г°ГҐГ­ГЁГЁ.
+ГЏГ®Г¬Г­ГЁГІГҐ, Г·ГІГ® Г§Г  "Г·ГЁГІГ»" Г¬Г®ГЈГіГІ ГўГ»Г¤Г ГІГј Г­Г ГЄГ Г§Г Г­ГЁГї, Г§Г  ГЄГ®ГІГ®Г°Г»ГҐ Г¬Г» Г­ГҐ Г­ГҐГ±ГҐГ¬ Г®ГІГўГҐГІГ±ГІГўГҐГ­Г­Г®Г±ГІГЁ, ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ Г­Г  Г±ГўГ®Г© Г‘Г’ГђГЂГ• Г€ ГђГ€Г‘ГЉ!
+ГЃГіГ¤ГҐГ¬ Г®Г·ГҐГ­Гј ГЎГ«Г ГЈГ®Г¤Г Г°Г­Г» Г§Г  Г«ГѕГЎГіГѕ ГЇГ®Г¬Г®Г№Гј! Г‘ Г«ГѕГЎГ®ГўГјГѕ ГЇГ°Г®ГҐГЄГІ zuwi :3]]}
 imgIntGameENG = {[[Welcome, dear user! In this project there are support functions for your game in SA-MP.
 We will help you understand zuwi: You can see tabs from the top, such as, "Actor", "Vehicle", "Weapon", etc.
 These tabs are responsible for a certain "sphere".]],
@@ -161,21 +161,21 @@ This is a brief help. We hope that you will understand this creation.
 Remember that for "cheats" can give punishments for which we are not responsible, use at your own risk and risk!
 We will be very grateful for any help! With love project zuwi: 3]]}
 --ERRORS
-local errorRUS = {tag..'{B31A06}Ошибка #1 {888EA0}({F9D82F}Ваш игрок мертв/не существует{888EA0})',
-tag..'{B31A06}Ошибка #2 {888EA0}({F9D82F}Ваш игрок не в транспорте{888EA0})',
-tag..'{B31A06}Ошибка #3 {888EA0}({F9D82F}Открыт игровой чат{888EA0})',
-tag..'{B31A06}Ошибка #4 {888EA0}({F9D82F}Открыт SampFuncs чат{888EA0})',
-tag..'{B31A06}Ошибка #5 {888EA0}({F9D82F}Открыт диалог{888EA0})',
-tag..'{B31A06}Ошибка #6 {888EA0}({F9D82F}Ваш игрок мертв/не существует или не в транспорте{888EA0})',
-tag..'{B31A06}Ошибка #7 {888EA0}({F9D82F}У Вас открыт игровой чат/SampFuncs чат/диалог{888EA0})',
-tag..'{B31A06}Ошибка #8 {888EA0}({F9D82F}Ваш игрок не в транспорте или у Вас открыт игровой чат/SampFuncs чат/диалог{888EA0})',
-tag..'{B31A06}Ошибка #9 {888EA0}({F9D82F}Ваш игрок мертв/не существует или у Вас открыт игровой чат/SampFuncs чат/диалог{888EA0})',
-tag..'{B31A06}Ошибка #10 {888EA0}({F9D82F}Транспорт не найден{888EA0})',
-tag..'{B31A06}Ошибка #11 {888EA0}({F9D82F}Уже открыт другой диалог{888EA0})',
-tag..'{B31A06}Ошибка #12 {888EA0}(Не найдено время. Напишите: {F9D82F}/z_time 0-23{888EA0})',
-tag..'{B31A06}Ошибка #13 {888EA0}(Погода не найдена. Напишите: {F9D82F}/z_weather 0-45{888EA0})',
-tag..'{B31A06}Ошибка #14 {888EA0}({F9D82F}Метка не создана{888EA0})',
-tag..'{B31A06}Ошибка #15 {888EA0}({F9D82F}Вы находитесь в интерьере{888EA0})'}
+local errorRUS = {tag..'{B31A06}ГЋГёГЁГЎГЄГ  #1 {888EA0}({F9D82F}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г¬ГҐГ°ГІГў/Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #2 {888EA0}({F9D82F}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г­ГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #3 {888EA0}({F9D82F}ГЋГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #4 {888EA0}({F9D82F}ГЋГІГЄГ°Г»ГІ SampFuncs Г·Г ГІ{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #5 {888EA0}({F9D82F}ГЋГІГЄГ°Г»ГІ Г¤ГЁГ Г«Г®ГЈ{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #6 {888EA0}({F9D82F}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г¬ГҐГ°ГІГў/Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ ГЁГ«ГЁ Г­ГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #7 {888EA0}({F9D82F}Г“ Г‚Г Г± Г®ГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ/SampFuncs Г·Г ГІ/Г¤ГЁГ Г«Г®ГЈ{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #8 {888EA0}({F9D82F}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г­ГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ ГЁГ«ГЁ Гі Г‚Г Г± Г®ГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ/SampFuncs Г·Г ГІ/Г¤ГЁГ Г«Г®ГЈ{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #9 {888EA0}({F9D82F}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г¬ГҐГ°ГІГў/Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ ГЁГ«ГЁ Гі Г‚Г Г± Г®ГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ/SampFuncs Г·Г ГІ/Г¤ГЁГ Г«Г®ГЈ{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #10 {888EA0}({F9D82F}Г’Г°Г Г­Г±ГЇГ®Г°ГІ Г­ГҐ Г­Г Г©Г¤ГҐГ­{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #11 {888EA0}({F9D82F}Г“Г¦ГҐ Г®ГІГЄГ°Г»ГІ Г¤Г°ГіГЈГ®Г© Г¤ГЁГ Г«Г®ГЈ{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #12 {888EA0}(ГЌГҐ Г­Г Г©Г¤ГҐГ­Г® ГўГ°ГҐГ¬Гї. ГЌГ ГЇГЁГёГЁГІГҐ: {F9D82F}/z_time 0-23{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #13 {888EA0}(ГЏГ®ГЈГ®Г¤Г  Г­ГҐ Г­Г Г©Г¤ГҐГ­Г . ГЌГ ГЇГЁГёГЁГІГҐ: {F9D82F}/z_weather 0-45{888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #14 {888EA0}({F9D82F}ГЊГҐГІГЄГ  Г­ГҐ Г±Г®Г§Г¤Г Г­Г {888EA0})',
+tag..'{B31A06}ГЋГёГЁГЎГЄГ  #15 {888EA0}({F9D82F}Г‚Г» Г­Г ГµГ®Г¤ГЁГІГҐГ±Гј Гў ГЁГ­ГІГҐГ°ГјГҐГ°ГҐ{888EA0})'}
 local errorENG = {tag..'{B31A06}Error #1 {888EA0}({F9D82F}You are player is dead/not playing{888EA0})',
 tag..'{B31A06}Error #2 {888EA0}({F9D82F}You are player is not in vehicle{888EA0})',
 tag..'{B31A06}Error #3 {888EA0}({F9D82F}Open game chat{888EA0})',
@@ -192,41 +192,41 @@ tag..'{B31A06}Error #13 {888EA0}(Weather not found. Write: {F9D82F}/z_weather 0-
 tag..'{B31A06}Error #14 {888EA0}({F9D82F}Mark not create{888EA0})',
 tag..'{B31A06}Error #15 {888EA0}({F9D82F}You are in the interior{888EA0})'}
 --LISTS&DIALOGS
-local helpcmdsampRUS = [[{F9D82F}/headmove - {0984d2}Включает/Выключает {888EA0}поворот головы
-{F9D82F}/timestamp {888EA0}- {0984d2}Включает/Выключает {888EA0}время возле каждого сообщения
-{F9D82F}/pagesize {888EA0}- Устанавливает количество строк в чате
-{F9D82F}/quit (/q) {888EA0}- Быстрый выход из игры
-{F9D82F}/save [комментарий] {888EA0}- Сохранение координат в {F9D82F}savedposition.txt
-{F9D82F}/fpslimit {888EA0}- Устанавливает лимит кадров в секунду
-{F9D82F}/dl {888EA0}- {0984d2}Включает/Выключает {888EA0}подробную информацию о транспорте по близости
-{F9D82F}/interior {888EA0}- Выводит в чат текущий интерьер
-{F9D82F}/rs {888EA0}- Сохранение координат в {F9D82F}rawposition.txt
-{F9D82F}/mem {888EA0}- Отображает сколько памяти использует SA-MP]]
+local helpcmdsampRUS = [[{F9D82F}/headmove - {0984d2}Г‚ГЄГ«ГѕГ·Г ГҐГІ/Г‚Г»ГЄГ«ГѕГ·Г ГҐГІ {888EA0}ГЇГ®ГўГ®Г°Г®ГІ ГЈГ®Г«Г®ГўГ»
+{F9D82F}/timestamp {888EA0}- {0984d2}Г‚ГЄГ«ГѕГ·Г ГҐГІ/Г‚Г»ГЄГ«ГѕГ·Г ГҐГІ {888EA0}ГўГ°ГҐГ¬Гї ГўГ®Г§Г«ГҐ ГЄГ Г¦Г¤Г®ГЈГ® Г±Г®Г®ГЎГ№ГҐГ­ГЁГї
+{F9D82F}/pagesize {888EA0}- Г“Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГІ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГ°Г®ГЄ Гў Г·Г ГІГҐ
+{F9D82F}/quit (/q) {888EA0}- ГЃГ»Г±ГІГ°Г»Г© ГўГ»ГµГ®Г¤ ГЁГ§ ГЁГЈГ°Г»
+{F9D82F}/save [ГЄГ®Г¬Г¬ГҐГ­ГІГ Г°ГЁГ©] {888EA0}- Г‘Г®ГµГ°Г Г­ГҐГ­ГЁГҐ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІ Гў {F9D82F}savedposition.txt
+{F9D82F}/fpslimit {888EA0}- Г“Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГІ Г«ГЁГ¬ГЁГІ ГЄГ Г¤Г°Г®Гў Гў Г±ГҐГЄГіГ­Г¤Гі
+{F9D82F}/dl {888EA0}- {0984d2}Г‚ГЄГ«ГѕГ·Г ГҐГІ/Г‚Г»ГЄГ«ГѕГ·Г ГҐГІ {888EA0}ГЇГ®Г¤Г°Г®ГЎГ­ГіГѕ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГѕ Г® ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ ГЇГ® ГЎГ«ГЁГ§Г®Г±ГІГЁ
+{F9D82F}/interior {888EA0}- Г‚Г»ГўГ®Г¤ГЁГІ Гў Г·Г ГІ ГІГҐГЄГіГ№ГЁГ© ГЁГ­ГІГҐГ°ГјГҐГ°
+{F9D82F}/rs {888EA0}- Г‘Г®ГµГ°Г Г­ГҐГ­ГЁГҐ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІ Гў {F9D82F}rawposition.txt
+{F9D82F}/mem {888EA0}- ГЋГІГ®ГЎГ°Г Г¦Г ГҐГІ Г±ГЄГ®Г«ГјГЄГ® ГЇГ Г¬ГїГІГЁ ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГІ SA-MP]]
 local helpcmdsampENG = [[{F9D82F}/headmove - {0984d2}On/Off {888EA0}head rotation
 {F9D82F}/timestamp {888EA0}- {0984d2}On/Off {888EA0}time near each message
 {F9D82F}/pagesize {888EA0}- Set the number of lines in the chat
 {F9D82F}/quit (/q) {888EA0}- Quick exit from the game
-{F9D82F}/save [комментарий] {888EA0}- Save coordinates to {F9D82F}savedposition.txt
+{F9D82F}/save [ГЄГ®Г¬Г¬ГҐГ­ГІГ Г°ГЁГ©] {888EA0}- Save coordinates to {F9D82F}savedposition.txt
 {F9D82F}/fpslimit {888EA0}- Set the frames per second limit
 {F9D82F}/dl {888EA0}- {0984d2}On/Off {888EA0}detailed information about near vehicle
 {F9D82F}/interior {888EA0}- Current interior to chat
 {F9D82F}/rs {888EA0}- Save coordinates to {F9D82F}rawposition.txt
 {F9D82F}/mem {888EA0}- How much memory SA-MP uses]]
-local errorslistRUS = [[{B31A06}#1 {888EA0}- {F9D82F}Ваш игрок мертв/не существует
-{B31A06}#2 {888EA0}- {F9D82F}Ваш игрок не в транспорте
-{B31A06}#3 {888EA0}- {F9D82F}Открыт игровой чат
-{B31A06}#4 {888EA0}- {F9D82F}Открыт SampFuncs чат
-{B31A06}#5 {888EA0}- {F9D82F}Открыт диалог
-{B31A06}#6 {888EA0}- {F9D82F}Ваш игрок мертв/не существует или не в транспорте
-{B31A06}#7 {888EA0}- {F9D82F}У Вас открыт игровой чат/SampFuncs чат/диалог
-{B31A06}#8 {888EA0}- {F9D82F}Ваш игрок не в транспорте или у Вас открыт игровой чат/SampFuncs чат/диалог
-{B31A06}#9 {888EA0}- {F9D82F}Ваш игрок мертв/не существует или у Вас открыт игровой чат/SampFuncs чат/диалог
-{B31A06}#10 {888EA0}- {F9D82F}Транспорт не найден
-{B31A06}#11 {888EA0}- {F9D82F}Уже открыт другой диалог
-{B31A06}#12 {888EA0}- {F9D82F}Время не найдено
-{B31A06}#13 {888EA0}- {F9D82F}Погода не найдена
-{B31A06}#14 {888EA0}- {F9D82F}Метка не создана
-{B31A06}#15 {888EA0}- {F9D82F}Вы находитесь в интерьере]]
+local errorslistRUS = [[{B31A06}#1 {888EA0}- {F9D82F}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г¬ГҐГ°ГІГў/Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ
+{B31A06}#2 {888EA0}- {F9D82F}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г­ГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ
+{B31A06}#3 {888EA0}- {F9D82F}ГЋГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ
+{B31A06}#4 {888EA0}- {F9D82F}ГЋГІГЄГ°Г»ГІ SampFuncs Г·Г ГІ
+{B31A06}#5 {888EA0}- {F9D82F}ГЋГІГЄГ°Г»ГІ Г¤ГЁГ Г«Г®ГЈ
+{B31A06}#6 {888EA0}- {F9D82F}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г¬ГҐГ°ГІГў/Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ ГЁГ«ГЁ Г­ГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ
+{B31A06}#7 {888EA0}- {F9D82F}Г“ Г‚Г Г± Г®ГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ/SampFuncs Г·Г ГІ/Г¤ГЁГ Г«Г®ГЈ
+{B31A06}#8 {888EA0}- {F9D82F}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г­ГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ ГЁГ«ГЁ Гі Г‚Г Г± Г®ГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ/SampFuncs Г·Г ГІ/Г¤ГЁГ Г«Г®ГЈ
+{B31A06}#9 {888EA0}- {F9D82F}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г¬ГҐГ°ГІГў/Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ ГЁГ«ГЁ Гі Г‚Г Г± Г®ГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ/SampFuncs Г·Г ГІ/Г¤ГЁГ Г«Г®ГЈ
+{B31A06}#10 {888EA0}- {F9D82F}Г’Г°Г Г­Г±ГЇГ®Г°ГІ Г­ГҐ Г­Г Г©Г¤ГҐГ­
+{B31A06}#11 {888EA0}- {F9D82F}Г“Г¦ГҐ Г®ГІГЄГ°Г»ГІ Г¤Г°ГіГЈГ®Г© Г¤ГЁГ Г«Г®ГЈ
+{B31A06}#12 {888EA0}- {F9D82F}Г‚Г°ГҐГ¬Гї Г­ГҐ Г­Г Г©Г¤ГҐГ­Г®
+{B31A06}#13 {888EA0}- {F9D82F}ГЏГ®ГЈГ®Г¤Г  Г­ГҐ Г­Г Г©Г¤ГҐГ­Г 
+{B31A06}#14 {888EA0}- {F9D82F}ГЊГҐГІГЄГ  Г­ГҐ Г±Г®Г§Г¤Г Г­Г 
+{B31A06}#15 {888EA0}- {F9D82F}Г‚Г» Г­Г ГµГ®Г¤ГЁГІГҐГ±Гј Гў ГЁГ­ГІГҐГ°ГјГҐГ°ГҐ]]
 local errorslistENG = [[{B31A06}#1 {888EA0}- {F9D82F}You player is dead/not playing
 {B31A06}#2 {888EA0}- {F9D82F}You are player is not in vehicle
 {B31A06}#3 {888EA0}- {F9D82F}Open game chat
@@ -251,7 +251,7 @@ local blueA_color = 623826 		-- {0984d2}
 local pink_color = '{F84CE0}'
 local purple_color = '{9B0690}'
 local imgui_main2_color = '{C39932}'
---переменные
+--ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ
 local checkTabs = 'zuwi'
 local active = true
 reduceZoom = true
@@ -268,10 +268,10 @@ CheckGMWveh = false
 checkClickwarp = false
 local airBrakeCoords = {}
 langIG = {}
---Настройки imgui
+--ГЌГ Г±ГІГ°Г®Г©ГЄГЁ imgui
 local btn_size = imgui.ImVec2(-0.1, 0)
 local sw, sh = getScreenResolution()
---Настройки меню (imgui)
+--ГЌГ Г±ГІГ°Г®Г©ГЄГЁ Г¬ГҐГ­Гѕ (imgui)
 array = {
 main_window_state 						= imgui.ImBool(false),
 
@@ -507,40 +507,40 @@ function imgui.OnDrawFrame(args)
 			if imgui.Button(fa.ICON_INFO ..' Help', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> Help' act1 = 8 end
 		elseif array.lang_menu.v then
 			imgui.CenterTextColoredRGB(checkTabs)
-			if imgui.Button(fa.ICON_STREET_VIEW .. u8' Персонаж', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> Персонаж' act1 = 1 end
+			if imgui.Button(fa.ICON_STREET_VIEW .. u8' ГЏГҐГ°Г±Г®Г­Г Г¦', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> ГЏГҐГ°Г±Г®Г­Г Г¦' act1 = 1 end
 			imgui.SameLine(nil, x)
-			if imgui.Button(fa.ICON_CAR .. u8' Транспорт', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> Транспорт' act1 = 2 end
+			if imgui.Button(fa.ICON_CAR .. u8' Г’Г°Г Г­Г±ГЇГ®Г°ГІ', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> Г’Г°Г Г­Г±ГЇГ®Г°ГІ' act1 = 2 end
 			imgui.SameLine(nil, x)
-			if imgui.Button(fa.ICON_BOMB .. u8' Оружие', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> Оружие' act1 = 3 end
+			if imgui.Button(fa.ICON_BOMB .. u8' ГЋГ°ГіГ¦ГЁГҐ', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> ГЋГ°ГіГ¦ГЁГҐ' act1 = 3 end
 			imgui.SameLine(nil, x)
-			if imgui.Button(fa.ICON_ADJUST .. u8' Разное', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> Разное' act1 = 4 end
+			if imgui.Button(fa.ICON_ADJUST .. u8' ГђГ Г§Г­Г®ГҐ', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> ГђГ Г§Г­Г®ГҐ' act1 = 4 end
 			imgui.SameLine(nil, x)
-			if imgui.Button(fa.ICON_EYE .. u8' Визуалы', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> Визуалы' act1 = 5 end
+			if imgui.Button(fa.ICON_EYE .. u8' Г‚ГЁГ§ГіГ Г«Г»', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> Г‚ГЁГ§ГіГ Г«Г»' act1 = 5 end
 			imgui.SameLine(nil, x)
-			if imgui.Button(fa.ICON_COG .. u8' Настройки', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> Настройки' act1 = 6 end
+			if imgui.Button(fa.ICON_COG .. u8' ГЌГ Г±ГІГ°Г®Г©ГЄГЁ', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> ГЌГ Г±ГІГ°Г®Г©ГЄГЁ' act1 = 6 end
 			imgui.SameLine(nil, x)
-			if imgui.Button(fa.ICON_INFO .. u8' Помощь', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> Помощь' act1 = 8 end
+			if imgui.Button(fa.ICON_INFO .. u8' ГЏГ®Г¬Г®Г№Гј', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> ГЏГ®Г¬Г®Г№Гј' act1 = 8 end
 		end
 		if imgui.Button(fa.ICON_SERVER .. ' Revent-RP', imgui.ImVec2(100, 0)) then checkTabs = 'zuwi -> Revent-RP' act1 = 9 end	
 
 		if act1 == 1 then --ACTOR IMGUI
 			imgui.BeginChild('1', imgui.ImVec2(855, 370), true)
 			if array.lang_menu.v then
-				imgui.ToggleButton('1', 'Бесконечная выносливость (бег)', array.show_imgui_infRun)
-				imgui.ToggleButton('32', 'Бесконечная выносливость (плавание)', array.show_imgui_infSwim)
-				imgui.ToggleButton('2', 'Бесконечный кислород', array.show_imgui_infOxygen)
-				imgui.ToggleButton('3', 'Мега прыжок', array.show_imgui_megajumpActor)
-				imgui.ToggleButton('4', 'Быстрый бег', array.show_imgui_fastsprint)
-				imgui.ToggleButton('5', 'Без падений', array.show_imgui_nofall)
-				imgui.ToggleButton('6', 'Разморозить', array.show_imgui_unfreeze)
+				imgui.ToggleButton('1', 'ГЃГҐГ±ГЄГ®Г­ГҐГ·Г­Г Гї ГўГ»Г­Г®Г±Г«ГЁГўГ®Г±ГІГј (ГЎГҐГЈ)', array.show_imgui_infRun)
+				imgui.ToggleButton('32', 'ГЃГҐГ±ГЄГ®Г­ГҐГ·Г­Г Гї ГўГ»Г­Г®Г±Г«ГЁГўГ®Г±ГІГј (ГЇГ«Г ГўГ Г­ГЁГҐ)', array.show_imgui_infSwim)
+				imgui.ToggleButton('2', 'ГЃГҐГ±ГЄГ®Г­ГҐГ·Г­Г»Г© ГЄГЁГ±Г«Г®Г°Г®Г¤', array.show_imgui_infOxygen)
+				imgui.ToggleButton('3', 'ГЊГҐГЈГ  ГЇГ°Г»Г¦Г®ГЄ', array.show_imgui_megajumpActor)
+				imgui.ToggleButton('4', 'ГЃГ»Г±ГІГ°Г»Г© ГЎГҐГЈ', array.show_imgui_fastsprint)
+				imgui.ToggleButton('5', 'ГЃГҐГ§ ГЇГ Г¤ГҐГ­ГЁГ©', array.show_imgui_nofall)
+				imgui.ToggleButton('6', 'ГђГ Г§Г¬Г®Г°Г®Г§ГЁГІГј', array.show_imgui_unfreeze)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: /")
-				imgui.ToggleButton('7', 'Суицид', array.show_imgui_suicideActor)
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: /")
+				imgui.ToggleButton('7', 'Г‘ГіГЁГ¶ГЁГ¤', array.show_imgui_suicideActor)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: F3\nЕсли функция 'Взрыв транспорта' включен во вкладке 'Транспорт' то произойдет только суицид\nЕсли обе функции включены, то произойдет взрыв транспорта, а если Вы не в транспорте, то Вы совершите суицид")
-				imgui.ToggleButton('37', 'Бесконечное здоровье', array.show_imgui_gmActor)
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: F3\nГ…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї 'Г‚Г§Г°Г»Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГ ' ГўГЄГ«ГѕГ·ГҐГ­ ГўГ® ГўГЄГ«Г Г¤ГЄГҐ 'Г’Г°Г Г­Г±ГЇГ®Г°ГІ' ГІГ® ГЇГ°Г®ГЁГ§Г®Г©Г¤ГҐГІ ГІГ®Г«ГјГЄГ® Г±ГіГЁГ¶ГЁГ¤\nГ…Г±Г«ГЁ Г®ГЎГҐ ГґГіГ­ГЄГ¶ГЁГЁ ГўГЄГ«ГѕГ·ГҐГ­Г», ГІГ® ГЇГ°Г®ГЁГ§Г®Г©Г¤ГҐГІ ГўГ§Г°Г»Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГ , Г  ГҐГ±Г«ГЁ Г‚Г» Г­ГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ, ГІГ® Г‚Г» Г±Г®ГўГҐГ°ГёГЁГІГҐ Г±ГіГЁГ¶ГЁГ¤")
+				imgui.ToggleButton('37', 'ГЃГҐГ±ГЄГ®Г­ГҐГ·Г­Г®ГҐ Г§Г¤Г®Г°Г®ГўГјГҐ', array.show_imgui_gmActor)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: Insert")
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: Insert")
 			elseif not array.lang_menu.v then
 				imgui.ToggleButton('1', 'Infinity stamina (run)', array.show_imgui_infRun)
 				imgui.ToggleButton('32', 'Infinity stamina (swim)', array.show_imgui_infSwim)
@@ -565,47 +565,47 @@ function imgui.OnDrawFrame(args)
 			if array.lang_menu.v then
 				imgui.ToggleButton('31', 'SpeedHack', array.show_imgui_speedhack)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: ALT")
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: ALT")
 					imgui.SameLine(nil, x)
-					imgui.SliderFloat(u8'Максимальная скорость', array.SpeedHackMaxSpeed, 80, 300, '%.f', 0.5)
-				imgui.ToggleButton('8', 'Переворот на 180', array.show_imgui_flip180)
+					imgui.SliderFloat(u8'ГЊГ ГЄГ±ГЁГ¬Г Г«ГјГ­Г Гї Г±ГЄГ®Г°Г®Г±ГІГј', array.SpeedHackMaxSpeed, 80, 300, '%.f', 0.5)
+				imgui.ToggleButton('8', 'ГЏГҐГ°ГҐГўГ®Г°Г®ГІ Г­Г  180', array.show_imgui_flip180)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: Backspace")
-				imgui.ToggleButton('9', 'Переворот на колеса', array.show_imgui_flipOnWheels)
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: Backspace")
+				imgui.ToggleButton('9', 'ГЏГҐГ°ГҐГўГ®Г°Г®ГІ Г­Г  ГЄГ®Г«ГҐГ±Г ', array.show_imgui_flipOnWheels)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: Delete")
-				imgui.ToggleButton('10', 'Прыжочек', array.show_imgui_hopVeh)
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: Delete")
+				imgui.ToggleButton('10', 'ГЏГ°Г»Г¦Г®Г·ГҐГЄ', array.show_imgui_hopVeh)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: B")
-				imgui.ToggleButton('11', 'Взрыв транспорта', array.show_imgui_suicideVeh)
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: B")
+				imgui.ToggleButton('11', 'Г‚Г§Г°Г»Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГ ', array.show_imgui_suicideVeh)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: F3\nЕсли функция 'Суицид' включена во вкладке 'Персонаж' то произойдет только взрыв транспорта\nЕсли обе функции включены, то произойдет взрыв транспорта, а если Вы не в транспорте, то Вы совершите суицид")
-				imgui.ToggleButton('12', 'Быстрый выход', array.show_imgui_fastexit)
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: F3\nГ…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї 'Г‘ГіГЁГ¶ГЁГ¤' ГўГЄГ«ГѕГ·ГҐГ­Г  ГўГ® ГўГЄГ«Г Г¤ГЄГҐ 'ГЏГҐГ°Г±Г®Г­Г Г¦' ГІГ® ГЇГ°Г®ГЁГ§Г®Г©Г¤ГҐГІ ГІГ®Г«ГјГЄГ® ГўГ§Г°Г»Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГ \nГ…Г±Г«ГЁ Г®ГЎГҐ ГґГіГ­ГЄГ¶ГЁГЁ ГўГЄГ«ГѕГ·ГҐГ­Г», ГІГ® ГЇГ°Г®ГЁГ§Г®Г©Г¤ГҐГІ ГўГ§Г°Г»Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГ , Г  ГҐГ±Г«ГЁ Г‚Г» Г­ГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ, ГІГ® Г‚Г» Г±Г®ГўГҐГ°ГёГЁГІГҐ Г±ГіГЁГ¶ГЁГ¤")
+				imgui.ToggleButton('12', 'ГЃГ»Г±ГІГ°Г»Г© ГўГ»ГµГ®Г¤', array.show_imgui_fastexit)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: N")
-				imgui.ToggleButton('13', 'Починить колеса', array.show_imgui_fixWheels)
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: N")
+				imgui.ToggleButton('13', 'ГЏГ®Г·ГЁГ­ГЁГІГј ГЄГ®Г«ГҐГ±Г ', array.show_imgui_fixWheels)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: Z+1")
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: Z+1")
 				imgui.ToggleButton('14', 'Anti-bike fall', array.show_imgui_antiBikeFall)
-				imgui.ToggleButton('15', 'Мега BMX прыжок', array.show_imgui_megajumpBMX)
-				imgui.ToggleButton('34', 'Идеальная езда', array.show_imgui_perfectHandling)
-				imgui.ToggleButton('46', 'У всего транспорта нитро', array.show_imgui_allCarsNitro)
-				imgui.ToggleButton('48', 'Танк мод', array.show_imgui_tankMode)
-				imgui.ToggleButton('49', 'Транспорт отлетает если в него стрельнуть', array.show_imgui_carsFloatWhenHit)
-				imgui.ToggleButton('35', 'Езда по воде', array.show_imgui_driveOnWater)
-				imgui.ToggleButton('38', 'Починить транспорт', array.show_imgui_restHealthVeh)
+				imgui.ToggleButton('15', 'ГЊГҐГЈГ  BMX ГЇГ°Г»Г¦Г®ГЄ', array.show_imgui_megajumpBMX)
+				imgui.ToggleButton('34', 'Г€Г¤ГҐГ Г«ГјГ­Г Гї ГҐГ§Г¤Г ', array.show_imgui_perfectHandling)
+				imgui.ToggleButton('46', 'Г“ ГўГ±ГҐГЈГ® ГІГ°Г Г­Г±ГЇГ®Г°ГІГ  Г­ГЁГІГ°Г®', array.show_imgui_allCarsNitro)
+				imgui.ToggleButton('48', 'Г’Г Г­ГЄ Г¬Г®Г¤', array.show_imgui_tankMode)
+				imgui.ToggleButton('49', 'Г’Г°Г Г­Г±ГЇГ®Г°ГІ Г®ГІГ«ГҐГІГ ГҐГІ ГҐГ±Г«ГЁ Гў Г­ГҐГЈГ® Г±ГІГ°ГҐГ«ГјГ­ГіГІГј', array.show_imgui_carsFloatWhenHit)
+				imgui.ToggleButton('35', 'Г…Г§Г¤Г  ГЇГ® ГўГ®Г¤ГҐ', array.show_imgui_driveOnWater)
+				imgui.ToggleButton('38', 'ГЏГ®Г·ГЁГ­ГЁГІГј ГІГ°Г Г­Г±ГЇГ®Г°ГІ', array.show_imgui_restHealthVeh)
 					imgui.SameLine(nil,x)
-					imgui.TextQuestion(u8'Если функция включена, используйте: 1')
-				imgui.ToggleButton('39', 'Двигатель включен', array.show_imgui_engineOnVeh)
+					imgui.TextQuestion(u8'Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: 1')
+				imgui.ToggleButton('39', 'Г„ГўГЁГЈГ ГІГҐГ«Гј ГўГЄГ«ГѕГ·ГҐГ­', array.show_imgui_engineOnVeh)
 				imgui.Separator()
 				imgui.TextColoredRGB('{0984d2}GM')
-				imgui.ToggleButton('16', 'Обычный', array.show_imgui_gmVeh)
+				imgui.ToggleButton('16', 'ГЋГЎГ»Г·Г­Г»Г©', array.show_imgui_gmVeh)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: Home+1")
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: Home+1")
 				imgui.SameLine(nil, x)
-				imgui.ToggleButton('17', 'Колеса', array.show_imgui_gmWheels)
+				imgui.ToggleButton('17', 'ГЉГ®Г«ГҐГ±Г ', array.show_imgui_gmWheels)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: Home+2")
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: Home+2")
 			elseif not array.lang_menu.v then
 				imgui.ToggleButton('31', 'SpeedHack', array.show_imgui_speedhack)
 					imgui.SameLine(nil, x)
@@ -656,8 +656,8 @@ function imgui.OnDrawFrame(args)
 		elseif act1 == 3 then --WEAPON IMGUI
 			imgui.BeginChild('3', imgui.ImVec2(855, 370), true)
 			if array.lang_menu.v then
-				imgui.ToggleButton('18', 'Бесконечные патроны, без перезарядки', array.show_imgui_infAmmo)
-				imgui.ToggleButton('45', 'Полное умение', array.show_imgui_fullskills)
+				imgui.ToggleButton('18', 'ГЃГҐГ±ГЄГ®Г­ГҐГ·Г­Г»ГҐ ГЇГ ГІГ°Г®Г­Г», ГЎГҐГ§ ГЇГҐГ°ГҐГ§Г Г°ГїГ¤ГЄГЁ', array.show_imgui_infAmmo)
+				imgui.ToggleButton('45', 'ГЏГ®Г«Г­Г®ГҐ ГіГ¬ГҐГ­ГЁГҐ', array.show_imgui_fullskills)
 			elseif not array.lang_menu.v then
 				imgui.ToggleButton('18', 'Infinity ammo and no reload', array.show_imgui_infAmmo)
 				imgui.ToggleButton('45', 'Full skills', array.show_imgui_fullskills)
@@ -667,41 +667,41 @@ function imgui.OnDrawFrame(args)
 		elseif act1 == 4 then --MISC IMGUI
 			imgui.BeginChild('4', imgui.ImVec2(855, 370), true)
 			if array.lang_menu.v then
-				if imgui.Button(fa.ICON_GLOBE .. u8' Главное') then checkTabs = 'zuwi -> Разное -> Главное' act4 = 1 end
+				if imgui.Button(fa.ICON_GLOBE .. u8' ГѓГ«Г ГўГ­Г®ГҐ') then checkTabs = 'zuwi -> ГђГ Г§Г­Г®ГҐ -> ГѓГ«Г ГўГ­Г®ГҐ' act4 = 1 end
 				imgui.SameLine(nil, x)
-				if imgui.Button(fa.ICON_LOCATION_ARROW .. u8' Телепорты') then checkTabs = 'zuwi -> Разное -> Телепорты' act4 = 2 end
+				if imgui.Button(fa.ICON_LOCATION_ARROW .. u8' Г’ГҐГ«ГҐГЇГ®Г°ГІГ»') then checkTabs = 'zuwi -> ГђГ Г§Г­Г®ГҐ -> Г’ГҐГ«ГҐГЇГ®Г°ГІГ»' act4 = 2 end
 				imgui.Separator()
 				if act4 == 1 then
 					imgui.ToggleButton('19', 'AirBrake', array.show_imgui_AirBrake)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: RShift")
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: RShift")
 					imgui.SameLine(nil, 79)
-					imgui.SliderFloat(u8'Скорость', array.AirBrake_Speed, 0.1, 14.9, '%.1f', 1.5)
-					imgui.ToggleButton('20', 'Поле зрения', array.show_imgui_FOV)
+					imgui.SliderFloat(u8'Г‘ГЄГ®Г°Г®Г±ГІГј', array.AirBrake_Speed, 0.1, 14.9, '%.1f', 1.5)
+					imgui.ToggleButton('20', 'ГЏГ®Г«ГҐ Г§Г°ГҐГ­ГЁГї', array.show_imgui_FOV)
 					imgui.SameLine(nil, 76)
-					imgui.SliderFloat(u8'Значение', array.FOV_value, 70.0, 108.0, '%.f', 0.5)
-					imgui.ToggleButton('21', 'Быстрый телепорт', array.show_imgui_blink)
+					imgui.SliderFloat(u8'Г‡Г­Г Г·ГҐГ­ГЁГҐ', array.FOV_value, 70.0, 108.0, '%.f', 0.5)
+					imgui.ToggleButton('21', 'ГЃГ»Г±ГІГ°Г»Г© ГІГҐГ«ГҐГЇГ®Г°ГІ', array.show_imgui_blink)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: X\nВас телепортирует на определенное количество метров вперед")
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: X\nГ‚Г Г± ГІГҐГ«ГҐГЇГ®Г°ГІГЁГ°ГіГҐГІ Г­Г  Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­Г­Г®ГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¬ГҐГІГ°Г®Гў ГўГЇГҐГ°ГҐГ¤")
 					imgui.SameLine(nil, 18)
-					imgui.SliderFloat(u8'Дистанция', array.blink_dist, 1, 150, '%.f', 1.5)
+					imgui.SliderFloat(u8'Г„ГЁГ±ГІГ Г­Г¶ГЁГї', array.blink_dist, 1, 150, '%.f', 1.5)
 					imgui.ToggleButton('43', 'ClickWarp', array.show_imgui_clickwarp)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: Колесо мыши")
-					imgui.ToggleButton('22', 'Анти BHop', array.show_imgui_antibhop)
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: ГЉГ®Г«ГҐГ±Г® Г¬Г»ГёГЁ")
+					imgui.ToggleButton('22', 'ГЂГ­ГІГЁ BHop', array.show_imgui_antibhop)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion('Осторожно с этой функцией! Могут дать бан!')
-					imgui.ToggleButton('23', 'Быстрая карта', array.show_imgui_quickMap)
+					imgui.TextQuestion('ГЋГ±ГІГ®Г°Г®Г¦Г­Г® Г± ГЅГІГ®Г© ГґГіГ­ГЄГ¶ГЁГҐГ©! ГЊГ®ГЈГіГІ Г¤Г ГІГј ГЎГ Г­!')
+					imgui.ToggleButton('23', 'ГЃГ»Г±ГІГ°Г Гї ГЄГ Г°ГІГ ', array.show_imgui_quickMap)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8"Если функция включена, используйте: M")
-					imgui.ToggleButton('24', 'Исправление чувствительности', array.show_imgui_sensfix)
-					imgui.ToggleButton('25', 'Перезаход', array.show_imgui_reconnect)
+					imgui.TextQuestion(u8"Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: M")
+					imgui.ToggleButton('24', 'Г€Г±ГЇГ°Г ГўГ«ГҐГ­ГЁГҐ Г·ГіГўГ±ГІГўГЁГІГҐГ«ГјГ­Г®Г±ГІГЁ', array.show_imgui_sensfix)
+					imgui.ToggleButton('25', 'ГЏГҐГ°ГҐГ§Г ГµГ®Г¤', array.show_imgui_reconnect)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8'Если функция включена, используйте: LSHFIT+0')
-					imgui.ToggleButton('33', 'Чистрый скриншот', array.show_imgui_clrScr)
-					imgui.ToggleButton('36', 'Езда/Ходьба под водой', array.show_imgui_UnderWater)
+					imgui.TextQuestion(u8'Г…Г±Г«ГЁ ГґГіГ­ГЄГ¶ГЁГї ГўГЄГ«ГѕГ·ГҐГ­Г , ГЁГ±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: LSHFIT+0')
+					imgui.ToggleButton('33', 'Г—ГЁГ±ГІГ°Г»Г© Г±ГЄГ°ГЁГ­ГёГ®ГІ', array.show_imgui_clrScr)
+					imgui.ToggleButton('36', 'Г…Г§Г¤Г /Г•Г®Г¤ГјГЎГ  ГЇГ®Г¤ ГўГ®Г¤Г®Г©', array.show_imgui_UnderWater)
 				elseif act4 == 2 then
-					if imgui.CollapsingHeader(u8'Телепорты в интерьеры') then
+					if imgui.CollapsingHeader(u8'Г’ГҐГ«ГҐГЇГ®Г°ГІГ» Гў ГЁГ­ГІГҐГ°ГјГҐГ°Г»') then
 						imgui.Columns(3, true)
 						if imgui.Button("Interior: Burning Desire House") then teleportInterior(PLAYER_PED, 2338.32, -1180.61, 1027.98, 5) end
 						if imgui.Button("Interior: RC Zero's Battlefield") then teleportInterior(PLAYER_PED, -975.5766, 1061.1312, 1345.6719, 10) end
@@ -727,7 +727,7 @@ function imgui.OnDrawFrame(args)
 						if imgui.Button("Airplane: Andromada Cargo hold") then teleportInterior(PLAYER_PED, 315.8561, 1024.4964, 1949.7973, 9) end
 					end
 					imgui.Columns(1, true)
-					if imgui.CollapsingHeader(u8'Остальные телепорты') then
+					if imgui.CollapsingHeader(u8'ГЋГ±ГІГ Г«ГјГ­Г»ГҐ ГІГҐГ«ГҐГЇГ®Г°ГІГ»') then
 						imgui.Columns(3, true)
 						if imgui.Button("Transfender near Wang Cars in Doherty") then teleportInterior(PLAYER_PED, -1935.77, 228.79, 34.16, 0) end
 						if imgui.Button("Wheel Archangels in Ocean Flats") then teleportInterior(PLAYER_PED, -2707.48, 218.65, 4.93, 0) end
@@ -897,23 +897,23 @@ function imgui.OnDrawFrame(args)
 		elseif act1 == 5 then --VISUAL IMGUI
 			imgui.BeginChild('5', imgui.ImVec2(855, 370), true)
 			if array.lang_menu.v then
-				if imgui.Button(fa.ICON_WINDOW_MAXIMIZE .. u8' Главное') then checkTabs = 'zuwi -> Визуалы -> Главное' act5 = 1 end
+				if imgui.Button(fa.ICON_WINDOW_MAXIMIZE .. u8' ГѓГ«Г ГўГ­Г®ГҐ') then checkTabs = 'zuwi -> Г‚ГЁГ§ГіГ Г«Г» -> ГѓГ«Г ГўГ­Г®ГҐ' act5 = 1 end
 				imgui.SameLine(nil, x)
-				if imgui.Button(fa.ICON_STREET_VIEW .. u8' Игроки') then checkTabs = 'zuwi -> Визуалы -> Игроки' act5 = 2 end
+				if imgui.Button(fa.ICON_STREET_VIEW .. u8' Г€ГЈГ°Г®ГЄГЁ') then checkTabs = 'zuwi -> Г‚ГЁГ§ГіГ Г«Г» -> Г€ГЈГ°Г®ГЄГЁ' act5 = 2 end
 				imgui.SameLine(nil, x)
-				if imgui.Button(fa.ICON_CAR .. u8' Транспорт') then CheckTabs = 'zuwi -> Визуалы -> Транспорт' act5 = 3 end
+				if imgui.Button(fa.ICON_CAR .. u8' Г’Г°Г Г­Г±ГЇГ®Г°ГІ') then CheckTabs = 'zuwi -> Г‚ГЁГ§ГіГ Г«Г» -> Г’Г°Г Г­Г±ГЇГ®Г°ГІ' act5 = 3 end
 				imgui.Separator()
 				if act5 == 1 then
-					imgui.ToggleButton('40', 'Информационная панель', array.infbar)
+					imgui.ToggleButton('40', 'Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГ®Г­Г­Г Гї ГЇГ Г­ГҐГ«Гј', array.infbar)
 				elseif act5 == 2 then
 					imgui.ToggleButton('31', 'Name tag', array.show_imgui_nametag)
 				elseif act5 == 3 then
-					imgui.ToggleButton('47', 'Только колеса', array.show_imgui_onlyWheels)
+					imgui.ToggleButton('47', 'Г’Г®Г«ГјГЄГ® ГЄГ®Г«ГҐГ±Г ', array.show_imgui_onlyWheels)
 					imgui.SameLine(nil, x)
-					imgui.TextQuestion(u8'Если Вы находитесь в транспорте')
-					imgui.ToggleButton('50', 'Проверка дверей', array.show_imgui_doorlocks)
+					imgui.TextQuestion(u8'Г…Г±Г«ГЁ Г‚Г» Г­Г ГµГ®Г¤ГЁГІГҐГ±Гј Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ')
+					imgui.ToggleButton('50', 'ГЏГ°Г®ГўГҐГ°ГЄГ  Г¤ГўГҐГ°ГҐГ©', array.show_imgui_doorlocks)
 					imgui.SameLine(nil, x)
-					imgui.SliderInt(u8'Дистанция', array.distDoorLocks, 5, 200)
+					imgui.SliderInt(u8'Г„ГЁГ±ГІГ Г­Г¶ГЁГї', array.distDoorLocks, 5, 200)
 				end
 			elseif not array.lang_menu.v then
 				if imgui.Button(fa.ICON_WINDOW_MAXIMIZE ..' Main') then checkTabs = 'zuwi -> Visual -> Main' act5 = 1 end
@@ -940,11 +940,11 @@ function imgui.OnDrawFrame(args)
 		elseif act1 == 6 then --SETTINGS IMGUI
 			imgui.BeginChild('6', imgui.ImVec2(855, 370), true)
 			if array.lang_menu.v then
-				if imgui.Button(fa.ICON_WINDOW_MAXIMIZE .. u8' Меню') then checkTabs = 'zuwi -> Настройки -> Меню' act6 = 1 end
+				if imgui.Button(fa.ICON_WINDOW_MAXIMIZE .. u8' ГЊГҐГ­Гѕ') then checkTabs = 'zuwi -> ГЌГ Г±ГІГ°Г®Г©ГЄГЁ -> ГЊГҐГ­Гѕ' act6 = 1 end
 				imgui.SameLine(nil, x)
-				if imgui.Button(fa.ICON_CLOUD_DOWNLOAD .. u8' Обновления') then checkTabs = 'zuwi -> Настройки -> Обновления' act6 = 2 end
+				if imgui.Button(fa.ICON_CLOUD_DOWNLOAD .. u8' ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГї') then checkTabs = 'zuwi -> ГЌГ Г±ГІГ°Г®Г©ГЄГЁ -> ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГї' act6 = 2 end
 				--imgui.SameLine(nil,x)
-				--if imgui.Button(fa.ICON_KEY .. u8' Горячие клавиши') then checkTabs = 'zwui -> Настройки -> Горячие клавиши' act6 = 3 end
+				--if imgui.Button(fa.ICON_KEY .. u8' ГѓГ®Г°ГїГ·ГЁГҐ ГЄГ«Г ГўГЁГёГЁ') then checkTabs = 'zwui -> ГЌГ Г±ГІГ°Г®Г©ГЄГЁ -> ГѓГ®Г°ГїГ·ГЁГҐ ГЄГ«Г ГўГЁГёГЁ' act6 = 3 end
 				imgui.Separator()
 			elseif not array.lang_menu.v then
 				if imgui.Button(fa.ICON_WINDOW_MAXIMIZE ..' Menu') then checkTabs = 'zuwi -> Settings -> Menu' act6 = 1 end
@@ -956,22 +956,22 @@ function imgui.OnDrawFrame(args)
 			end
 			if act6 == 1 then
 				if array.lang_menu.v then
-					imgui.TextColoredRGB('{0984d2}F11 {888EA0}- {0E8604}Включить{888EA0}/{B31A06}Выключить {C39932}курсор')
+					imgui.TextColoredRGB('{0984d2}F11 {888EA0}- {0E8604}Г‚ГЄГ«ГѕГ·ГЁГІГј{888EA0}/{B31A06}Г‚Г»ГЄГ«ГѕГ·ГЁГІГј {C39932}ГЄГіГ°Г±Г®Г°')
 					imgui.Spacing()
 					imgui.Spacing()
-					if imgui.CollapsingHeader(u8'Язык') then
-						if imgui.ToggleButton('26', 'Меню', array.lang_menu) then CheckLangMenu = not CheckLangMenu end
+					if imgui.CollapsingHeader(u8'ГџГ§Г»ГЄ') then
+						if imgui.ToggleButton('26', 'ГЊГҐГ­Гѕ', array.lang_menu) then CheckLangMenu = not CheckLangMenu end
 						imgui.SameLine(nil, x)
-						if imgui.ToggleButton('27', 'Чат', array.lang_chat) then CheckLangChat = not CheckLangChat end
+						if imgui.ToggleButton('27', 'Г—Г ГІ', array.lang_chat) then CheckLangChat = not CheckLangChat end
 						imgui.SameLine(nil, x)
-						if imgui.ToggleButton('28', 'Диалоги', array.lang_dialogs) then CheckLangDialogs = not CheckLangDialogs end
+						if imgui.ToggleButton('28', 'Г„ГЁГ Г«Г®ГЈГЁ', array.lang_dialogs) then CheckLangDialogs = not CheckLangDialogs end
 						imgui.SameLine(nil, x)
-						if imgui.ToggleButton('51', 'Визуалы', array.lang_visual) then CheckLangVisuals = not CheckLangVisuals end
-						imgui.TextColoredRGB("{0984d2}Если включено, то работает на все вкладки кроме 'Серверы'.")
+						if imgui.ToggleButton('51', 'Г‚ГЁГ§ГіГ Г«Г»', array.lang_visual) then CheckLangVisuals = not CheckLangVisuals end
+						imgui.TextColoredRGB("{0984d2}Г…Г±Г«ГЁ ГўГЄГ«ГѕГ·ГҐГ­Г®, ГІГ® Г°Г ГЎГ®ГІГ ГҐГІ Г­Г  ГўГ±ГҐ ГўГЄГ«Г Г¤ГЄГЁ ГЄГ°Г®Г¬ГҐ 'Г‘ГҐГ°ГўГҐГ°Г»'.")
 						imgui.Separator()
 					end
 					imgui.Spacing() imgui.Spacing() imgui.Spacing()
-					imgui.TextColoredRGB('{0984d2}Настройка стилей:')
+					imgui.TextColoredRGB('{0984d2}ГЌГ Г±ГІГ°Г®Г©ГЄГ  Г±ГІГЁГ«ГҐГ©:')
 				elseif not array.lang_menu.v then
 					imgui.TextColoredRGB('{0984d2}F11 {888EA0}- {0E8604}On{888EA0}/{B31A06}Off {C39932}cursor')
 					imgui.Spacing()
@@ -1077,25 +1077,25 @@ function imgui.OnDrawFrame(args)
 									shortCMD = array.at_scmd.v
 								}
 							} inicfg.save(mainIni, 'zuwi.ini')
-							if array.lang_chat.v then sampAddChatMessage(tag..'Настройки {0E8604}успешно{888EA0} сохранены', main_color)
+							if array.lang_chat.v then sampAddChatMessage(tag..'ГЌГ Г±ГІГ°Г®Г©ГЄГЁ {0E8604}ГіГ±ГЇГҐГёГ­Г®{888EA0} Г±Г®ГµГ°Г Г­ГҐГ­Г»', main_color)
 							elseif not array.lang_chat.v then sampAddChatMessage(tag..'Settings {0E8604}successfully{888EA0} save', main_color) end
 						else
-							if array.lang_chat.v then sampAddChatMessage(tag..'Настройки {B31A06}не успешно{888EA0} сохранены', main_color)
+							if array.lang_chat.v then sampAddChatMessage(tag..'ГЌГ Г±ГІГ°Г®Г©ГЄГЁ {B31A06}Г­ГҐ ГіГ±ГЇГҐГёГ­Г®{888EA0} Г±Г®ГµГ°Г Г­ГҐГ­Г»', main_color)
 							elseif array.lang_chat.v then sampAddChatMessage(tag..'Settings {B31A06}not successfully {888EA0}save', main_color) end
 						end
 					else
 						if inicfg.save(mainIni, 'zuwi.ini') then
-							if array.lang_chat.v then sampAddChatMessage(tag..'Настройки {0E8604}успешно{888EA0} сохранены', main_color)
+							if array.lang_chat.v then sampAddChatMessage(tag..'ГЌГ Г±ГІГ°Г®Г©ГЄГЁ {0E8604}ГіГ±ГЇГҐГёГ­Г®{888EA0} Г±Г®ГµГ°Г Г­ГҐГ­Г»', main_color)
 							elseif not array.lang_chat.v then sampAddChatMessage(tag..'Settings {0E8604}successfully{888EA0} save', main_color) end
 						else
-							if array.lang_chat.v then sampAddChatMessage(tag..'Настройки {B31A06}не успешно{888EA0} сохранены', main_color)
+							if array.lang_chat.v then sampAddChatMessage(tag..'ГЌГ Г±ГІГ°Г®Г©ГЄГЁ {B31A06}Г­ГҐ ГіГ±ГЇГҐГёГ­Г®{888EA0} Г±Г®ГµГ°Г Г­ГҐГ­Г»', main_color)
 							elseif not array.lang_chat.v then sampAddChatMessage(tag..'Settings {B31A06}not successfully {888EA0}save', main_color) end
 						end
 					end
 				end
 				imgui.SameLine(nil, x)
 				if not array.lang_menu.v then imgui.ToggleButton('29', 'Auto save', array.AutoSave)
-				elseif array.lang_menu.v then imgui.ToggleButton('29', 'Автосохранение', array.AutoSave) end
+				elseif array.lang_menu.v then imgui.ToggleButton('29', 'ГЂГўГІГ®Г±Г®ГµГ°Г Г­ГҐГ­ГЁГҐ', array.AutoSave) end
 				imgui.Spacing()
 				imgui.Spacing()
 				imgui.Spacing()
@@ -1106,11 +1106,11 @@ function imgui.OnDrawFrame(args)
 					imgui.TextColoredRGB('{888EA0}Topic on Blast.Hack: {0E8604}https://www.blast.hk/threads/66295')
 					imgui.TextColoredRGB('{888EA0}Donate: {0E8604}https://www.donationalerts.com/r/panseek')
 				elseif array.lang_menu.v then
-					imgui.TextColoredRGB('{0984d2}Контакты{888EA0}:')
+					imgui.TextColoredRGB('{0984d2}ГЉГ®Г­ГІГ ГЄГІГ»{888EA0}:')
 					imgui.TextColoredRGB('{888EA0}Telegram: {0E8604}https://t.me/panseek')
-					imgui.TextColoredRGB('{888EA0}VK группа: {0E8604}https://vk.com/creationpanseek')
-					imgui.TextColoredRGB('{888EA0}Тема на Blast.Hack: {0E8604}https://www.blast.hk/threads/66295')
-					imgui.TextColoredRGB('{888EA0}Пожертвования: {0E8604}https://www.donationalerts.com/r/panseek')
+					imgui.TextColoredRGB('{888EA0}VK ГЈГ°ГіГЇГЇГ : {0E8604}https://vk.com/creationpanseek')
+					imgui.TextColoredRGB('{888EA0}Г’ГҐГ¬Г  Г­Г  Blast.Hack: {0E8604}https://www.blast.hk/threads/66295')
+					imgui.TextColoredRGB('{888EA0}ГЏГ®Г¦ГҐГ°ГІГўГ®ГўГ Г­ГЁГї: {0E8604}https://www.donationalerts.com/r/panseek')
 				end
 			elseif act6 == 2 then
 				if not array.lang_menu.v then
@@ -1118,7 +1118,7 @@ function imgui.OnDrawFrame(args)
 					imgui.SameLine(nil, x)
 					if imgui.Button('Download last update') then
 						downloadUrlToFile('https://raw.githubusercontent.com/PanSeek/zuwi/master/zuwi.lua', 'moonloader/zuwi.lua')
-						if array.lang_chat.v then sampAddChatMessage(tag..'Обновление {0E8604}загружено', main_color)
+						if array.lang_chat.v then sampAddChatMessage(tag..'ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ {0E8604}Г§Г ГЈГ°ГіГ¦ГҐГ­Г®', main_color)
 						elseif not array.lang_chat.v then sampAddChatMessage(tag..'Update {0E8604}download', main_color) end
 					end
 					imgui.Spacing()
@@ -1146,34 +1146,34 @@ function imgui.OnDrawFrame(args)
 						imgui.Unindent(10)
 					end
 				elseif array.lang_menu.v then
-					imgui.ToggleButton('30', 'Проверка обновлений', array.checkupdate)
+					imgui.ToggleButton('30', 'ГЏГ°Г®ГўГҐГ°ГЄГ  Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГ©', array.checkupdate)
 					imgui.SameLine(nil, x)
-					if imgui.Button(u8'Скачать последнее обновление') then
+					if imgui.Button(u8'Г‘ГЄГ Г·Г ГІГј ГЇГ®Г±Г«ГҐГ¤Г­ГҐГҐ Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ') then
 						downloadUrlToFile('https://raw.githubusercontent.com/PanSeek/zuwi/master/zuwi.lua', 'moonloader/zuwi.lua')
-						if array.lang_chat.v then sampAddChatMessage(tag..'Обновление {0E8604}загружено', main_color)
+						if array.lang_chat.v then sampAddChatMessage(tag..'ГЋГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ {0E8604}Г§Г ГЈГ°ГіГ¦ГҐГ­Г®', main_color)
 						elseif not array.lang_chat.v then sampAddChatMessage(tag..'Update {0E8604}download', main_color) end
 					end
 					imgui.Spacing()
-					if imgui.CollapsingHeader(u8'Список обновлений') then
+					if imgui.CollapsingHeader(u8'Г‘ГЇГЁГ±Г®ГЄ Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГ©') then
 						imgui.Indent(10)
 						if imgui.CollapsingHeader('21.10.2020 - v1.1') then
-							imgui.TextColoredRGB('{888EA0}Добавлена функция {C39932}"Проверка дверей" {888EA0}в {C39932}"Визуалы" {888EA0}-> {C39932}"Транспорт"')
-							imgui.TextColoredRGB('{888EA0}Добавлена смена языка для {C39932}"Визуалы"')
-							imgui.TextColoredRGB('{888EA0}Функция {C39932}"Оружия" {888EA0}-> {C39932}"Полное прицеливание" {888EA0}изменило название на {C39932}"Полное умение"')
-							imgui.TextColoredRGB('{888EA0}Функция {C39932}"Транспорт" {888EA0}-> {C39932}"Только колеса" {888EA0}перенесена во вкладку {C39932}"Визуалы" {888EA0}-> {C39932}"Транспорт"')
-							imgui.TextColoredRGB('{888EA0}Исправлена функция {C39932}"Разное" {888EA0}-> {C39932}"Поле зрение"')
-							imgui.TextColoredRGB('{888EA0}Исправлена функция {C39932}"Транспорт" {888EA0}-> {C39932}"SpeedHack"')
-							imgui.TextColoredRGB('{888EA0}Исправлена функция {C39932}"Транспорт" {888EA0}-> {C39932}"Переворот на колеса"')
-							imgui.TextColoredRGB('{888EA0}Исправлено автообновление')
+							imgui.TextColoredRGB('{888EA0}Г„Г®ГЎГ ГўГ«ГҐГ­Г  ГґГіГ­ГЄГ¶ГЁГї {C39932}"ГЏГ°Г®ГўГҐГ°ГЄГ  Г¤ГўГҐГ°ГҐГ©" {888EA0}Гў {C39932}"Г‚ГЁГ§ГіГ Г«Г»" {888EA0}-> {C39932}"Г’Г°Г Г­Г±ГЇГ®Г°ГІ"')
+							imgui.TextColoredRGB('{888EA0}Г„Г®ГЎГ ГўГ«ГҐГ­Г  Г±Г¬ГҐГ­Г  ГїГ§Г»ГЄГ  Г¤Г«Гї {C39932}"Г‚ГЁГ§ГіГ Г«Г»"')
+							imgui.TextColoredRGB('{888EA0}Г”ГіГ­ГЄГ¶ГЁГї {C39932}"ГЋГ°ГіГ¦ГЁГї" {888EA0}-> {C39932}"ГЏГ®Г«Г­Г®ГҐ ГЇГ°ГЁГ¶ГҐГ«ГЁГўГ Г­ГЁГҐ" {888EA0}ГЁГ§Г¬ГҐГ­ГЁГ«Г® Г­Г Г§ГўГ Г­ГЁГҐ Г­Г  {C39932}"ГЏГ®Г«Г­Г®ГҐ ГіГ¬ГҐГ­ГЁГҐ"')
+							imgui.TextColoredRGB('{888EA0}Г”ГіГ­ГЄГ¶ГЁГї {C39932}"Г’Г°Г Г­Г±ГЇГ®Г°ГІ" {888EA0}-> {C39932}"Г’Г®Г«ГјГЄГ® ГЄГ®Г«ГҐГ±Г " {888EA0}ГЇГҐГ°ГҐГ­ГҐГ±ГҐГ­Г  ГўГ® ГўГЄГ«Г Г¤ГЄГі {C39932}"Г‚ГЁГ§ГіГ Г«Г»" {888EA0}-> {C39932}"Г’Г°Г Г­Г±ГЇГ®Г°ГІ"')
+							imgui.TextColoredRGB('{888EA0}Г€Г±ГЇГ°Г ГўГ«ГҐГ­Г  ГґГіГ­ГЄГ¶ГЁГї {C39932}"ГђГ Г§Г­Г®ГҐ" {888EA0}-> {C39932}"ГЏГ®Г«ГҐ Г§Г°ГҐГ­ГЁГҐ"')
+							imgui.TextColoredRGB('{888EA0}Г€Г±ГЇГ°Г ГўГ«ГҐГ­Г  ГґГіГ­ГЄГ¶ГЁГї {C39932}"Г’Г°Г Г­Г±ГЇГ®Г°ГІ" {888EA0}-> {C39932}"SpeedHack"')
+							imgui.TextColoredRGB('{888EA0}Г€Г±ГЇГ°Г ГўГ«ГҐГ­Г  ГґГіГ­ГЄГ¶ГЁГї {C39932}"Г’Г°Г Г­Г±ГЇГ®Г°ГІ" {888EA0}-> {C39932}"ГЏГҐГ°ГҐГўГ®Г°Г®ГІ Г­Г  ГЄГ®Г«ГҐГ±Г "')
+							imgui.TextColoredRGB('{888EA0}Г€Г±ГЇГ°Г ГўГ«ГҐГ­Г® Г ГўГІГ®Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ')
 						end
 						if imgui.CollapsingHeader('16.10.2020 - v1.0') then
-							imgui.TextColoredRGB('{888EA0}Добавлены функции в {C39932}"Транспорт"{888EA0}: {C39932}"У всего транспорта нитро"{888EA0}; {C39932}"Только колеса"{888EA0}; {C39932}"Танк мод"{888EA0}; {C39932}"Транспорт отлетает если в него стрельнуть"')
-							imgui.TextColoredRGB('{888EA0}Добавлены контакты в {C39932}"Настройки"')
-							imgui.TextColoredRGB('{888EA0}Убрана команда {C39932}/z_at {888EA0}(теперь доступен функционал без данной команды)')
-							imgui.TextColoredRGB('{888EA0}Мелкие исправления и доработки')
+							imgui.TextColoredRGB('{888EA0}Г„Г®ГЎГ ГўГ«ГҐГ­Г» ГґГіГ­ГЄГ¶ГЁГЁ Гў {C39932}"Г’Г°Г Г­Г±ГЇГ®Г°ГІ"{888EA0}: {C39932}"Г“ ГўГ±ГҐГЈГ® ГІГ°Г Г­Г±ГЇГ®Г°ГІГ  Г­ГЁГІГ°Г®"{888EA0}; {C39932}"Г’Г®Г«ГјГЄГ® ГЄГ®Г«ГҐГ±Г "{888EA0}; {C39932}"Г’Г Г­ГЄ Г¬Г®Г¤"{888EA0}; {C39932}"Г’Г°Г Г­Г±ГЇГ®Г°ГІ Г®ГІГ«ГҐГІГ ГҐГІ ГҐГ±Г«ГЁ Гў Г­ГҐГЈГ® Г±ГІГ°ГҐГ«ГјГ­ГіГІГј"')
+							imgui.TextColoredRGB('{888EA0}Г„Г®ГЎГ ГўГ«ГҐГ­Г» ГЄГ®Г­ГІГ ГЄГІГ» Гў {C39932}"ГЌГ Г±ГІГ°Г®Г©ГЄГЁ"')
+							imgui.TextColoredRGB('{888EA0}Г“ГЎГ°Г Г­Г  ГЄГ®Г¬Г Г­Г¤Г  {C39932}/z_at {888EA0}(ГІГҐГЇГҐГ°Гј Г¤Г®Г±ГІГіГЇГҐГ­ ГґГіГ­ГЄГ¶ГЁГ®Г­Г Г« ГЎГҐГ§ Г¤Г Г­Г­Г®Г© ГЄГ®Г¬Г Г­Г¤Г»)')
+							imgui.TextColoredRGB('{888EA0}ГЊГҐГ«ГЄГЁГҐ ГЁГ±ГЇГ°Г ГўГ«ГҐГ­ГЁГї ГЁ Г¤Г®Г°Г ГЎГ®ГІГЄГЁ')
 						end
 						if imgui.CollapsingHeader('13.10.2020 - v0.928') then
-							imgui.TextColoredRGB('{C39932}Релиз')
+							imgui.TextColoredRGB('{C39932}ГђГҐГ«ГЁГ§')
 						end
 						imgui.Unindent(10)
 					end
@@ -1188,57 +1188,57 @@ function imgui.OnDrawFrame(args)
 		elseif act1 == 8 then --HELP IMGUI
 			imgui.BeginChild('8', imgui.ImVec2(855, 370), true)
 			if array.lang_menu.v then
-				if imgui.CollapsingHeader(u8'Команды') then
-					imgui.TextColoredRGB('{C39932}/z_help {888EA0}- Помощь по скрипту')
-					imgui.TextColoredRGB('{C39932}/z_authors {888EA0}- Авторство и благодарности')
-					imgui.TextColoredRGB('{C39932}/z_date {888EA0}- Сегодняшняя дата')
-					imgui.TextColoredRGB('{C39932}/z_menu {888EA0}- {0984d2}Открытие/Закрытие {888EA0}меню')
-					imgui.TextColoredRGB('{C39932}/z_coord {888EA0}- Отмечает Ваши координаты')
-					imgui.TextColoredRGB('{C39932}/z_getmoney {888EA0}- Выдает 1.000$ ({B31A06}Визуально{888EA0})')
-					imgui.TextColoredRGB('{C39932}/z_fakerepair {888EA0}- Чинит транспорт ({B31A06}Для Revent-Rp{888EA0})')
-					imgui.TextColoredRGB('{C39932}/z_togall {888EA0}- {0984d2}Выключает/Включает {888EA0}все чаты которые возможно ({B31A06}Для Revent-Rp{888EA0})')
-					imgui.TextColoredRGB('{C39932}/z_time {888EA0}- Поменять время')
-					imgui.TextColoredRGB('{C39932}/z_weather {888EA0}- Поменять погоду')
-					imgui.TextColoredRGB('{C39932}/z_setmark {888EA0}- Поставить метку')
-					imgui.TextColoredRGB('{C39932}/z_tpmark {888EA0}- Телепортироваться к метке')
-					imgui.TextColoredRGB('{C39932}/z_cc {888EA0}- Очистка чата')
-					imgui.TextColoredRGB('{C39932}/z_version {888EA0}- Версия скрипта')
-					imgui.TextColoredRGB('{C39932}/z_update {888EA0}- Обновить скрипт')
-					imgui.TextColoredRGB('{C39932}/z_checktime {888EA0}- Точное время по МСК')
-					imgui.TextColoredRGB('{C39932}/z_suicide {888EA0}- Суицид (Если в транспорте, то взрывает транспорт. Если пешком, то убивает Вас)')
-					imgui.TextColoredRGB('{C39932}/z_errors {888EA0}- Список ошибок')
-					imgui.TextColoredRGB('{C39932}/z_cmdsamp {888EA0}- Список команд SA-MP')
-					imgui.TextColoredRGB('{C39932}/z_reload {888EA0}- Перезагружает данный скрипт')
-					imgui.TextColoredRGB('{C39932}/z_fps {888EA0}- Выводит FPS')
+				if imgui.CollapsingHeader(u8'ГЉГ®Г¬Г Г­Г¤Г»') then
+					imgui.TextColoredRGB('{C39932}/z_help {888EA0}- ГЏГ®Г¬Г®Г№Гј ГЇГ® Г±ГЄГ°ГЁГЇГІГі')
+					imgui.TextColoredRGB('{C39932}/z_authors {888EA0}- ГЂГўГІГ®Г°Г±ГІГўГ® ГЁ ГЎГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ')
+					imgui.TextColoredRGB('{C39932}/z_date {888EA0}- Г‘ГҐГЈГ®Г¤Г­ГїГёГ­ГїГї Г¤Г ГІГ ')
+					imgui.TextColoredRGB('{C39932}/z_menu {888EA0}- {0984d2}ГЋГІГЄГ°Г»ГІГЁГҐ/Г‡Г ГЄГ°Г»ГІГЁГҐ {888EA0}Г¬ГҐГ­Гѕ')
+					imgui.TextColoredRGB('{C39932}/z_coord {888EA0}- ГЋГІГ¬ГҐГ·Г ГҐГІ Г‚Г ГёГЁ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГ»')
+					imgui.TextColoredRGB('{C39932}/z_getmoney {888EA0}- Г‚Г»Г¤Г ГҐГІ 1.000$ ({B31A06}Г‚ГЁГ§ГіГ Г«ГјГ­Г®{888EA0})')
+					imgui.TextColoredRGB('{C39932}/z_fakerepair {888EA0}- Г—ГЁГ­ГЁГІ ГІГ°Г Г­Г±ГЇГ®Г°ГІ ({B31A06}Г„Г«Гї Revent-Rp{888EA0})')
+					imgui.TextColoredRGB('{C39932}/z_togall {888EA0}- {0984d2}Г‚Г»ГЄГ«ГѕГ·Г ГҐГІ/Г‚ГЄГ«ГѕГ·Г ГҐГІ {888EA0}ГўГ±ГҐ Г·Г ГІГ» ГЄГ®ГІГ®Г°Г»ГҐ ГўГ®Г§Г¬Г®Г¦Г­Г® ({B31A06}Г„Г«Гї Revent-Rp{888EA0})')
+					imgui.TextColoredRGB('{C39932}/z_time {888EA0}- ГЏГ®Г¬ГҐГ­ГїГІГј ГўГ°ГҐГ¬Гї')
+					imgui.TextColoredRGB('{C39932}/z_weather {888EA0}- ГЏГ®Г¬ГҐГ­ГїГІГј ГЇГ®ГЈГ®Г¤Гі')
+					imgui.TextColoredRGB('{C39932}/z_setmark {888EA0}- ГЏГ®Г±ГІГ ГўГЁГІГј Г¬ГҐГІГЄГі')
+					imgui.TextColoredRGB('{C39932}/z_tpmark {888EA0}- Г’ГҐГ«ГҐГЇГ®Г°ГІГЁГ°Г®ГўГ ГІГјГ±Гї ГЄ Г¬ГҐГІГЄГҐ')
+					imgui.TextColoredRGB('{C39932}/z_cc {888EA0}- ГЋГ·ГЁГ±ГІГЄГ  Г·Г ГІГ ')
+					imgui.TextColoredRGB('{C39932}/z_version {888EA0}- Г‚ГҐГ°Г±ГЁГї Г±ГЄГ°ГЁГЇГІГ ')
+					imgui.TextColoredRGB('{C39932}/z_update {888EA0}- ГЋГЎГ­Г®ГўГЁГІГј Г±ГЄГ°ГЁГЇГІ')
+					imgui.TextColoredRGB('{C39932}/z_checktime {888EA0}- Г’Г®Г·Г­Г®ГҐ ГўГ°ГҐГ¬Гї ГЇГ® ГЊГ‘ГЉ')
+					imgui.TextColoredRGB('{C39932}/z_suicide {888EA0}- Г‘ГіГЁГ¶ГЁГ¤ (Г…Г±Г«ГЁ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ, ГІГ® ГўГ§Г°Г»ГўГ ГҐГІ ГІГ°Г Г­Г±ГЇГ®Г°ГІ. Г…Г±Г«ГЁ ГЇГҐГёГЄГ®Г¬, ГІГ® ГіГЎГЁГўГ ГҐГІ Г‚Г Г±)')
+					imgui.TextColoredRGB('{C39932}/z_errors {888EA0}- Г‘ГЇГЁГ±Г®ГЄ Г®ГёГЁГЎГ®ГЄ')
+					imgui.TextColoredRGB('{C39932}/z_cmdsamp {888EA0}- Г‘ГЇГЁГ±Г®ГЄ ГЄГ®Г¬Г Г­Г¤ SA-MP')
+					imgui.TextColoredRGB('{C39932}/z_reload {888EA0}- ГЏГҐГ°ГҐГ§Г ГЈГ°ГіГ¦Г ГҐГІ Г¤Г Г­Г­Г»Г© Г±ГЄГ°ГЁГЇГІ')
+					imgui.TextColoredRGB('{C39932}/z_fps {888EA0}- Г‚Г»ГўГ®Г¤ГЁГІ FPS')
 				end
-				if imgui.CollapsingHeader(u8'Ошибки') then
-					imgui.TextColoredRGB('{B31A06}#1 {888EA0}- {C39932}Ваш игрок мертв/не существует')
-					imgui.TextColoredRGB('{B31A06}#2 {888EA0}- {C39932}Ваш игрок не в транспорте')
-					imgui.TextColoredRGB('{B31A06}#3 {888EA0}- {C39932}Открыт игровой чат')
-					imgui.TextColoredRGB('{B31A06}#4 {888EA0}- {C39932}Открыт SampFuncs чат')
-					imgui.TextColoredRGB('{B31A06}#5 {888EA0}- {C39932}Открыт диалог')
-					imgui.TextColoredRGB('{B31A06}#6 {888EA0}- {C39932}Ваш игрок мертв/не существует или не в транспорте')
-					imgui.TextColoredRGB('{B31A06}#7 {888EA0}- {C39932}У Вас открыт игровой чат/SampFuncs чат/диалог')
-					imgui.TextColoredRGB('{B31A06}#8 {888EA0}- {C39932}Ваш игрок не в транспорте или у Вас открыт игровой чат/SampFuncs чат/диалог')
-					imgui.TextColoredRGB('{B31A06}#9 {888EA0}- {C39932}Ваш игрок мертв/не существует или у Вас открыт игровой чат/SampFuncs чат/диалог')
-					imgui.TextColoredRGB('{B31A06}#10 {888EA0}- {C39932}Транспорт не найден')
-					imgui.TextColoredRGB('{B31A06}#11 {888EA0}- {C39932}Уже открыт другой диалог')
-					imgui.TextColoredRGB('{B31A06}#12 {888EA0}- {C39932}Время не найдено')
-					imgui.TextColoredRGB('{B31A06}#13 {888EA0}- {C39932}Погода не найдена')
-					imgui.TextColoredRGB('{B31A06}#14 {888EA0}- {C39932}Метка не создана')
-					imgui.TextColoredRGB('{B31A06}#15 {888EA0}- {C39932}Вы находитесь в интерьере')
+				if imgui.CollapsingHeader(u8'ГЋГёГЁГЎГЄГЁ') then
+					imgui.TextColoredRGB('{B31A06}#1 {888EA0}- {C39932}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г¬ГҐГ°ГІГў/Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ')
+					imgui.TextColoredRGB('{B31A06}#2 {888EA0}- {C39932}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г­ГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ')
+					imgui.TextColoredRGB('{B31A06}#3 {888EA0}- {C39932}ГЋГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ')
+					imgui.TextColoredRGB('{B31A06}#4 {888EA0}- {C39932}ГЋГІГЄГ°Г»ГІ SampFuncs Г·Г ГІ')
+					imgui.TextColoredRGB('{B31A06}#5 {888EA0}- {C39932}ГЋГІГЄГ°Г»ГІ Г¤ГЁГ Г«Г®ГЈ')
+					imgui.TextColoredRGB('{B31A06}#6 {888EA0}- {C39932}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г¬ГҐГ°ГІГў/Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ ГЁГ«ГЁ Г­ГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ')
+					imgui.TextColoredRGB('{B31A06}#7 {888EA0}- {C39932}Г“ Г‚Г Г± Г®ГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ/SampFuncs Г·Г ГІ/Г¤ГЁГ Г«Г®ГЈ')
+					imgui.TextColoredRGB('{B31A06}#8 {888EA0}- {C39932}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г­ГҐ Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІГҐ ГЁГ«ГЁ Гі Г‚Г Г± Г®ГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ/SampFuncs Г·Г ГІ/Г¤ГЁГ Г«Г®ГЈ')
+					imgui.TextColoredRGB('{B31A06}#9 {888EA0}- {C39932}Г‚Г Гё ГЁГЈГ°Г®ГЄ Г¬ГҐГ°ГІГў/Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ ГЁГ«ГЁ Гі Г‚Г Г± Г®ГІГЄГ°Г»ГІ ГЁГЈГ°Г®ГўГ®Г© Г·Г ГІ/SampFuncs Г·Г ГІ/Г¤ГЁГ Г«Г®ГЈ')
+					imgui.TextColoredRGB('{B31A06}#10 {888EA0}- {C39932}Г’Г°Г Г­Г±ГЇГ®Г°ГІ Г­ГҐ Г­Г Г©Г¤ГҐГ­')
+					imgui.TextColoredRGB('{B31A06}#11 {888EA0}- {C39932}Г“Г¦ГҐ Г®ГІГЄГ°Г»ГІ Г¤Г°ГіГЈГ®Г© Г¤ГЁГ Г«Г®ГЈ')
+					imgui.TextColoredRGB('{B31A06}#12 {888EA0}- {C39932}Г‚Г°ГҐГ¬Гї Г­ГҐ Г­Г Г©Г¤ГҐГ­Г®')
+					imgui.TextColoredRGB('{B31A06}#13 {888EA0}- {C39932}ГЏГ®ГЈГ®Г¤Г  Г­ГҐ Г­Г Г©Г¤ГҐГ­Г ')
+					imgui.TextColoredRGB('{B31A06}#14 {888EA0}- {C39932}ГЊГҐГІГЄГ  Г­ГҐ Г±Г®Г§Г¤Г Г­Г ')
+					imgui.TextColoredRGB('{B31A06}#15 {888EA0}- {C39932}Г‚Г» Г­Г ГµГ®Г¤ГЁГІГҐГ±Гј Гў ГЁГ­ГІГҐГ°ГјГҐГ°ГҐ')
 				end
-				if imgui.CollapsingHeader(u8'Авторство и благодарности') then
-					imgui.TextColoredRGB('{B31A06}PanSeek {888EA0}- {C39932}Создатель')
+				if imgui.CollapsingHeader(u8'ГЂГўГІГ®Г°Г±ГІГўГ® ГЁ ГЎГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ') then
+					imgui.TextColoredRGB('{B31A06}PanSeek {888EA0}- {C39932}Г‘Г®Г§Г¤Г ГІГҐГ«Гј')
 					imgui.Spacing()
-					imgui.CenterTextColoredRGB('{0E8604}Благодарности{888EA0}:')
-					imgui.TextColoredRGB('{B31A06}fran9 {888EA0}- {C39932}Помогал с цветами/расположением меню/AdminTools для Revent-RP')
-					imgui.TextColoredRGB('{B31A06}FBenz {888EA0}- {C39932}Помогал в некоторых вопросах/советовал')
-					imgui.TextColoredRGB('{B31A06}qrlk {888EA0}- {C39932}Автообновление')
-					imgui.TextColoredRGB('{B31A06}FYP {888EA0}- {C39932}Исходный код')
-					imgui.TextColoredRGB('{B31A06}cover {888EA0}- {C39932}Исходный код')
+					imgui.CenterTextColoredRGB('{0E8604}ГЃГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ{888EA0}:')
+					imgui.TextColoredRGB('{B31A06}fran9 {888EA0}- {C39932}ГЏГ®Г¬Г®ГЈГ Г« Г± Г¶ГўГҐГІГ Г¬ГЁ/Г°Г Г±ГЇГ®Г«Г®Г¦ГҐГ­ГЁГҐГ¬ Г¬ГҐГ­Гѕ/AdminTools Г¤Г«Гї Revent-RP')
+					imgui.TextColoredRGB('{B31A06}FBenz {888EA0}- {C39932}ГЏГ®Г¬Г®ГЈГ Г« Гў Г­ГҐГЄГ®ГІГ®Г°Г»Гµ ГўГ®ГЇГ°Г®Г±Г Гµ/Г±Г®ГўГҐГІГ®ГўГ Г«')
+					imgui.TextColoredRGB('{B31A06}qrlk {888EA0}- {C39932}ГЂГўГІГ®Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ')
+					imgui.TextColoredRGB('{B31A06}FYP {888EA0}- {C39932}Г€Г±ГµГ®Г¤Г­Г»Г© ГЄГ®Г¤')
+					imgui.TextColoredRGB('{B31A06}cover {888EA0}- {C39932}Г€Г±ГµГ®Г¤Г­Г»Г© ГЄГ®Г¤')
 					imgui.Spacing()
-					imgui.TextColoredRGB('{0E8604}А также спасибо всем, кто тестировал скрипт и сообщал о некоторых проблемах/багах')
+					imgui.TextColoredRGB('{0E8604}ГЂ ГІГ ГЄГ¦ГҐ Г±ГЇГ Г±ГЁГЎГ® ГўГ±ГҐГ¬, ГЄГІГ® ГІГҐГ±ГІГЁГ°Г®ГўГ Г« Г±ГЄГ°ГЁГЇГІ ГЁ Г±Г®Г®ГЎГ№Г Г« Г® Г­ГҐГЄГ®ГІГ®Г°Г»Гµ ГЇГ°Г®ГЎГ«ГҐГ¬Г Гµ/ГЎГ ГЈГ Гµ')
 				end
 			elseif not array.lang_menu.v then
 				if imgui.CollapsingHeader('Commands') then
@@ -1298,31 +1298,31 @@ function imgui.OnDrawFrame(args)
 
 		elseif act1 == 9 then --REVENT-RP IMGUI
 			imgui.BeginChild('9', imgui.ImVec2(855, 370), true)
-			if imgui.Button(fa.ICON_LOCATION_ARROW .. u8' Телепорты') then checkTabs = 'zuwi -> Revent-RP -> Телепорты' act9 = 1 end
+			if imgui.Button(fa.ICON_LOCATION_ARROW .. u8' Г’ГҐГ«ГҐГЇГ®Г°ГІГ»') then checkTabs = 'zuwi -> Revent-RP -> Г’ГҐГ«ГҐГЇГ®Г°ГІГ»' act9 = 1 end
 			imgui.SameLine(nil, x)
 			if imgui.Button(fa.ICON_ADDRESS_CARD ..' Admin Tools') then checkTabs = 'zuwi -> Revent-RP -> Admin Tools' act9 = 2 end
 			imgui.Separator()
 			if act9 == 1 then
-				if imgui.CollapsingHeader(u8'Фракции и организации') then
+				if imgui.CollapsingHeader(u8'Г”Г°Г ГЄГ¶ГЁГЁ ГЁ Г®Г°ГЈГ Г­ГЁГ§Г Г¶ГЁГЁ') then
 					imgui.Indent(15)
-					if imgui.CollapsingHeader(u8'Интерьеры') then
+					if imgui.CollapsingHeader(u8'Г€Г­ГІГҐГ°ГјГҐГ°Г»') then
 						imgui.Columns(3)
 						if imgui.Button('LSPD') then teleportInterior(PLAYER_PED,2633.8281,1054.9259,1025.7860,10) end
 						if imgui.Button('SFPD') then teleportInterior(PLAYER_PED,2631.7517,1052.0356,1025.7860,10) end
 						if imgui.Button('LVPD') then teleportInterior(PLAYER_PED,2632.2693,1053.0416,1025.7860,10) end
-						if imgui.Button(u8'Больница LS') then teleportInterior(PLAYER_PED,1389.7893,-18.2846,1000.9153,1) end
-						if imgui.Button(u8'Больница SF') then teleportInterior(PLAYER_PED,1993.3247,1828.4985,1036.4240,1) end
-						if imgui.Button(u8'Больница LV') then teleportInterior(PLAYER_PED,-2149.7686,678.9402,1000.8959,1) end
-						if imgui.Button(u8'ФБР') then teleportInterior(PLAYER_PED,-807.6865,-286.6179,994.1849,15) end
-						if imgui.Button(u8'Правительство') then teleportInterior(PLAYER_PED,2545.4111,1179.0635,1041.9678,3) end
+						if imgui.Button(u8'ГЃГ®Г«ГјГ­ГЁГ¶Г  LS') then teleportInterior(PLAYER_PED,1389.7893,-18.2846,1000.9153,1) end
+						if imgui.Button(u8'ГЃГ®Г«ГјГ­ГЁГ¶Г  SF') then teleportInterior(PLAYER_PED,1993.3247,1828.4985,1036.4240,1) end
+						if imgui.Button(u8'ГЃГ®Г«ГјГ­ГЁГ¶Г  LV') then teleportInterior(PLAYER_PED,-2149.7686,678.9402,1000.8959,1) end
+						if imgui.Button(u8'Г”ГЃГђ') then teleportInterior(PLAYER_PED,-807.6865,-286.6179,994.1849,15) end
+						if imgui.Button(u8'ГЏГ°Г ГўГЁГІГҐГ«ГјГ±ГІГўГ®') then teleportInterior(PLAYER_PED,2545.4111,1179.0635,1041.9678,3) end
 						imgui.NextColumn()
 						if imgui.Button('Radio LS') then teleportInterior(PLAYER_PED,1906.0597,-4.9029,1000.9819,1) end
 						if imgui.Button('Radio LV') then teleportInterior(PLAYER_PED,911.8922,1464.3600,999.5259,1) end
-						if imgui.Button(u8'Автошкола') then teleportInterior(PLAYER_PED,1907.9076,1772.4630,1044.3833,1) end
-						if imgui.Button(u8'Отдел лицензирования') then teleportInterior(PLAYER_PED,-54.1390,1379.4974,943.4575,100) end
-						if imgui.Button(u8'Нац. гвардия') then teleportInterior(PLAYER_PED,-1833.1125,1920.4862,918.4860,1) end
-						if imgui.Button(u8'Русская мафия') then teleportInterior(PLAYER_PED,2.5189,2279.8877,947.1949,2) end
-						if imgui.Button(u8'Якудза') then teleportInterior(PLAYER_PED,1356.0793,2.4012,932.7360,5) end
+						if imgui.Button(u8'ГЂГўГІГ®ГёГЄГ®Г«Г ') then teleportInterior(PLAYER_PED,1907.9076,1772.4630,1044.3833,1) end
+						if imgui.Button(u8'ГЋГІГ¤ГҐГ« Г«ГЁГ¶ГҐГ­Г§ГЁГ°Г®ГўГ Г­ГЁГї') then teleportInterior(PLAYER_PED,-54.1390,1379.4974,943.4575,100) end
+						if imgui.Button(u8'ГЌГ Г¶. ГЈГўГ Г°Г¤ГЁГї') then teleportInterior(PLAYER_PED,-1833.1125,1920.4862,918.4860,1) end
+						if imgui.Button(u8'ГђГіГ±Г±ГЄГ Гї Г¬Г ГґГЁГї') then teleportInterior(PLAYER_PED,2.5189,2279.8877,947.1949,2) end
+						if imgui.Button(u8'ГџГЄГіГ¤Г§Г ') then teleportInterior(PLAYER_PED,1356.0793,2.4012,932.7360,5) end
 						if imgui.Button('Aztecas') then teleportInterior(PLAYER_PED,1400.1066,948.5361,940.6245,15) end
 						imgui.NextColumn()
 						if imgui.Button('Grove') then teleportInterior(PLAYER_PED,-32.1703,-18.1900,1003.5374,3) end
@@ -1333,24 +1333,24 @@ function imgui.OnDrawFrame(args)
 						if imgui.Button('Warlock MC') then teleportInterior(PLAYER_PED,-851.0549,1528.1084,3029.6042,1) end
 					end
 					imgui.Columns(1)
-					if imgui.CollapsingHeader(u8'Возле интерьера') then
+					if imgui.CollapsingHeader(u8'Г‚Г®Г§Г«ГҐ ГЁГ­ГІГҐГ°ГјГҐГ°Г ') then
 						imgui.Columns(3)
 						if imgui.Button('LSPD') then teleportInterior(PLAYER_PED, 1543.4442, -1675.2795, 13.5565, 0) end
 						if imgui.Button('SFPD') then teleportInterior(PLAYER_PED,-1606.9584,720.8036,12.2308,0) end
 						if imgui.Button('LVPD') then teleportInterior(PLAYER_PED,2287.3582,2421.3423,10.8203,0) end
-						if imgui.Button(u8'Больница LS') then teleportInterior(PLAYER_PED, 1178.7211, -1326.7101, 14.1560, 0) end
-						if imgui.Button(u8'Больница SF') then teleportInterior(PLAYER_PED,-2662.2585,625.6224,14.4531,0) end
-						if imgui.Button(u8'Больница LV') then teleportInterior(PLAYER_PED,1632.9490,1821.7103,10.8203,0) end
-						if imgui.Button(u8'ФБР') then teleportInterior(PLAYER_PED,1046.4518,1026.6058,10.9978,0) end
-						if imgui.Button(u8'Правительство') then teleportInterior(PLAYER_PED, 1407.8854,-1788.0032,13.5469,0) end
+						if imgui.Button(u8'ГЃГ®Г«ГјГ­ГЁГ¶Г  LS') then teleportInterior(PLAYER_PED, 1178.7211, -1326.7101, 14.1560, 0) end
+						if imgui.Button(u8'ГЃГ®Г«ГјГ­ГЁГ¶Г  SF') then teleportInterior(PLAYER_PED,-2662.2585,625.6224,14.4531,0) end
+						if imgui.Button(u8'ГЃГ®Г«ГјГ­ГЁГ¶Г  LV') then teleportInterior(PLAYER_PED,1632.9490,1821.7103,10.8203,0) end
+						if imgui.Button(u8'Г”ГЃГђ') then teleportInterior(PLAYER_PED,1046.4518,1026.6058,10.9978,0) end
+						if imgui.Button(u8'ГЏГ°Г ГўГЁГІГҐГ«ГјГ±ГІГўГ®') then teleportInterior(PLAYER_PED, 1407.8854,-1788.0032,13.5469,0) end
 						imgui.NextColumn()
 						if imgui.Button('Radio LS') then teleportInterior(PLAYER_PED, 760.8872,-1358.9816,13.5198,0) end
 						if imgui.Button('Radio LV') then teleportInterior(PLAYER_PED,947.7136,1743.1909,8.8516,0) end
-						if imgui.Button(u8'Автошкола') then teleportInterior(PLAYER_PED, -2037.7787,-99.7488,35.1641,0) end
-						if imgui.Button(u8'Отдел лицензирования') then teleportInterior(PLAYER_PED,1910.5309,2343.3171,10.8203,0) end
-						if imgui.Button(u8'Нац. гвардия') then teleportInterior(PLAYER_PED, 312.4188,1959.1595,17.6406, 0) end
-						if imgui.Button(u8'Русская мафия') then teleportInterior(PLAYER_PED, -2723.7395,-313.8499,7.1860,0) end
-						if imgui.Button(u8'Якудза') then teleportInterior(PLAYER_PED, 1492.9370,724.5159,10.8203,0) end
+						if imgui.Button(u8'ГЂГўГІГ®ГёГЄГ®Г«Г ') then teleportInterior(PLAYER_PED, -2037.7787,-99.7488,35.1641,0) end
+						if imgui.Button(u8'ГЋГІГ¤ГҐГ« Г«ГЁГ¶ГҐГ­Г§ГЁГ°Г®ГўГ Г­ГЁГї') then teleportInterior(PLAYER_PED,1910.5309,2343.3171,10.8203,0) end
+						if imgui.Button(u8'ГЌГ Г¶. ГЈГўГ Г°Г¤ГЁГї') then teleportInterior(PLAYER_PED, 312.4188,1959.1595,17.6406, 0) end
+						if imgui.Button(u8'ГђГіГ±Г±ГЄГ Гї Г¬Г ГґГЁГї') then teleportInterior(PLAYER_PED, -2723.7395,-313.8499,7.1860,0) end
+						if imgui.Button(u8'ГџГЄГіГ¤Г§Г ') then teleportInterior(PLAYER_PED, 1492.9370,724.5159,10.8203,0) end
 						if imgui.Button('Aztecas') then teleportInterior(PLAYER_PED, 1673.0597,-2113.4204,13.5469,0) end
 						imgui.NextColumn()
 						if imgui.Button('Grove') then teleportInterior(PLAYER_PED, 2493.1980,-1673.9980,13.3359,0) end
@@ -1364,261 +1364,261 @@ function imgui.OnDrawFrame(args)
 					imgui.Columns(1)
 				end
 				imgui.Spacing()
-				if imgui.CollapsingHeader(u8'Работы') then
+				if imgui.CollapsingHeader(u8'ГђГ ГЎГ®ГІГ»') then
 					imgui.Columns(2)
-					if imgui.Button(u8'Нефтянная вышка') then teleportInterior(PLAYER_PED,815.8508,604.5477,11.8305,0) end
-					if imgui.Button(u8'Грузчик') then teleportInterior(PLAYER_PED,2788.3308,-2437.6555,13.6335,0) end
-					if imgui.Button(u8'Автоцех') then teleportInterior(PLAYER_PED,-49.9263,-277.9673,5.4297,0) end
-					if imgui.Button(u8'Автоцех (Интерьер)') then teleportInterior(PLAYER_PED,-570.5103,-82.4685,3001.0859,1) end
+					if imgui.Button(u8'ГЌГҐГґГІГїГ­Г­Г Гї ГўГ»ГёГЄГ ') then teleportInterior(PLAYER_PED,815.8508,604.5477,11.8305,0) end
+					if imgui.Button(u8'ГѓГ°ГіГ§Г·ГЁГЄ') then teleportInterior(PLAYER_PED,2788.3308,-2437.6555,13.6335,0) end
+					if imgui.Button(u8'ГЂГўГІГ®Г¶ГҐГµ') then teleportInterior(PLAYER_PED,-49.9263,-277.9673,5.4297,0) end
+					if imgui.Button(u8'ГЂГўГІГ®Г¶ГҐГµ (Г€Г­ГІГҐГ°ГјГҐГ°)') then teleportInterior(PLAYER_PED,-570.5103,-82.4685,3001.0859,1) end
 					imgui.NextColumn()
-					if imgui.Button(u8'Дальнобойщик') then teleportInterior(PLAYER_PED,-504.6666,-545.2240,25.5234,0) end
-					if imgui.Button(u8'Лесоруб') then teleportInterior(PLAYER_PED,-555.8159,-189.0762,78.4063,0) end
-					if imgui.Button(u8'Мойщик улиц') then teleportInterior(PLAYER_PED,-2586.7097,608.1636,14.4531,0) end
-					if imgui.Button(u8'Инкасатор') then teleportInterior(PLAYER_PED,2168.6331,998.6193,10.8203,0) end
+					if imgui.Button(u8'Г„Г Г«ГјГ­Г®ГЎГ®Г©Г№ГЁГЄ') then teleportInterior(PLAYER_PED,-504.6666,-545.2240,25.5234,0) end
+					if imgui.Button(u8'Г‹ГҐГ±Г®Г°ГіГЎ') then teleportInterior(PLAYER_PED,-555.8159,-189.0762,78.4063,0) end
+					if imgui.Button(u8'ГЊГ®Г©Г№ГЁГЄ ГіГ«ГЁГ¶') then teleportInterior(PLAYER_PED,-2586.7097,608.1636,14.4531,0) end
+					if imgui.Button(u8'Г€Г­ГЄГ Г±Г ГІГ®Г°') then teleportInterior(PLAYER_PED,2168.6331,998.6193,10.8203,0) end
 				end
 				imgui.Columns(1)
 				imgui.Spacing()
-				if imgui.CollapsingHeader(u8'Остальные телепорты') then
+				if imgui.CollapsingHeader(u8'ГЋГ±ГІГ Г«ГјГ­Г»ГҐ ГІГҐГ«ГҐГЇГ®Г°ГІГ»') then
 					imgui.Indent(15)
-					if imgui.CollapsingHeader(u8'Интерьеры ') then
+					if imgui.CollapsingHeader(u8'Г€Г­ГІГҐГ°ГјГҐГ°Г» ') then
 						imgui.Columns(3)
-						if imgui.Button(u8'Старый деморган') then teleportInterior(PLAYER_PED,1281.1638,-1.8006,1001.0133,18) end
-						if imgui.Button(u8'Банк') then teleportInterior(PLAYER_PED,1463.0361,-1009.3804,34.4652,0) end
-						if imgui.Button(u8'Биржа труда') then teleportInterior(PLAYER_PED,1561.1443,-1518.2223,3001.5188,15) end
-						if imgui.Button(u8'Черный рынок') then teleportInterior(PLAYER_PED,1696.5221,-1586.8097,2875.2939,1) end
-						if imgui.Button(u8'Черный рынок (пропуск)') then teleportInterior(PLAYER_PED,1569.4727,1230.9999,1055.1804,1) end
+						if imgui.Button(u8'Г‘ГІГ Г°Г»Г© Г¤ГҐГ¬Г®Г°ГЈГ Г­') then teleportInterior(PLAYER_PED,1281.1638,-1.8006,1001.0133,18) end
+						if imgui.Button(u8'ГЃГ Г­ГЄ') then teleportInterior(PLAYER_PED,1463.0361,-1009.3804,34.4652,0) end
+						if imgui.Button(u8'ГЃГЁГ°Г¦Г  ГІГ°ГіГ¤Г ') then teleportInterior(PLAYER_PED,1561.1443,-1518.2223,3001.5188,15) end
+						if imgui.Button(u8'Г—ГҐГ°Г­Г»Г© Г°Г»Г­Г®ГЄ') then teleportInterior(PLAYER_PED,1696.5221,-1586.8097,2875.2939,1) end
+						if imgui.Button(u8'Г—ГҐГ°Г­Г»Г© Г°Г»Г­Г®ГЄ (ГЇГ°Г®ГЇГіГ±ГЄ)') then teleportInterior(PLAYER_PED,1569.4727,1230.9999,1055.1804,1) end
 						imgui.NextColumn()
-						if imgui.Button(u8'Автосалон') then teleportInterior(PLAYER_PED,2489.1558,-1017.1227,1033.1460,1) end
-						if imgui.Button(u8'Департамент администрации') then teleportInterior(PLAYER_PED,-265.7054,725.4685,1000.0859,5) end
-						if imgui.Button(u8'Военкомат') then teleportInterior(PLAYER_PED,223.4714,1540.9908,3001.0859,1) end
-						if imgui.Button(u8'Казино') then teleportInterior(PLAYER_PED,1888.7018,1049.5775,996.8770,1) end
-						if imgui.Button(u8'Казино-мини') then teleportInterior(PLAYER_PED,1411.5062,-586.6498,1607.3579,1) end
+						if imgui.Button(u8'ГЂГўГІГ®Г±Г Г«Г®Г­') then teleportInterior(PLAYER_PED,2489.1558,-1017.1227,1033.1460,1) end
+						if imgui.Button(u8'Г„ГҐГЇГ Г°ГІГ Г¬ГҐГ­ГІ Г Г¤Г¬ГЁГ­ГЁГ±ГІГ°Г Г¶ГЁГЁ') then teleportInterior(PLAYER_PED,-265.7054,725.4685,1000.0859,5) end
+						if imgui.Button(u8'Г‚Г®ГҐГ­ГЄГ®Г¬Г ГІ') then teleportInterior(PLAYER_PED,223.4714,1540.9908,3001.0859,1) end
+						if imgui.Button(u8'ГЉГ Г§ГЁГ­Г®') then teleportInterior(PLAYER_PED,1888.7018,1049.5775,996.8770,1) end
+						if imgui.Button(u8'ГЉГ Г§ГЁГ­Г®-Г¬ГЁГ­ГЁ') then teleportInterior(PLAYER_PED,1411.5062,-586.6498,1607.3579,1) end
 						imgui.NextColumn()
-						if imgui.Button(u8'Тренировочный комлпекс') then teleportInterior(PLAYER_PED,2365.9114,-1943.3044,919.4700,1) end
-						if imgui.Button(u8'Состязательная арена') then teleportInterior(PLAYER_PED,825.7631,-1578.9291,3001.0823,3) end
-						if imgui.Button(u8'Тир') then teleportInterior(PLAYER_PED,285.8546,-78.9205,1001.5156,4) end
-						if imgui.Button(u8'Торговый центр') then teleportInterior(PLAYER_PED,1359.7142,-27.9618,1000.9163,1) end
-						if imgui.Button(u8'Страховая') then teleportInterior(PLAYER_PED,1707.3676,636.4663,3001.0859,1) end
+						if imgui.Button(u8'Г’Г°ГҐГ­ГЁГ°Г®ГўГ®Г·Г­Г»Г© ГЄГ®Г¬Г«ГЇГҐГЄГ±') then teleportInterior(PLAYER_PED,2365.9114,-1943.3044,919.4700,1) end
+						if imgui.Button(u8'Г‘Г®Г±ГІГїГ§Г ГІГҐГ«ГјГ­Г Гї Г Г°ГҐГ­Г ') then teleportInterior(PLAYER_PED,825.7631,-1578.9291,3001.0823,3) end
+						if imgui.Button(u8'Г’ГЁГ°') then teleportInterior(PLAYER_PED,285.8546,-78.9205,1001.5156,4) end
+						if imgui.Button(u8'Г’Г®Г°ГЈГ®ГўГ»Г© Г¶ГҐГ­ГІГ°') then teleportInterior(PLAYER_PED,1359.7142,-27.9618,1000.9163,1) end
+						if imgui.Button(u8'Г‘ГІГ°Г ГµГ®ГўГ Гї') then teleportInterior(PLAYER_PED,1707.3676,636.4663,3001.0859,1) end
 					end
 					imgui.Columns(1)
-					if imgui.CollapsingHeader(u8'Остальное') then
+					if imgui.CollapsingHeader(u8'ГЋГ±ГІГ Г«ГјГ­Г®ГҐ') then
 						imgui.Columns(3)
-						if imgui.Button(u8'Маяк') then teleportInterior(PLAYER_PED,154.9556,-1939.6304,3.7734,0) end
-						if imgui.Button(u8'Колесо обозрения') then teleportInterior(PLAYER_PED,381.6406,-2044.5220,7.8359,0) end
-						if imgui.Button(u8'Банк') then teleportInterior(PLAYER_PED,1457.3635,-1027.2981,23.8281,0) end
-						if imgui.Button(u8'Чиллиад') then teleportInterior(PLAYER_PED,-2242.5701,-1731.3767,480.3250,0) end
-						if imgui.Button(u8'Биржа труда') then teleportInterior(PLAYER_PED,554.2763,-1500.1908,14.5191,0) end
-						if imgui.Button(u8'Черный рынок') then teleportInterior(PLAYER_PED,341.1162,-97.6198,1.4143,0) end
-						if imgui.Button(u8'Автосалон') then teleportInterior(PLAYER_PED,-2447.2839,750.6021,35.1719,0) end
-						if imgui.Button(u8'БУ рынок') then teleportInterior(PLAYER_PED,1492.5591,2809.7349,10.8203,0) end
-						if imgui.Button(u8'ЖДЛС') then teleportInterior(PLAYER_PED,1707.0590,-1895.5723,13.5685,0) end
-						if imgui.Button(u8'ЖДСФ') then teleportInterior(PLAYER_PED,-1975.0864,141.7100,27.6873,0) end
-						if imgui.Button(u8'ЖДЛВ') then teleportInterior(PLAYER_PED,2839.9119,1286.1318,11.3906,0) end
-						if imgui.Button(u8'Кладбище LS') then teleportInterior(PLAYER_PED,936.1039,-1101.4722,24.3431,0) end
+						if imgui.Button(u8'ГЊГ ГїГЄ') then teleportInterior(PLAYER_PED,154.9556,-1939.6304,3.7734,0) end
+						if imgui.Button(u8'ГЉГ®Г«ГҐГ±Г® Г®ГЎГ®Г§Г°ГҐГ­ГЁГї') then teleportInterior(PLAYER_PED,381.6406,-2044.5220,7.8359,0) end
+						if imgui.Button(u8'ГЃГ Г­ГЄ') then teleportInterior(PLAYER_PED,1457.3635,-1027.2981,23.8281,0) end
+						if imgui.Button(u8'Г—ГЁГ«Г«ГЁГ Г¤') then teleportInterior(PLAYER_PED,-2242.5701,-1731.3767,480.3250,0) end
+						if imgui.Button(u8'ГЃГЁГ°Г¦Г  ГІГ°ГіГ¤Г ') then teleportInterior(PLAYER_PED,554.2763,-1500.1908,14.5191,0) end
+						if imgui.Button(u8'Г—ГҐГ°Г­Г»Г© Г°Г»Г­Г®ГЄ') then teleportInterior(PLAYER_PED,341.1162,-97.6198,1.4143,0) end
+						if imgui.Button(u8'ГЂГўГІГ®Г±Г Г«Г®Г­') then teleportInterior(PLAYER_PED,-2447.2839,750.6021,35.1719,0) end
+						if imgui.Button(u8'ГЃГ“ Г°Г»Г­Г®ГЄ') then teleportInterior(PLAYER_PED,1492.5591,2809.7349,10.8203,0) end
+						if imgui.Button(u8'Г†Г„Г‹Г‘') then teleportInterior(PLAYER_PED,1707.0590,-1895.5723,13.5685,0) end
+						if imgui.Button(u8'Г†Г„Г‘Г”') then teleportInterior(PLAYER_PED,-1975.0864,141.7100,27.6873,0) end
+						if imgui.Button(u8'Г†Г„Г‹Г‚') then teleportInterior(PLAYER_PED,2839.9119,1286.1318,11.3906,0) end
+						if imgui.Button(u8'ГЉГ«Г Г¤ГЎГЁГ№ГҐ LS') then teleportInterior(PLAYER_PED,936.1039,-1101.4722,24.3431,0) end
 						imgui.NextColumn()
-						if imgui.Button(u8'Торговый центр') then teleportInterior(PLAYER_PED,1306.2538,-1331.6825,13.6422,0) end
-						if imgui.Button(u8'Страховая') then teleportInterior(PLAYER_PED,2129.5217,-1139.7073,25.2925,0) end
-						if imgui.Button(u8'Аренда авто LS') then teleportInterior(PLAYER_PED,568.2047,-1290.3613,17.2422,0) end
-						if imgui.Button(u8'Аренда авто SF') then teleportInterior(PLAYER_PED,-1972.5128,257.3625,35.1719,0) end
-						if imgui.Button(u8'Аренда авто LV') then teleportInterior(PLAYER_PED,2257.1780,2033.8057,10.8203,0) end
-						if imgui.Button(u8'Аренда авто LV (Возле казино)') then teleportInterior(PLAYER_PED,1897.5586,949.3096,10.8203,0) end
-						if imgui.Button(u8'Карьер') then teleportInterior(PLAYER_PED,626.8690,853.0729,-42.9609,0) end
-						if imgui.Button(u8'Автосервис') then teleportInterior(PLAYER_PED,617.2724,-1520.0159,15.2100,0) end
-						if imgui.Button(u8'Департамент администрации') then teleportInterior(PLAYER_PED,635.7059,-565.4893,16.3359,0) end
-						if imgui.Button(u8'Военкомат') then teleportInterior(PLAYER_PED,-2449.4761,498.7346,30.0873,0) end
-						if imgui.Button(u8'Казино') then teleportInterior(PLAYER_PED,2031.1218,1006.4854,10.8203,0) end
-						if imgui.Button(u8'Казино-мини') then teleportInterior(PLAYER_PED,1015.9720,-1127.6450,23.8574,0) end
+						if imgui.Button(u8'Г’Г®Г°ГЈГ®ГўГ»Г© Г¶ГҐГ­ГІГ°') then teleportInterior(PLAYER_PED,1306.2538,-1331.6825,13.6422,0) end
+						if imgui.Button(u8'Г‘ГІГ°Г ГµГ®ГўГ Гї') then teleportInterior(PLAYER_PED,2129.5217,-1139.7073,25.2925,0) end
+						if imgui.Button(u8'ГЂГ°ГҐГ­Г¤Г  Г ГўГІГ® LS') then teleportInterior(PLAYER_PED,568.2047,-1290.3613,17.2422,0) end
+						if imgui.Button(u8'ГЂГ°ГҐГ­Г¤Г  Г ГўГІГ® SF') then teleportInterior(PLAYER_PED,-1972.5128,257.3625,35.1719,0) end
+						if imgui.Button(u8'ГЂГ°ГҐГ­Г¤Г  Г ГўГІГ® LV') then teleportInterior(PLAYER_PED,2257.1780,2033.8057,10.8203,0) end
+						if imgui.Button(u8'ГЂГ°ГҐГ­Г¤Г  Г ГўГІГ® LV (Г‚Г®Г§Г«ГҐ ГЄГ Г§ГЁГ­Г®)') then teleportInterior(PLAYER_PED,1897.5586,949.3096,10.8203,0) end
+						if imgui.Button(u8'ГЉГ Г°ГјГҐГ°') then teleportInterior(PLAYER_PED,626.8690,853.0729,-42.9609,0) end
+						if imgui.Button(u8'ГЂГўГІГ®Г±ГҐГ°ГўГЁГ±') then teleportInterior(PLAYER_PED,617.2724,-1520.0159,15.2100,0) end
+						if imgui.Button(u8'Г„ГҐГЇГ Г°ГІГ Г¬ГҐГ­ГІ Г Г¤Г¬ГЁГ­ГЁГ±ГІГ°Г Г¶ГЁГЁ') then teleportInterior(PLAYER_PED,635.7059,-565.4893,16.3359,0) end
+						if imgui.Button(u8'Г‚Г®ГҐГ­ГЄГ®Г¬Г ГІ') then teleportInterior(PLAYER_PED,-2449.4761,498.7346,30.0873,0) end
+						if imgui.Button(u8'ГЉГ Г§ГЁГ­Г®') then teleportInterior(PLAYER_PED,2031.1218,1006.4854,10.8203,0) end
+						if imgui.Button(u8'ГЉГ Г§ГЁГ­Г®-Г¬ГЁГ­ГЁ') then teleportInterior(PLAYER_PED,1015.9720,-1127.6450,23.8574,0) end
 						imgui.NextColumn()
-						if imgui.Button(u8'Разборка LV') then teleportInterior(PLAYER_PED,-1506.7286,2623.1606,55.8359,0) end
-						if imgui.Button(u8'Разборка LS-SF') then teleportInterior(PLAYER_PED,-2110.1580,-2431.3657,30.6250,0) end
-						if imgui.Button(u8'Заброшенный завод') then teleportInterior(PLAYER_PED,1044.2622,2078.8237,10.8203,0) end
-						if imgui.Button(u8'Тренировочный комлпекс') then teleportInterior(PLAYER_PED,2478.8884,-2108.2769,13.5469,0) end
-						if imgui.Button(u8'Состязательная арена') then teleportInterior(PLAYER_PED,1088.4347,-900.3381,42.7011,0) end
-						if imgui.Button(u8'Остров "Невезения"') then teleportInterior(PLAYER_PED,616.4134,-3549.7146,86.9716,0) end
-						if imgui.Button(u8'Экспорт ТС') then teleportInterior(PLAYER_PED,-1549.0760,121.4793,3.5547,0) end
-						if imgui.Button(u8'Тир') then teleportInterior(PLAYER_PED,-2689.1277,0.0403,6.1328,0) end
-						if imgui.Button(u8'Трущобы') then teleportInterior(PLAYER_PED,-2541.6707,25.9529,16.4438,0) end
-						if imgui.Button(u8'Аэропорт LS') then teleportInterior(PLAYER_PED,1449.0017,-2461.8296,13.5547,0) end
-						if imgui.Button(u8'Аэропорт SF') then teleportInterior(PLAYER_PED,-1654.5244,-173.4216,14.1484,0) end
-						if imgui.Button(u8'Аэропорт LV') then teleportInterior(PLAYER_PED,1337.8947,1303.8196,10.8203,0) end
+						if imgui.Button(u8'ГђГ Г§ГЎГ®Г°ГЄГ  LV') then teleportInterior(PLAYER_PED,-1506.7286,2623.1606,55.8359,0) end
+						if imgui.Button(u8'ГђГ Г§ГЎГ®Г°ГЄГ  LS-SF') then teleportInterior(PLAYER_PED,-2110.1580,-2431.3657,30.6250,0) end
+						if imgui.Button(u8'Г‡Г ГЎГ°Г®ГёГҐГ­Г­Г»Г© Г§Г ГўГ®Г¤') then teleportInterior(PLAYER_PED,1044.2622,2078.8237,10.8203,0) end
+						if imgui.Button(u8'Г’Г°ГҐГ­ГЁГ°Г®ГўГ®Г·Г­Г»Г© ГЄГ®Г¬Г«ГЇГҐГЄГ±') then teleportInterior(PLAYER_PED,2478.8884,-2108.2769,13.5469,0) end
+						if imgui.Button(u8'Г‘Г®Г±ГІГїГ§Г ГІГҐГ«ГјГ­Г Гї Г Г°ГҐГ­Г ') then teleportInterior(PLAYER_PED,1088.4347,-900.3381,42.7011,0) end
+						if imgui.Button(u8'ГЋГ±ГІГ°Г®Гў "ГЌГҐГўГҐГ§ГҐГ­ГЁГї"') then teleportInterior(PLAYER_PED,616.4134,-3549.7146,86.9716,0) end
+						if imgui.Button(u8'ГќГЄГ±ГЇГ®Г°ГІ Г’Г‘') then teleportInterior(PLAYER_PED,-1549.0760,121.4793,3.5547,0) end
+						if imgui.Button(u8'Г’ГЁГ°') then teleportInterior(PLAYER_PED,-2689.1277,0.0403,6.1328,0) end
+						if imgui.Button(u8'Г’Г°ГіГ№Г®ГЎГ»') then teleportInterior(PLAYER_PED,-2541.6707,25.9529,16.4438,0) end
+						if imgui.Button(u8'ГЂГЅГ°Г®ГЇГ®Г°ГІ LS') then teleportInterior(PLAYER_PED,1449.0017,-2461.8296,13.5547,0) end
+						if imgui.Button(u8'ГЂГЅГ°Г®ГЇГ®Г°ГІ SF') then teleportInterior(PLAYER_PED,-1654.5244,-173.4216,14.1484,0) end
+						if imgui.Button(u8'ГЂГЅГ°Г®ГЇГ®Г°ГІ LV') then teleportInterior(PLAYER_PED,1337.8947,1303.8196,10.8203,0) end
 					end
 					imgui.Unindent(15)
 					imgui.Columns(1)
 				end
 
 			elseif act9 == 2 then
-				imgui.ToggleButton('41', 'Сокращенные команды', array.at_scmd)
+				imgui.ToggleButton('41', 'Г‘Г®ГЄГ°Г Г№ГҐГ­Г­Г»ГҐ ГЄГ®Г¬Г Г­Г¤Г»', array.at_scmd)
 				imgui.SameLine(nil, x)
-				imgui.ToggleButton('42', 'Новые команды', array.at_ncmd)
+				imgui.ToggleButton('42', 'ГЌГ®ГўГ»ГҐ ГЄГ®Г¬Г Г­Г¤Г»', array.at_ncmd)
 				imgui.Spacing()
-				if imgui.CollapsingHeader(u8'Чаты') then
+				if imgui.CollapsingHeader(u8'Г—Г ГІГ»') then
 					imgui.Indent(10)
-					imgui.ToggleButton('44', 'Административный чат', array.at_chat)
+					imgui.ToggleButton('44', 'ГЂГ¤Г¬ГЁГ­ГЁГ±ГІГ°Г ГІГЁГўГ­Г»Г© Г·Г ГІ', array.at_chat)
 					imgui.Unindent(10)
 				end
 				imgui.Spacing()
-				if imgui.CollapsingHeader(u8'Помощь') then
+				if imgui.CollapsingHeader(u8'ГЏГ®Г¬Г®Г№Гј') then
 					imgui.NewLine()
 					imgui.SameLine(nil, 10)
 					if imgui.CollapsingHeader('AHELP') then
 						imgui.Indent(20)
 						if imgui.CollapsingHeader('ALVL 1', btn_size) then
-							imgui.TextColoredRGB('{B31A06}/a {888EA0}- {0E8604}админ чат')
-							imgui.TextColoredRGB('{B31A06}/admins {888EA0}- {0E8604}просмотр админов онлайн')
-							imgui.TextColoredRGB('{B31A06}/an {888EA0}- {0E8604}ответить на репорт')
-							imgui.TextColoredRGB('{B31A06}/spec {888EA0}- {0E8604}следить за игроком')
-							imgui.TextColoredRGB('{B31A06}/specoff {888EA0}- {0E8604}перестать следить')
-							imgui.TextColoredRGB('{B31A06}/jail {888EA0}- {0E8604}посадить в тюрьму')
-							imgui.TextColoredRGB('{B31A06}/kick {888EA0}- {0E8604}кикнуть игрока')
-							imgui.TextColoredRGB('{B31A06}/check{888EA0} -{0E8604} просмотр статистики персонажа')
-							imgui.TextColoredRGB('{B31A06}/anames{888EA0} -{0E8604} история ник-неймов')
-							imgui.TextColoredRGB('{B31A06}/tp {888EA0}-{0E8604} телепорт')
-							imgui.TextColoredRGB('{B31A06}/ftp {888EA0}- {0E8604}телепорт к организациям')
-							imgui.TextColoredRGB('{B31A06}/goto{888EA0} - {0E8604}телепорт к игроку')
-							imgui.TextColoredRGB('{B31A06}/fixveh{888EA0} -{0E8604} починить транспорт')
-				 		  imgui.TextColoredRGB('{B31A06}/spawncar{888EA0} -{0E8604} заспавнить ID транспорта (/dl)')
-							imgui.TextColoredRGB('{B31A06}/checkad{888EA0} -{0E8604} проверка объявлений')
-							imgui.TextColoredRGB('{B31A06}/cheaters{888EA0} - {0E8604}игроки у которых установлен собейт')
-							imgui.TextColoredRGB('{B31A06}/getcar{888EA0} - {0E8604}призвать ID транспорта (/dl)')
-							imgui.TextColoredRGB('{B31A06}/aen {888EA0}- {0E8604}проверить вкл/выкл двигатель транспорта')
-							imgui.TextColoredRGB('{B31A06}/hit {888EA0}- {0E8604}проверить урон попаданий игрока, выстрелы')
-							imgui.TextColoredRGB('{B31A06}/zz{888EA0} - {0E8604}как /o, только со скобками и другим цветом')
-							imgui.TextColoredRGB('{B31A06}/deleteobjects{888EA0} - {0E8604}удалить все объекты ПД')
+							imgui.TextColoredRGB('{B31A06}/a {888EA0}- {0E8604}Г Г¤Г¬ГЁГ­ Г·Г ГІ')
+							imgui.TextColoredRGB('{B31A06}/admins {888EA0}- {0E8604}ГЇГ°Г®Г±Г¬Г®ГІГ° Г Г¤Г¬ГЁГ­Г®Гў Г®Г­Г«Г Г©Г­')
+							imgui.TextColoredRGB('{B31A06}/an {888EA0}- {0E8604}Г®ГІГўГҐГІГЁГІГј Г­Г  Г°ГҐГЇГ®Г°ГІ')
+							imgui.TextColoredRGB('{B31A06}/spec {888EA0}- {0E8604}Г±Г«ГҐГ¤ГЁГІГј Г§Г  ГЁГЈГ°Г®ГЄГ®Г¬')
+							imgui.TextColoredRGB('{B31A06}/specoff {888EA0}- {0E8604}ГЇГҐГ°ГҐГ±ГІГ ГІГј Г±Г«ГҐГ¤ГЁГІГј')
+							imgui.TextColoredRGB('{B31A06}/jail {888EA0}- {0E8604}ГЇГ®Г±Г Г¤ГЁГІГј Гў ГІГѕГ°ГјГ¬Гі')
+							imgui.TextColoredRGB('{B31A06}/kick {888EA0}- {0E8604}ГЄГЁГЄГ­ГіГІГј ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/check{888EA0} -{0E8604} ГЇГ°Г®Г±Г¬Г®ГІГ° Г±ГІГ ГІГЁГ±ГІГЁГЄГЁ ГЇГҐГ°Г±Г®Г­Г Г¦Г ')
+							imgui.TextColoredRGB('{B31A06}/anames{888EA0} -{0E8604} ГЁГ±ГІГ®Г°ГЁГї Г­ГЁГЄ-Г­ГҐГ©Г¬Г®Гў')
+							imgui.TextColoredRGB('{B31A06}/tp {888EA0}-{0E8604} ГІГҐГ«ГҐГЇГ®Г°ГІ')
+							imgui.TextColoredRGB('{B31A06}/ftp {888EA0}- {0E8604}ГІГҐГ«ГҐГЇГ®Г°ГІ ГЄ Г®Г°ГЈГ Г­ГЁГ§Г Г¶ГЁГїГ¬')
+							imgui.TextColoredRGB('{B31A06}/goto{888EA0} - {0E8604}ГІГҐГ«ГҐГЇГ®Г°ГІ ГЄ ГЁГЈГ°Г®ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/fixveh{888EA0} -{0E8604} ГЇГ®Г·ГЁГ­ГЁГІГј ГІГ°Г Г­Г±ГЇГ®Г°ГІ')
+				 		  imgui.TextColoredRGB('{B31A06}/spawncar{888EA0} -{0E8604} Г§Г Г±ГЇГ ГўГ­ГЁГІГј ID ГІГ°Г Г­Г±ГЇГ®Г°ГІГ  (/dl)')
+							imgui.TextColoredRGB('{B31A06}/checkad{888EA0} -{0E8604} ГЇГ°Г®ГўГҐГ°ГЄГ  Г®ГЎГєГїГўГ«ГҐГ­ГЁГ©')
+							imgui.TextColoredRGB('{B31A06}/cheaters{888EA0} - {0E8604}ГЁГЈГ°Г®ГЄГЁ Гі ГЄГ®ГІГ®Г°Г»Гµ ГіГ±ГІГ Г­Г®ГўГ«ГҐГ­ Г±Г®ГЎГҐГ©ГІ')
+							imgui.TextColoredRGB('{B31A06}/getcar{888EA0} - {0E8604}ГЇГ°ГЁГ§ГўГ ГІГј ID ГІГ°Г Г­Г±ГЇГ®Г°ГІГ  (/dl)')
+							imgui.TextColoredRGB('{B31A06}/aen {888EA0}- {0E8604}ГЇГ°Г®ГўГҐГ°ГЁГІГј ГўГЄГ«/ГўГ»ГЄГ« Г¤ГўГЁГЈГ ГІГҐГ«Гј ГІГ°Г Г­Г±ГЇГ®Г°ГІГ ')
+							imgui.TextColoredRGB('{B31A06}/hit {888EA0}- {0E8604}ГЇГ°Г®ГўГҐГ°ГЁГІГј ГіГ°Г®Г­ ГЇГ®ГЇГ Г¤Г Г­ГЁГ© ГЁГЈГ°Г®ГЄГ , ГўГ»Г±ГІГ°ГҐГ«Г»')
+							imgui.TextColoredRGB('{B31A06}/zz{888EA0} - {0E8604}ГЄГ ГЄ /o, ГІГ®Г«ГјГЄГ® Г±Г® Г±ГЄГ®ГЎГЄГ Г¬ГЁ ГЁ Г¤Г°ГіГЈГЁГ¬ Г¶ГўГҐГІГ®Г¬')
+							imgui.TextColoredRGB('{B31A06}/deleteobjects{888EA0} - {0E8604}ГіГ¤Г Г«ГЁГІГј ГўГ±ГҐ Г®ГЎГєГҐГЄГІГ» ГЏГ„')
 						end
 						if imgui.CollapsingHeader('ALVL 2', btn_size) then
-							imgui.TextColoredRGB('{B31A06}/ban{888EA0} - {0E8604}забанить игрока')
-							imgui.TextColoredRGB('{B31A06}/prison {888EA0}- {0E8604}посадить в присон на 3500 секунд')
-							imgui.TextColoredRGB('{B31A06}/warn {888EA0}- {0E8604}дать предупреждение')
-							imgui.TextColoredRGB('{B31A06}/mute{888EA0} - {0E8604}дать молчанку')
-							imgui.TextColoredRGB('{B31A06}/spawn {888EA0}- {0E8604}отправить игрока на спавн')
-							imgui.TextColoredRGB('{B31A06}/abizz {888EA0}- {0E8604}просмотр информации про все бизнессы штата')
-							imgui.TextColoredRGB('{B31A06}/ajobs {888EA0}-{0E8604} просмотр трудовой книги игрока')
-							imgui.TextColoredRGB('{B31A06}/biz {888EA0}- {0E8604}тп в биз')
-							imgui.TextColoredRGB('{B31A06}/house {888EA0}- {0E8604}тп в дом')
-							imgui.TextColoredRGB('{B31A06}/garage {888EA0}- {0E8604}тп в гараж')
-							imgui.TextColoredRGB('{B31A06}/destroycar {888EA0}- {0E8604}уничтожить созданный транспорт')
-							imgui.TextColoredRGB('{B31A06}/fillveh {888EA0}- {0E8604}заправить транспорт')
-							imgui.TextColoredRGB('{B31A06}/gethere{888EA0} -{0E8604} тп к себе игрока')
-							imgui.TextColoredRGB('{B31A06}/sban {888EA0}- {0E8604}тихо забанить игрока')
-							imgui.TextColoredRGB('{B31A06}/skick {888EA0}- {0E8604}тихо кикнуть игрока')
-							imgui.TextColoredRGB('{B31A06}/amembers {888EA0}- {0E8604}проверить онлайн во фракции')
-							imgui.TextColoredRGB('{B31A06}/o{888EA0} - {0E8604}чат видный всем игрокам')
-							imgui.TextColoredRGB('{B31A06}/setsex {888EA0}- {0E8604}смена пола игроку')
-							imgui.TextColoredRGB('{B31A06}/setnat {888EA0}- {0E8604}смена расы игроку')
-							imgui.TextColoredRGB('{B31A06}/auron{888EA0} -{0E8604} показывает кому игрок последний раз нанёс урон и от кого получил')
+							imgui.TextColoredRGB('{B31A06}/ban{888EA0} - {0E8604}Г§Г ГЎГ Г­ГЁГІГј ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/prison {888EA0}- {0E8604}ГЇГ®Г±Г Г¤ГЁГІГј Гў ГЇГ°ГЁГ±Г®Г­ Г­Г  3500 Г±ГҐГЄГіГ­Г¤')
+							imgui.TextColoredRGB('{B31A06}/warn {888EA0}- {0E8604}Г¤Г ГІГј ГЇГ°ГҐГ¤ГіГЇГ°ГҐГ¦Г¤ГҐГ­ГЁГҐ')
+							imgui.TextColoredRGB('{B31A06}/mute{888EA0} - {0E8604}Г¤Г ГІГј Г¬Г®Г«Г·Г Г­ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/spawn {888EA0}- {0E8604}Г®ГІГЇГ°Г ГўГЁГІГј ГЁГЈГ°Г®ГЄГ  Г­Г  Г±ГЇГ ГўГ­')
+							imgui.TextColoredRGB('{B31A06}/abizz {888EA0}- {0E8604}ГЇГ°Г®Г±Г¬Г®ГІГ° ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГЁ ГЇГ°Г® ГўГ±ГҐ ГЎГЁГ§Г­ГҐГ±Г±Г» ГёГІГ ГІГ ')
+							imgui.TextColoredRGB('{B31A06}/ajobs {888EA0}-{0E8604} ГЇГ°Г®Г±Г¬Г®ГІГ° ГІГ°ГіГ¤Г®ГўГ®Г© ГЄГ­ГЁГЈГЁ ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/biz {888EA0}- {0E8604}ГІГЇ Гў ГЎГЁГ§')
+							imgui.TextColoredRGB('{B31A06}/house {888EA0}- {0E8604}ГІГЇ Гў Г¤Г®Г¬')
+							imgui.TextColoredRGB('{B31A06}/garage {888EA0}- {0E8604}ГІГЇ Гў ГЈГ Г°Г Г¦')
+							imgui.TextColoredRGB('{B31A06}/destroycar {888EA0}- {0E8604}ГіГ­ГЁГ·ГІГ®Г¦ГЁГІГј Г±Г®Г§Г¤Г Г­Г­Г»Г© ГІГ°Г Г­Г±ГЇГ®Г°ГІ')
+							imgui.TextColoredRGB('{B31A06}/fillveh {888EA0}- {0E8604}Г§Г ГЇГ°Г ГўГЁГІГј ГІГ°Г Г­Г±ГЇГ®Г°ГІ')
+							imgui.TextColoredRGB('{B31A06}/gethere{888EA0} -{0E8604} ГІГЇ ГЄ Г±ГҐГЎГҐ ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/sban {888EA0}- {0E8604}ГІГЁГµГ® Г§Г ГЎГ Г­ГЁГІГј ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/skick {888EA0}- {0E8604}ГІГЁГµГ® ГЄГЁГЄГ­ГіГІГј ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/amembers {888EA0}- {0E8604}ГЇГ°Г®ГўГҐГ°ГЁГІГј Г®Г­Г«Г Г©Г­ ГўГ® ГґГ°Г ГЄГ¶ГЁГЁ')
+							imgui.TextColoredRGB('{B31A06}/o{888EA0} - {0E8604}Г·Г ГІ ГўГЁГ¤Г­Г»Г© ГўГ±ГҐГ¬ ГЁГЈГ°Г®ГЄГ Г¬')
+							imgui.TextColoredRGB('{B31A06}/setsex {888EA0}- {0E8604}Г±Г¬ГҐГ­Г  ГЇГ®Г«Г  ГЁГЈГ°Г®ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/setnat {888EA0}- {0E8604}Г±Г¬ГҐГ­Г  Г°Г Г±Г» ГЁГЈГ°Г®ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/auron{888EA0} -{0E8604} ГЇГ®ГЄГ Г§Г»ГўГ ГҐГІ ГЄГ®Г¬Гі ГЁГЈГ°Г®ГЄ ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ© Г°Г Г§ Г­Г Г­ВёГ± ГіГ°Г®Г­ ГЁ Г®ГІ ГЄГ®ГЈГ® ГЇГ®Г«ГіГ·ГЁГ«')
 						end
 						if imgui.CollapsingHeader('ALVL 3', btn_size) then
-							imgui.TextColoredRGB('{B31A06}/mpgo {888EA0}- {0E8604}начать мероприятие')
-							imgui.TextColoredRGB('{B31A06}/ainvite {888EA0}- {0E8604}инвайтнуть себя во фракцию')
-							imgui.TextColoredRGB('{B31A06}/mark {888EA0}- {0E8604}поставить метку')
-							imgui.TextColoredRGB('{B31A06}/gotomark{888EA0} - {0E8604}тп на метку')
-							imgui.TextColoredRGB('{B31A06}/unprison{888EA0} -{0E8604} выпустить из присона')
-							imgui.TextColoredRGB('{B31A06}/unjail{888EA0} - {0E8604}выпустить из тюрьмы')
-							imgui.TextColoredRGB('{B31A06}/sethp {888EA0}- {0E8604}изменить здоровье игроку')
-							imgui.TextColoredRGB('{B31A06}/veh {888EA0}- {0E8604}создать транспорт (не забыть удалить)')
-							imgui.TextColoredRGB('{B31A06}/dellveh {888EA0}- {0E8604}удалить весь созданный транспорт за сервере')
-							imgui.TextColoredRGB('{B31A06}/slap {888EA0}- {0E8604}слапнуть игрока')
-							imgui.TextColoredRGB('{B31A06}/freeze {888EA0}- {0E8604}заморозить игрока')
-							imgui.TextColoredRGB('{B31A06}/unfreeze {888EA0}-{0E8604} разморозить игрока')
-							imgui.TextColoredRGB('{B31A06}/spawncars{888EA0} -{0E8604} заспавнить весь транспорт')
-							imgui.TextColoredRGB('{B31A06}/fuelcars{888EA0} - {0E8604}заправить весь транспорт')
-							imgui.TextColoredRGB('{B31A06}/disarm {888EA0}- {0E8604}обезоружить игрока')
-							imgui.TextColoredRGB('{B31A06}/cc {888EA0}- {0E8604}очистить чат')
-							imgui.TextColoredRGB('{B31A06}/cc2 {888EA0}- {0E8604}очистить чат игроку')
-							imgui.TextColoredRGB('{B31A06}/kickjob {888EA0}- {0E8604}уволить с работы')
-							imgui.TextColoredRGB('{B31A06}/mpskin {888EA0}- {0E8604}выдать временный скин')
-							imgui.TextColoredRGB('{B31A06}/rspawncars {888EA0}-{0E8604} заспавнить транспорт в радиусе')
-							imgui.TextColoredRGB('{B31A06}/dmzone{888EA0} - {0E8604}запустить страйкбол')
-							imgui.TextColoredRGB('{B31A06}/aobject{888EA0} - {0E8604}создать объект (нужен 8 ранг в ПД)')
+							imgui.TextColoredRGB('{B31A06}/mpgo {888EA0}- {0E8604}Г­Г Г·Г ГІГј Г¬ГҐГ°Г®ГЇГ°ГЁГїГІГЁГҐ')
+							imgui.TextColoredRGB('{B31A06}/ainvite {888EA0}- {0E8604}ГЁГ­ГўГ Г©ГІГ­ГіГІГј Г±ГҐГЎГї ГўГ® ГґГ°Г ГЄГ¶ГЁГѕ')
+							imgui.TextColoredRGB('{B31A06}/mark {888EA0}- {0E8604}ГЇГ®Г±ГІГ ГўГЁГІГј Г¬ГҐГІГЄГі')
+							imgui.TextColoredRGB('{B31A06}/gotomark{888EA0} - {0E8604}ГІГЇ Г­Г  Г¬ГҐГІГЄГі')
+							imgui.TextColoredRGB('{B31A06}/unprison{888EA0} -{0E8604} ГўГ»ГЇГіГ±ГІГЁГІГј ГЁГ§ ГЇГ°ГЁГ±Г®Г­Г ')
+							imgui.TextColoredRGB('{B31A06}/unjail{888EA0} - {0E8604}ГўГ»ГЇГіГ±ГІГЁГІГј ГЁГ§ ГІГѕГ°ГјГ¬Г»')
+							imgui.TextColoredRGB('{B31A06}/sethp {888EA0}- {0E8604}ГЁГ§Г¬ГҐГ­ГЁГІГј Г§Г¤Г®Г°Г®ГўГјГҐ ГЁГЈГ°Г®ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/veh {888EA0}- {0E8604}Г±Г®Г§Г¤Г ГІГј ГІГ°Г Г­Г±ГЇГ®Г°ГІ (Г­ГҐ Г§Г ГЎГ»ГІГј ГіГ¤Г Г«ГЁГІГј)')
+							imgui.TextColoredRGB('{B31A06}/dellveh {888EA0}- {0E8604}ГіГ¤Г Г«ГЁГІГј ГўГҐГ±Гј Г±Г®Г§Г¤Г Г­Г­Г»Г© ГІГ°Г Г­Г±ГЇГ®Г°ГІ Г§Г  Г±ГҐГ°ГўГҐГ°ГҐ')
+							imgui.TextColoredRGB('{B31A06}/slap {888EA0}- {0E8604}Г±Г«Г ГЇГ­ГіГІГј ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/freeze {888EA0}- {0E8604}Г§Г Г¬Г®Г°Г®Г§ГЁГІГј ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/unfreeze {888EA0}-{0E8604} Г°Г Г§Г¬Г®Г°Г®Г§ГЁГІГј ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/spawncars{888EA0} -{0E8604} Г§Г Г±ГЇГ ГўГ­ГЁГІГј ГўГҐГ±Гј ГІГ°Г Г­Г±ГЇГ®Г°ГІ')
+							imgui.TextColoredRGB('{B31A06}/fuelcars{888EA0} - {0E8604}Г§Г ГЇГ°Г ГўГЁГІГј ГўГҐГ±Гј ГІГ°Г Г­Г±ГЇГ®Г°ГІ')
+							imgui.TextColoredRGB('{B31A06}/disarm {888EA0}- {0E8604}Г®ГЎГҐГ§Г®Г°ГіГ¦ГЁГІГј ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/cc {888EA0}- {0E8604}Г®Г·ГЁГ±ГІГЁГІГј Г·Г ГІ')
+							imgui.TextColoredRGB('{B31A06}/cc2 {888EA0}- {0E8604}Г®Г·ГЁГ±ГІГЁГІГј Г·Г ГІ ГЁГЈГ°Г®ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/kickjob {888EA0}- {0E8604}ГіГўГ®Г«ГЁГІГј Г± Г°Г ГЎГ®ГІГ»')
+							imgui.TextColoredRGB('{B31A06}/mpskin {888EA0}- {0E8604}ГўГ»Г¤Г ГІГј ГўГ°ГҐГ¬ГҐГ­Г­Г»Г© Г±ГЄГЁГ­')
+							imgui.TextColoredRGB('{B31A06}/rspawncars {888EA0}-{0E8604} Г§Г Г±ГЇГ ГўГ­ГЁГІГј ГІГ°Г Г­Г±ГЇГ®Г°ГІ Гў Г°Г Г¤ГЁГіГ±ГҐ')
+							imgui.TextColoredRGB('{B31A06}/dmzone{888EA0} - {0E8604}Г§Г ГЇГіГ±ГІГЁГІГј Г±ГІГ°Г Г©ГЄГЎГ®Г«')
+							imgui.TextColoredRGB('{B31A06}/aobject{888EA0} - {0E8604}Г±Г®Г§Г¤Г ГІГј Г®ГЎГєГҐГЄГІ (Г­ГіГ¦ГҐГ­ 8 Г°Г Г­ГЈ Гў ГЏГ„)')
 						end
 						if imgui.CollapsingHeader('ALVL 4', btn_size) then
-							imgui.TextColoredRGB('{B31A06}/getip{888EA0} - {0E8604}IP игрока')
-							imgui.TextColoredRGB('{B31A06}/alock {888EA0}- {0E8604}открыть транспорт')
-							imgui.TextColoredRGB('{B31A06}/alock2 {888EA0}- {0E8604}закрыть транспорт')
-							imgui.TextColoredRGB('{B31A06}/setname {888EA0}- {0E8604}сменить ник-нейм игроку')
-							imgui.TextColoredRGB('{B31A06}/setnames{888EA0} - {0E8604}заявки на смену ник-нейма')
-							imgui.TextColoredRGB('{B31A06}/agl{888EA0} - {0E8604}выдать лицензию')
-							imgui.TextColoredRGB('{B31A06}/int{888EA0} - {0E8604}сменить интерьер в доме')
-							imgui.TextColoredRGB('{B31A06}/tpto{888EA0} - {0E8604} игрока к другому игроку')
-							imgui.TextColoredRGB('{B31A06}/kickinvite {888EA0}-{0E8604} уволить с фракции')
-							imgui.TextColoredRGB('{B31A06}/take {888EA0}- {0E8604}отбор лицензий')
-							imgui.TextColoredRGB('{B31A06}/unban{888EA0} - {0E8604}разбанить аккаунт')
-							imgui.TextColoredRGB('{B31A06}/razborka1 {888EA0}- {0E8604}перекрасить разборку байкеров')
-							imgui.TextColoredRGB('{B31A06}/unwarn {888EA0}- {0E8604}снять варн')
+							imgui.TextColoredRGB('{B31A06}/getip{888EA0} - {0E8604}IP ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/alock {888EA0}- {0E8604}Г®ГІГЄГ°Г»ГІГј ГІГ°Г Г­Г±ГЇГ®Г°ГІ')
+							imgui.TextColoredRGB('{B31A06}/alock2 {888EA0}- {0E8604}Г§Г ГЄГ°Г»ГІГј ГІГ°Г Г­Г±ГЇГ®Г°ГІ')
+							imgui.TextColoredRGB('{B31A06}/setname {888EA0}- {0E8604}Г±Г¬ГҐГ­ГЁГІГј Г­ГЁГЄ-Г­ГҐГ©Г¬ ГЁГЈГ°Г®ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/setnames{888EA0} - {0E8604}Г§Г ГїГўГЄГЁ Г­Г  Г±Г¬ГҐГ­Гі Г­ГЁГЄ-Г­ГҐГ©Г¬Г ')
+							imgui.TextColoredRGB('{B31A06}/agl{888EA0} - {0E8604}ГўГ»Г¤Г ГІГј Г«ГЁГ¶ГҐГ­Г§ГЁГѕ')
+							imgui.TextColoredRGB('{B31A06}/int{888EA0} - {0E8604}Г±Г¬ГҐГ­ГЁГІГј ГЁГ­ГІГҐГ°ГјГҐГ° Гў Г¤Г®Г¬ГҐ')
+							imgui.TextColoredRGB('{B31A06}/tpto{888EA0} - {0E8604} ГЁГЈГ°Г®ГЄГ  ГЄ Г¤Г°ГіГЈГ®Г¬Гі ГЁГЈГ°Г®ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/kickinvite {888EA0}-{0E8604} ГіГўГ®Г«ГЁГІГј Г± ГґГ°Г ГЄГ¶ГЁГЁ')
+							imgui.TextColoredRGB('{B31A06}/take {888EA0}- {0E8604}Г®ГІГЎГ®Г° Г«ГЁГ¶ГҐГ­Г§ГЁГ©')
+							imgui.TextColoredRGB('{B31A06}/unban{888EA0} - {0E8604}Г°Г Г§ГЎГ Г­ГЁГІГј Г ГЄГЄГ ГіГ­ГІ')
+							imgui.TextColoredRGB('{B31A06}/razborka1 {888EA0}- {0E8604}ГЇГҐГ°ГҐГЄГ°Г Г±ГЁГІГј Г°Г Г§ГЎГ®Г°ГЄГі ГЎГ Г©ГЄГҐГ°Г®Гў')
+							imgui.TextColoredRGB('{B31A06}/unwarn {888EA0}- {0E8604}Г±Г­ГїГІГј ГўГ Г°Г­')
 						end
 						if imgui.CollapsingHeader('ALVL 5', btn_size) then
-							imgui.TextColoredRGB('{B31A06}/apark {888EA0}- {0E8604}припарковать транспорт')
-							imgui.TextColoredRGB('{B31A06}/mole {888EA0}- {0E8604}написать всем игрокам СМС от лица сервера')
-							imgui.TextColoredRGB('{B31A06}/glrp {888EA0}- {0E8604}прослушка чатов')
-							imgui.TextColoredRGB('{B31A06}/agiverank {888EA0}- {0E8604}сменить ранг игроку')
-							imgui.TextColoredRGB('{B31A06}/givegun {888EA0}- {0E8604}дать игроку оружие')
-							imgui.TextColoredRGB('{B31A06}/setarmor {888EA0}- {0E8604}сменить состояние брони игроку')
-							imgui.TextColoredRGB('{B31A06}/explode{888EA0} -{0E8604} взорвать игрока')
-							imgui.TextColoredRGB('{B31A06}/unslot{888EA0} - {0E8604}очистить слоты транспортов игрока')
-							imgui.TextColoredRGB('{B31A06}/weather {888EA0}-{0E8604} сменить погоду')
-							imgui.TextColoredRGB('{B31A06}/sethprad {888EA0}- {0E8604}выдать хп всем в опр. радиусе')
-							imgui.TextColoredRGB('{B31A06}/mpskinrad {888EA0}- {0E8604}выдать всем скин в опр. радиусе')
-							imgui.TextColoredRGB('{B31A06}/givegunrad {888EA0}- {0E8604}выдать всем оружие в опр. радиусе')
-							imgui.TextColoredRGB('{B31A06}/setarmorrad {888EA0}-{0E8604} выдать всех броню в опр. радиусе')
-							imgui.TextColoredRGB('{B31A06}/1gungame {888EA0}- {0E8604}запустить ""Гонку Вооружений"')
-							imgui.TextColoredRGB('{B31A06}/stopattack{888EA0} -{0E8604} прекратить капт')
-							imgui.TextColoredRGB('{B31A06}/giveport{888EA0} -{0E8604} выдать порт мафии')
-							imgui.TextColoredRGB('{B31A06}/admtack {888EA0}- {0E8604}cнять кд на капт у банды')
-							imgui.TextColoredRGB('{B31A06}/givegz {888EA0}- {0E8604}дать гангзону другой банде')
-							imgui.TextColoredRGB('{B31A06}/zaprosip {888EA0}- {0E8604}посмотреть аккаунты на опр. IP')
+							imgui.TextColoredRGB('{B31A06}/apark {888EA0}- {0E8604}ГЇГ°ГЁГЇГ Г°ГЄГ®ГўГ ГІГј ГІГ°Г Г­Г±ГЇГ®Г°ГІ')
+							imgui.TextColoredRGB('{B31A06}/mole {888EA0}- {0E8604}Г­Г ГЇГЁГ±Г ГІГј ГўГ±ГҐГ¬ ГЁГЈГ°Г®ГЄГ Г¬ Г‘ГЊГ‘ Г®ГІ Г«ГЁГ¶Г  Г±ГҐГ°ГўГҐГ°Г ')
+							imgui.TextColoredRGB('{B31A06}/glrp {888EA0}- {0E8604}ГЇГ°Г®Г±Г«ГіГёГЄГ  Г·Г ГІГ®Гў')
+							imgui.TextColoredRGB('{B31A06}/agiverank {888EA0}- {0E8604}Г±Г¬ГҐГ­ГЁГІГј Г°Г Г­ГЈ ГЁГЈГ°Г®ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/givegun {888EA0}- {0E8604}Г¤Г ГІГј ГЁГЈГ°Г®ГЄГі Г®Г°ГіГ¦ГЁГҐ')
+							imgui.TextColoredRGB('{B31A06}/setarmor {888EA0}- {0E8604}Г±Г¬ГҐГ­ГЁГІГј Г±Г®Г±ГІГ®ГїГ­ГЁГҐ ГЎГ°Г®Г­ГЁ ГЁГЈГ°Г®ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/explode{888EA0} -{0E8604} ГўГ§Г®Г°ГўГ ГІГј ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/unslot{888EA0} - {0E8604}Г®Г·ГЁГ±ГІГЁГІГј Г±Г«Г®ГІГ» ГІГ°Г Г­Г±ГЇГ®Г°ГІГ®Гў ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/weather {888EA0}-{0E8604} Г±Г¬ГҐГ­ГЁГІГј ГЇГ®ГЈГ®Г¤Гі')
+							imgui.TextColoredRGB('{B31A06}/sethprad {888EA0}- {0E8604}ГўГ»Г¤Г ГІГј ГµГЇ ГўГ±ГҐГ¬ Гў Г®ГЇГ°. Г°Г Г¤ГЁГіГ±ГҐ')
+							imgui.TextColoredRGB('{B31A06}/mpskinrad {888EA0}- {0E8604}ГўГ»Г¤Г ГІГј ГўГ±ГҐГ¬ Г±ГЄГЁГ­ Гў Г®ГЇГ°. Г°Г Г¤ГЁГіГ±ГҐ')
+							imgui.TextColoredRGB('{B31A06}/givegunrad {888EA0}- {0E8604}ГўГ»Г¤Г ГІГј ГўГ±ГҐГ¬ Г®Г°ГіГ¦ГЁГҐ Гў Г®ГЇГ°. Г°Г Г¤ГЁГіГ±ГҐ')
+							imgui.TextColoredRGB('{B31A06}/setarmorrad {888EA0}-{0E8604} ГўГ»Г¤Г ГІГј ГўГ±ГҐГµ ГЎГ°Г®Г­Гѕ Гў Г®ГЇГ°. Г°Г Г¤ГЁГіГ±ГҐ')
+							imgui.TextColoredRGB('{B31A06}/1gungame {888EA0}- {0E8604}Г§Г ГЇГіГ±ГІГЁГІГј ""ГѓГ®Г­ГЄГі Г‚Г®Г®Г°ГіГ¦ГҐГ­ГЁГ©"')
+							imgui.TextColoredRGB('{B31A06}/stopattack{888EA0} -{0E8604} ГЇГ°ГҐГЄГ°Г ГІГЁГІГј ГЄГ ГЇГІ')
+							imgui.TextColoredRGB('{B31A06}/giveport{888EA0} -{0E8604} ГўГ»Г¤Г ГІГј ГЇГ®Г°ГІ Г¬Г ГґГЁГЁ')
+							imgui.TextColoredRGB('{B31A06}/admtack {888EA0}- {0E8604}cГ­ГїГІГј ГЄГ¤ Г­Г  ГЄГ ГЇГІ Гі ГЎГ Г­Г¤Г»')
+							imgui.TextColoredRGB('{B31A06}/givegz {888EA0}- {0E8604}Г¤Г ГІГј ГЈГ Г­ГЈГ§Г®Г­Гі Г¤Г°ГіГЈГ®Г© ГЎГ Г­Г¤ГҐ')
+							imgui.TextColoredRGB('{B31A06}/zaprosip {888EA0}- {0E8604}ГЇГ®Г±Г¬Г®ГІГ°ГҐГІГј Г ГЄГЄГ ГіГ­ГІГ» Г­Г  Г®ГЇГ°. IP')
 						end
 						if imgui.CollapsingHeader('ALVL 6', btn_size) then
-							imgui.TextColoredRGB('{B31A06}/sethpall {888EA0}- {0E8604}изменить хп всем игрокам')
-							imgui.TextColoredRGB('{B31A06}/unbanip {888EA0}-{0E8604} разбанить IP')
-							imgui.TextColoredRGB('{B31A06}/alllic {888EA0}- {0E8604}дать все лицензии игроку')
-							imgui.TextColoredRGB('{B31A06}/aengine {888EA0}-{0E8604} отключить систему двигателей на сервере(больше нагрузки, ддос)')
-							imgui.TextColoredRGB('{B31A06}/acapture{888EA0} -{0E8604} отключить захваты(мероприятия и прочее)')
-							imgui.TextColoredRGB('{B31A06}/rasform {888EA0}- {0E8604}полная расформировка гетто (общаки, репутация, количество убийств)')
-							imgui.TextColoredRGB('{B31A06}/rasformbiker{888EA0} - {0E8604}расформировка общаков байкеров')
-							imgui.TextColoredRGB('{B31A06}/givevip {888EA0}-{0E8604} выдать VIP')
-							imgui.TextColoredRGB('{B31A06}/makehelper {888EA0}-{0E8604} выдать хелперку')
+							imgui.TextColoredRGB('{B31A06}/sethpall {888EA0}- {0E8604}ГЁГ§Г¬ГҐГ­ГЁГІГј ГµГЇ ГўГ±ГҐГ¬ ГЁГЈГ°Г®ГЄГ Г¬')
+							imgui.TextColoredRGB('{B31A06}/unbanip {888EA0}-{0E8604} Г°Г Г§ГЎГ Г­ГЁГІГј IP')
+							imgui.TextColoredRGB('{B31A06}/alllic {888EA0}- {0E8604}Г¤Г ГІГј ГўГ±ГҐ Г«ГЁГ¶ГҐГ­Г§ГЁГЁ ГЁГЈГ°Г®ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/aengine {888EA0}-{0E8604} Г®ГІГЄГ«ГѕГ·ГЁГІГј Г±ГЁГ±ГІГҐГ¬Гі Г¤ГўГЁГЈГ ГІГҐГ«ГҐГ© Г­Г  Г±ГҐГ°ГўГҐГ°ГҐ(ГЎГ®Г«ГјГёГҐ Г­Г ГЈГ°ГіГ§ГЄГЁ, Г¤Г¤Г®Г±)')
+							imgui.TextColoredRGB('{B31A06}/acapture{888EA0} -{0E8604} Г®ГІГЄГ«ГѕГ·ГЁГІГј Г§Г ГµГўГ ГІГ»(Г¬ГҐГ°Г®ГЇГ°ГЁГїГІГЁГї ГЁ ГЇГ°Г®Г·ГҐГҐ)')
+							imgui.TextColoredRGB('{B31A06}/rasform {888EA0}- {0E8604}ГЇГ®Г«Г­Г Гї Г°Г Г±ГґГ®Г°Г¬ГЁГ°Г®ГўГЄГ  ГЈГҐГІГІГ® (Г®ГЎГ№Г ГЄГЁ, Г°ГҐГЇГіГІГ Г¶ГЁГї, ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГіГЎГЁГ©Г±ГІГў)')
+							imgui.TextColoredRGB('{B31A06}/rasformbiker{888EA0} - {0E8604}Г°Г Г±ГґГ®Г°Г¬ГЁГ°Г®ГўГЄГ  Г®ГЎГ№Г ГЄГ®Гў ГЎГ Г©ГЄГҐГ°Г®Гў')
+							imgui.TextColoredRGB('{B31A06}/givevip {888EA0}-{0E8604} ГўГ»Г¤Г ГІГј VIP')
+							imgui.TextColoredRGB('{B31A06}/makehelper {888EA0}-{0E8604} ГўГ»Г¤Г ГІГј ГµГҐГ«ГЇГҐГ°ГЄГі')
 						end
 						if imgui.CollapsingHeader('ALVL 7', btn_size) then
-							imgui.TextColoredRGB('{B31A06}/banip{888EA0} - {0E8604}забанить IP')
-							imgui.TextColoredRGB('{B31A06}/asellcar {888EA0}- {0E8604}продать транспорт (авторыночный)')
-							imgui.TextColoredRGB('{B31A06}/asellbiz {888EA0}- {0E8604}продать биз')
-							imgui.TextColoredRGB('{B31A06}/asellsbiz {888EA0}- {0E8604}продать сбиз')
-							imgui.TextColoredRGB('{B31A06}/asellhouse {888EA0}- {0E8604}продать дом')
-							imgui.TextColoredRGB('{B31A06}/kickmarriage {888EA0}- {0E8604}развести игрока')
-							imgui.TextColoredRGB('{B31A06}/noooc{888EA0} - {0E8604}включить OOC чат')
-							imgui.TextColoredRGB('{B31A06}/makedrugs {888EA0}- {0E8604}дать наркотики игроку')
-							imgui.TextColoredRGB('{B31A06}/setskin {888EA0}- {0E8604}выдать скин')
-							imgui.TextColoredRGB('{B31A06}/setskinslot {888EA0}- {0E8604}выдать скин на опр. слот')
+							imgui.TextColoredRGB('{B31A06}/banip{888EA0} - {0E8604}Г§Г ГЎГ Г­ГЁГІГј IP')
+							imgui.TextColoredRGB('{B31A06}/asellcar {888EA0}- {0E8604}ГЇГ°Г®Г¤Г ГІГј ГІГ°Г Г­Г±ГЇГ®Г°ГІ (Г ГўГІГ®Г°Г»Г­Г®Г·Г­Г»Г©)')
+							imgui.TextColoredRGB('{B31A06}/asellbiz {888EA0}- {0E8604}ГЇГ°Г®Г¤Г ГІГј ГЎГЁГ§')
+							imgui.TextColoredRGB('{B31A06}/asellsbiz {888EA0}- {0E8604}ГЇГ°Г®Г¤Г ГІГј Г±ГЎГЁГ§')
+							imgui.TextColoredRGB('{B31A06}/asellhouse {888EA0}- {0E8604}ГЇГ°Г®Г¤Г ГІГј Г¤Г®Г¬')
+							imgui.TextColoredRGB('{B31A06}/kickmarriage {888EA0}- {0E8604}Г°Г Г§ГўГҐГ±ГІГЁ ГЁГЈГ°Г®ГЄГ ')
+							imgui.TextColoredRGB('{B31A06}/noooc{888EA0} - {0E8604}ГўГЄГ«ГѕГ·ГЁГІГј OOC Г·Г ГІ')
+							imgui.TextColoredRGB('{B31A06}/makedrugs {888EA0}- {0E8604}Г¤Г ГІГј Г­Г Г°ГЄГ®ГІГЁГЄГЁ ГЁГЈГ°Г®ГЄГі')
+							imgui.TextColoredRGB('{B31A06}/setskin {888EA0}- {0E8604}ГўГ»Г¤Г ГІГј Г±ГЄГЁГ­')
+							imgui.TextColoredRGB('{B31A06}/setskinslot {888EA0}- {0E8604}ГўГ»Г¤Г ГІГј Г±ГЄГЁГ­ Г­Г  Г®ГЇГ°. Г±Г«Г®ГІ')
 						end
 						imgui.Unindent(20)
 					end
 					imgui.Indent(10)
-					if imgui.CollapsingHeader(u8'ID фракций') then
-						imgui.CenterTextColoredRGB('{0E8604}Государственные фракции{888EA0}:')
+					if imgui.CollapsingHeader(u8'ID ГґГ°Г ГЄГ¶ГЁГ©') then
+						imgui.CenterTextColoredRGB('{0E8604}ГѓГ®Г±ГіГ¤Г Г°Г±ГІГўГҐГ­Г­Г»ГҐ ГґГ°Г ГЄГ¶ГЁГЁ{888EA0}:')
 						imgui.Spacing()
-						imgui.TextColoredRGB('{888EA0}Полиция ЛС - {C39932}1')
-						imgui.TextColoredRGB('{888EA0}Полиция СФ - {C39932}20')
-						imgui.TextColoredRGB('{888EA0}Полиция ЛВ - {C39932}21')
+						imgui.TextColoredRGB('{888EA0}ГЏГ®Г«ГЁГ¶ГЁГї Г‹Г‘ - {C39932}1')
+						imgui.TextColoredRGB('{888EA0}ГЏГ®Г«ГЁГ¶ГЁГї Г‘Г” - {C39932}20')
+						imgui.TextColoredRGB('{888EA0}ГЏГ®Г«ГЁГ¶ГЁГї Г‹Г‚ - {C39932}21')
 						imgui.Spacing()
-						imgui.TextColoredRGB('{888EA0}Госпиталь ЛС - {C39932}2')
-						imgui.TextColoredRGB('{888EA0}Госпиталь СФ - {C39932}23')
-						imgui.TextColoredRGB('{888EA0}Госпиталь ЛВ - {C39932}24')
+						imgui.TextColoredRGB('{888EA0}ГѓГ®Г±ГЇГЁГІГ Г«Гј Г‹Г‘ - {C39932}2')
+						imgui.TextColoredRGB('{888EA0}ГѓГ®Г±ГЇГЁГІГ Г«Гј Г‘Г” - {C39932}23')
+						imgui.TextColoredRGB('{888EA0}ГѓГ®Г±ГЇГЁГІГ Г«Гј Г‹Г‚ - {C39932}24')
 						imgui.Spacing()
-						imgui.TextColoredRGB('{888EA0}ФБР - {C39932}22')
+						imgui.TextColoredRGB('{888EA0}Г”ГЃГђ - {C39932}22')
 						imgui.Spacing()
-						imgui.TextColoredRGB('{888EA0}Правительство - {C39932}3')
+						imgui.TextColoredRGB('{888EA0}ГЏГ°Г ГўГЁГІГҐГ«ГјГ±ГІГўГ® - {C39932}3')
 						imgui.Spacing()
-						imgui.TextColoredRGB('{888EA0}Нац.гвардия - {C39932}6')
+						imgui.TextColoredRGB('{888EA0}ГЌГ Г¶.ГЈГўГ Г°Г¤ГЁГї - {C39932}6')
 						imgui.Spacing()
-						imgui.TextColoredRGB('{888EA0}Лицензеры - {C39932}5')
+						imgui.TextColoredRGB('{888EA0}Г‹ГЁГ¶ГҐГ­Г§ГҐГ°Г» - {C39932}5')
 						imgui.Spacing()
-						imgui.TextColoredRGB('{888EA0}СМИ ЛС - {C39932}4')
-						imgui.TextColoredRGB('{888EA0}СМИ ЛВ - {C39932}25')
+						imgui.TextColoredRGB('{888EA0}Г‘ГЊГ€ Г‹Г‘ - {C39932}4')
+						imgui.TextColoredRGB('{888EA0}Г‘ГЊГ€ Г‹Г‚ - {C39932}25')
 						imgui.Spacing()
-						imgui.CenterTextColoredRGB('{B31A06}Банды/мафии/байкеры{888EA0}:')
+						imgui.CenterTextColoredRGB('{B31A06}ГЃГ Г­Г¤Г»/Г¬Г ГґГЁГЁ/ГЎГ Г©ГЄГҐГ°Г»{888EA0}:')
 						imgui.Spacing()
-						imgui.TextColoredRGB('{888EA0}Русская мафия - {C39932}7')
-						imgui.TextColoredRGB('{888EA0}Якудза - {C39932}8')
+						imgui.TextColoredRGB('{888EA0}ГђГіГ±Г±ГЄГ Гї Г¬Г ГґГЁГї - {C39932}7')
+						imgui.TextColoredRGB('{888EA0}ГџГЄГіГ¤Г§Г  - {C39932}8')
 						imgui.Spacing()
 						imgui.TextColoredRGB('{888EA0}West Side Grove Gang - {C39932}11')
 						imgui.TextColoredRGB('{888EA0}East Side Ballas Gang - {C39932}12')
@@ -1629,8 +1629,8 @@ function imgui.OnDrawFrame(args)
 						imgui.TextColoredRGB('{888EA0}Comrades MC - {C39932}17')
 						imgui.TextColoredRGB('{888EA0}Warlocks MC - {C39932}18')
 					end
-					if imgui.CollapsingHeader(u8'Команды') then
-						imgui.CenterTextColoredRGB('Сокращенные команды:')
+					if imgui.CollapsingHeader(u8'ГЉГ®Г¬Г Г­Г¤Г»') then
+						imgui.CenterTextColoredRGB('Г‘Г®ГЄГ°Г Г№ГҐГ­Г­Г»ГҐ ГЄГ®Г¬Г Г­Г¤Г»:')
 						imgui.Spacing()
 						imgui.TextColoredRGB('{C39932}/sp {888EA0}- /spec')
 						imgui.TextColoredRGB('{C39932}/spoff {888EA0}- /specoff')
@@ -1647,14 +1647,14 @@ function imgui.OnDrawFrame(args)
 						imgui.TextColoredRGB('{C39932}/rscars {888EA0}- /rspawncars')
 						imgui.TextColoredRGB('{C39932}/kinv {888EA0}- /kickinvite')
 						imgui.Spacing()
-						imgui.CenterTextColoredRGB('Новые команды')
-						imgui.TextColoredRGB('{C39932}/hp {888EA0}- Устанавливает Вам 150 единиц здоровья')
-						imgui.TextColoredRGB('{C39932}/ffveh {888EA0}- Чинит и заправяет ТС')
-						imgui.TextColoredRGB('{C39932}/gg [id] {888EA0}- Желаете игроку приятной игры')
-						imgui.TextColoredRGB('{C39932}/piarask {888EA0}- Пишет в общий чат про хелперов')
-						imgui.TextColoredRGB('{C39932}/fraklvl [id] {888EA0}- Пишет игроку какие фракции с какого уровня')
-						imgui.TextColoredRGB('{C39932}/dm [id] {888EA0}- Выдает jail игроку на 20 минут с причиной, "DM"')
-						imgui.TextColoredRGB('{C39932}/bike [num] {888EA0}- Создает велосипед (1 - Mountain; 2 - BMX; 3 - Bike)')
+						imgui.CenterTextColoredRGB('ГЌГ®ГўГ»ГҐ ГЄГ®Г¬Г Г­Г¤Г»')
+						imgui.TextColoredRGB('{C39932}/hp {888EA0}- Г“Г±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГІ Г‚Г Г¬ 150 ГҐГ¤ГЁГ­ГЁГ¶ Г§Г¤Г®Г°Г®ГўГјГї')
+						imgui.TextColoredRGB('{C39932}/ffveh {888EA0}- Г—ГЁГ­ГЁГІ ГЁ Г§Г ГЇГ°Г ГўГїГҐГІ Г’Г‘')
+						imgui.TextColoredRGB('{C39932}/gg [id] {888EA0}- Г†ГҐГ«Г ГҐГІГҐ ГЁГЈГ°Г®ГЄГі ГЇГ°ГЁГїГІГ­Г®Г© ГЁГЈГ°Г»')
+						imgui.TextColoredRGB('{C39932}/piarask {888EA0}- ГЏГЁГёГҐГІ Гў Г®ГЎГ№ГЁГ© Г·Г ГІ ГЇГ°Г® ГµГҐГ«ГЇГҐГ°Г®Гў')
+						imgui.TextColoredRGB('{C39932}/fraklvl [id] {888EA0}- ГЏГЁГёГҐГІ ГЁГЈГ°Г®ГЄГі ГЄГ ГЄГЁГҐ ГґГ°Г ГЄГ¶ГЁГЁ Г± ГЄГ ГЄГ®ГЈГ® ГіГ°Г®ГўГ­Гї')
+						imgui.TextColoredRGB('{C39932}/dm [id] {888EA0}- Г‚Г»Г¤Г ГҐГІ jail ГЁГЈГ°Г®ГЄГі Г­Г  20 Г¬ГЁГ­ГіГІ Г± ГЇГ°ГЁГ·ГЁГ­Г®Г©, "DM"')
+						imgui.TextColoredRGB('{C39932}/bike [num] {888EA0}- Г‘Г®Г§Г¤Г ГҐГІ ГўГҐГ«Г®Г±ГЁГЇГҐГ¤ (1 - Mountain; 2 - BMX; 3 - Bike)')
 					end
 					imgui.Unindent(10)
 				end
@@ -1664,11 +1664,11 @@ function imgui.OnDrawFrame(args)
 		else
 			actEnterInGame = 1
 			imgui.BeginChild('0', imgui.ImVec2(855, 370), true)
-			imgui.Text(u8'Select language/Выберите язык:')
+			imgui.Text(u8'Select language/Г‚Г»ГЎГҐГ°ГЁГІГҐ ГїГ§Г»ГЄ:')
 			imgui.SameLine(nil,x)
 			if imgui.Button('English') then langIG[1] = true langIG[2] = false end
 			imgui.SameLine(nil,x)
-			if imgui.Button(u8'Русский') then langIG[1] = false langIG[2] = true end
+			if imgui.Button(u8'ГђГіГ±Г±ГЄГЁГ©') then langIG[1] = false langIG[2] = true end
 			if langIG[1] then
 				imgui.Text(u8(imgIntGameENG[1]))
 				if imgui.CollapsingHeader('More about tabs') then
@@ -1678,7 +1678,7 @@ function imgui.OnDrawFrame(args)
 				imgui.Text(u8(imgIntGameENG[3]))
 			elseif langIG[2] then
 				imgui.Text(u8(imgIntGameRUS[1]))
-				if imgui.CollapsingHeader(u8'Подробнее про вкладки') then
+				if imgui.CollapsingHeader(u8'ГЏГ®Г¤Г°Г®ГЎГ­ГҐГҐ ГЇГ°Г® ГўГЄГ«Г Г¤ГЄГЁ') then
 					imgui.Text(u8(imgIntGameRUS[2]))
 					imgui.Separator()
 				end
@@ -1704,7 +1704,7 @@ function main()
 		autoupdate('https://raw.githubusercontent.com/PanSeek/zuwi/master/version.json', '##autoupdate', 'https://raw.githubusercontent.com/PanSeek/zuwi/master/version.json')
 	else
 		if not array.lang_chat.v then sampAddChatMessage(tag..'You have disabled autoupdate. You are using version: {F9D82F}'..version_script, main_color)
-		elseif array.lang_chat.v then sampAddChatMessage(tag..'У Вас выключено автообновление. Вы используете версию: {F9D82F}'..version_script, main_color) end
+		elseif array.lang_chat.v then sampAddChatMessage(tag..'Г“ Г‚Г Г± ГўГ»ГЄГ«ГѕГ·ГҐГ­Г® Г ГўГІГ®Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ. Г‚Г» ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГІГҐ ГўГҐГ°Г±ГЁГѕ: {F9D82F}'..version_script, main_color) end
 	end
 
 	imgui.Process = false
@@ -1941,11 +1941,11 @@ function main_funcs()
 
 		if array.show_imgui_engineOnVeh.v then
 			if not array.lang_visual.v then EngineText = '{29C730}Engine'
-			elseif array.lang_visual.v then EngineText = '{29C730}Двигатель' end
+			elseif array.lang_visual.v then EngineText = '{29C730}Г„ГўГЁГЈГ ГІГҐГ«Гј' end
 			switchCarEngine(storeCarCharIsInNoSave(PLAYER_PED), true)
 		else
 			if not array.lang_visual.v then EngineText = '{B22C2C}Engine'
-			elseif array.lang_visual.v then EngineText = '{B22C2C}Двигатель' end
+			elseif array.lang_visual.v then EngineText = '{B22C2C}Г„ГўГЁГЈГ ГІГҐГ«Гј' end
 		end
 
 		if array.show_imgui_speedhack.v and isKeyDown(VK_LMENU) then
@@ -2063,7 +2063,7 @@ function main_funcs()
 		--recon_delay.v = os.clock() * 1000
 		if --[[recon_delay.v and]] wasKeyPressed(key.VK_0) and wasKeyPressed(key.VK_LSHIFT) then
 			sampConnectToServer(ip, port)
-			if array.lang_chat.v then sampAddChatMessage(tag.. 'Вы перезашли на сервер: {F9D82F}' ..sname.. ' {888EA0}IP: {F9D82F}' ..ip.. ':' ..port, main_color)
+			if array.lang_chat.v then sampAddChatMessage(tag.. 'Г‚Г» ГЇГҐГ°ГҐГ§Г ГёГ«ГЁ Г­Г  Г±ГҐГ°ГўГҐГ°: {F9D82F}' ..sname.. ' {888EA0}IP: {F9D82F}' ..ip.. ':' ..port, main_color)
 			elseif not array.lang_chat.v then sampAddChatMessage(tag.. 'You are logged on: {F9D82F}' ..sname.. ' {888EA0}IP: {F9D82F}' ..ip.. ':' ..port, main_color) end
 		end
 	end
@@ -2167,7 +2167,7 @@ function main_funcs()
 					if not array.lang_visual.v then
 						renderFontDrawText(clickfont, string.format('Distance: %0.2f', dist), sx - (renderGetFontDrawTextLength(clickfont, string.format('Distance: %0.2f', dist)) / 2) + 6, sy - hoffs, 0xFFFFFFFF)
 					elseif array.lang_visual.v then
-						renderFontDrawText(clickfont, string.format('Дистанция: %0.2f', dist), sx - (renderGetFontDrawTextLength(clickfont, string.format('Дистанция: %0.2f', dist)) / 2) + 6, sy - hoffs, 0xFFFFFFFF)
+						renderFontDrawText(clickfont, string.format('Г„ГЁГ±ГІГ Г­Г¶ГЁГї: %0.2f', dist), sx - (renderGetFontDrawTextLength(clickfont, string.format('Г„ГЁГ±ГІГ Г­Г¶ГЁГї: %0.2f', dist)) / 2) + 6, sy - hoffs, 0xFFFFFFFF)
 					end
 					local tpIntoCar = nil
 					if colpoint.entityType == 2 then
@@ -2177,7 +2177,7 @@ function main_funcs()
 							if not array.lang_visual.v then
 								renderFontDrawText(clickfont, '{0984d2}Push RButton for {FFFFFF}warp to vehicle', sx - (renderGetFontDrawTextLength(clickfont, '{0984d2}Push RButton for {FFFFFF}warp to vehicle') / 2) + 6, sy - hoffs * 2, -1)
 							elseif array.lang_visual.v then
-								renderFontDrawText(clickfont, '{0984d2}Нажмите RButton чтобы {FFFFFF}сесть в транспорт', sx - (renderGetFontDrawTextLength(clickfont, '{0984d2}Нажмите RButton чтобы {FFFFFF}сесть в транспорт') / 2) + 6, sy - hoffs * 2, -1)
+								renderFontDrawText(clickfont, '{0984d2}ГЌГ Г¦Г¬ГЁГІГҐ RButton Г·ГІГ®ГЎГ» {FFFFFF}Г±ГҐГ±ГІГј Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІ', sx - (renderGetFontDrawTextLength(clickfont, '{0984d2}ГЌГ Г¦Г¬ГЁГІГҐ RButton Г·ГІГ®ГЎГ» {FFFFFF}Г±ГҐГ±ГІГј Гў ГІГ°Г Г­Г±ГЇГ®Г°ГІ') / 2) + 6, sy - hoffs * 2, -1)
 							end
 						end
 					end
@@ -2275,9 +2275,9 @@ function main_funcs()
 				end
 			elseif array.lang_visual.v then
 				if DoorsStats == 0 then
-					strStatus = '{00FF00}Открыто'
+					strStatus = '{00FF00}ГЋГІГЄГ°Г»ГІГ®'
 				elseif DoorsStats == 2 then
-					strStatus = '{FF0000}Закрыто'
+					strStatus = '{FF0000}Г‡Г ГЄГ°Г»ГІГ®'
 				end
 			end
 			local dist = getDistanceBetweenCoords3d(positionX, positionY, positionZ,x,y,z)
@@ -2298,7 +2298,7 @@ function main_funcs()
 			local playerInterior, playerID, playerHP, playerAP, playerPing  = getPlayerOnFootInfo()
 			local textENG = string.format("{888EA0}Int:{F9D82F} %d {888EA0}| [{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] {FF0000}| {888EA0}ID:{F9D82F} %d {888EA0}| Health:{F9D82F} %d {888EA0}| Armor:{F9D82F} %d {888EA0}| Ping:{F9D82F} %d {888EA0}| FPS:{F9D82F} %d",
 				playerInterior, playerposX, playerposY, playerposZ, playerID, playerHP, playerAP, playerPing, ifps)
-			local textRUS = string.format("{888EA0}Инт:{F9D82F} %d {888EA0}| [{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] {FF0000}| {888EA0}ID:{F9D82F} %d {888EA0}| Здоровье:{F9D82F} %d {888EA0}| Броня:{F9D82F} %d {888EA0}| Пинг:{F9D82F} %d {888EA0}| FPS:{F9D82F} %d",
+			local textRUS = string.format("{888EA0}Г€Г­ГІ:{F9D82F} %d {888EA0}| [{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] {FF0000}| {888EA0}ID:{F9D82F} %d {888EA0}| Г‡Г¤Г®Г°Г®ГўГјГҐ:{F9D82F} %d {888EA0}| ГЃГ°Г®Г­Гї:{F9D82F} %d {888EA0}| ГЏГЁГ­ГЈ:{F9D82F} %d {888EA0}| FPS:{F9D82F} %d",
 			playerInterior, playerposX, playerposY, playerposZ, playerID, playerHP, playerAP, playerPing, ifps)
 			local screenW, screenH = getScreenResolution()
 			local fontlen = renderGetFontDrawTextLength(ifont, textRUS)
@@ -2316,7 +2316,7 @@ function main_funcs()
 			local playerID, vehID, playerHP, playerAP, vehHP, playerPing = getPlayerInCarInfo()
 			local textENG = string.format("[{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] {FF0000}| {888EA0}ID:{F9D82F} %d {888EA0}| VID:{F9D82F} %d {888EA0}| Health:{F9D82F} %d {888EA0}| Armor:{F9D82F} %d {888EA0}| VHealth:{F9D82F} %d {888EA0}| Ping:{F9D82F} %d {888EA0}| FPS:{F9D82F} %d",
 				playerposX, playerposY, playerposZ, playerID, vehID, playerHP, playerAP, vehHP, playerPing, ifps)
-			local textRUS = string.format("[{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] {FF0000}| {888EA0}ID:{F9D82F} %d {888EA0}| VID:{F9D82F} %d {888EA0}| Здоровье:{F9D82F} %d {888EA0}| Броня:{F9D82F} %d {888EA0}| ТЗдоровье:{F9D82F} %d {888EA0}| Пинг:{F9D82F} %d {888EA0}| FPS:{F9D82F} %d",
+			local textRUS = string.format("[{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] [{F9D82F}%.2f{888EA0}] {FF0000}| {888EA0}ID:{F9D82F} %d {888EA0}| VID:{F9D82F} %d {888EA0}| Г‡Г¤Г®Г°Г®ГўГјГҐ:{F9D82F} %d {888EA0}| ГЃГ°Г®Г­Гї:{F9D82F} %d {888EA0}| Г’Г‡Г¤Г®Г°Г®ГўГјГҐ:{F9D82F} %d {888EA0}| ГЏГЁГ­ГЈ:{F9D82F} %d {888EA0}| FPS:{F9D82F} %d",
 				playerposX, playerposY, playerposZ, playerID, vehID, playerHP, playerAP, vehHP, playerPing, ifps)
 			local screenW, screenH = getScreenResolution()
 			local fontlen = renderGetFontDrawTextLength(ifont, textRUS)
@@ -2344,11 +2344,11 @@ end
 
 function sampev.onServerMessage(color, text) 
 	if array.at_chat.v then -- color adm chat = 15180346
-		admchat = text:gsub('Админ (%d+)', '[ALVL %1]')
+		admchat = text:gsub('ГЂГ¤Г¬ГЁГ­ (%d+)', '[ALVL %1]')
 		return {color, admchat}
 	end
 end
----------------------------------КОМАНДЫ-------------------------------------
+---------------------------------ГЉГЋГЊГЂГЌГ„Г›-------------------------------------
 function cmd_update()
 		lua_thread.create(function(prefix)
 		local dlstatus = require('moonloader').download_status
@@ -2360,7 +2360,7 @@ function cmd_update()
 			end
 			if status1 == dlstatus.STATUSEX_ENDDOWNLOAD then
 				if goupdatestatus == nil then
-					if array.lang_chat.v then sampAddChatMessage(tag..'{B31A06}Не удалось {888EA0}обновиться', main_color)
+					if array.lang_chat.v then sampAddChatMessage(tag..'{B31A06}ГЌГҐ ГіГ¤Г Г«Г®Г±Гј {888EA0}Г®ГЎГ­Г®ГўГЁГІГјГ±Гї', main_color)
 					elseif not array.lang_chat.v then sampAddChatMessage(tag..'{B31A06}Failed {888EA0}updating', main_color) end
 					update = false
 				end
@@ -2374,7 +2374,7 @@ function cmd_time(param)
 	if hour ~= nil and hour >= 0 and hour <= 23 then
 		time = hour
 		patch_samp_time_set(true)
-		if array.lang_chat.v then sampAddChatMessage(tag..'Время изменено на {F9D82F}' .. time, main_color)
+		if array.lang_chat.v then sampAddChatMessage(tag..'Г‚Г°ГҐГ¬Гї ГЁГ§Г¬ГҐГ­ГҐГ­Г® Г­Г  {F9D82F}' .. time, main_color)
 		elseif not array.lang_chat.v then sampAddChatMessage(tag..'Time change to {F9D82F}' .. time, main_color) end
 	else
 		patch_samp_time_set(false)
@@ -2387,7 +2387,7 @@ end
 function cmd_fps()
 	local fps = mem.getfloat(0xB7CB50, 4, false)
 	local ifps = string.format('%d', fps)
-	if array.lang_chat.v then sampAddChatMessage(tag..'Сейчас FPS: {F9D82F}'..ifps, main_color)
+	if array.lang_chat.v then sampAddChatMessage(tag..'Г‘ГҐГ©Г·Г Г± FPS: {F9D82F}'..ifps, main_color)
 	elseif not array.lang_chat.v then sampAddChatMessage(tag..'FPS now: {F9D82F}'..ifps, main_color) end
 end
 
@@ -2395,8 +2395,8 @@ function cmd_weather(param)
 	local weather = tonumber(param)
 	if weather ~= nil and weather >= 0 and weather <= 45 then
 		forceWeatherNow(weather)
-		if array.lang_chat.v then sampAddChatMessage(tag..'Погода изменена на {F9D82F}№' .. weather, main_color)
-		elseif not array.lang_chat.v then sampAddChatMessage(tag..'Weather change on {F9D82F}№' .. weather, main_color) end
+		if array.lang_chat.v then sampAddChatMessage(tag..'ГЏГ®ГЈГ®Г¤Г  ГЁГ§Г¬ГҐГ­ГҐГ­Г  Г­Г  {F9D82F}В№' .. weather, main_color)
+		elseif not array.lang_chat.v then sampAddChatMessage(tag..'Weather change on {F9D82F}В№' .. weather, main_color) end
 	else
 		if array.lang_chat.v then sampAddChatMessage(errorRUS[13], main_color)
 		elseif not array.lang_chat.v then sampAddChatMessage(errorENG[13], main_color) end
@@ -2405,25 +2405,25 @@ end
 
 function cmd_authors()
 	if not sampIsDialogActive() then
-		if array.lang_chat.v then sampShowDialog(2001, tag..'{F9D82F}Авторство {888EA0}и {0E8604}благодарности', authorsRUS, 'Закрыть', '', 0)
+		if array.lang_chat.v then sampShowDialog(2001, tag..'{F9D82F}ГЂГўГІГ®Г°Г±ГІГўГ® {888EA0}ГЁ {0E8604}ГЎГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ', authorsRUS, 'Г‡Г ГЄГ°Г»ГІГј', '', 0)
 		elseif not array.lang_chat.v then sampShowDialog(2001, tag..'{F9d82f}Authors {888ea0}and {0e8604}thanks', authorsENG, 'Close', '', 0) end
 	else sampAddChatMessage(errorRUS[11], main_color) end
 end
 
 function cmd_version()
-	if array.lang_chat.v then sampAddChatMessage(tag.. 'Версия скрипта:{F9D82F} v' ..version_script, main_color)
+	if array.lang_chat.v then sampAddChatMessage(tag.. 'Г‚ГҐГ°Г±ГЁГї Г±ГЄГ°ГЁГЇГІГ :{F9D82F} v' ..version_script, main_color)
 	elseif not array.lang_chat.v then sampAddChatMessage(tag.. 'Version script:{F9D82F} v' ..version_script, main_color) end
 end
 
 function cmd_date()
-	if array.lang_chat.v then sampAddChatMessage(os.date(tag..'Сегодняшняя дата: {F9D82F}%d.%m.%Y'), main_color)
+	if array.lang_chat.v then sampAddChatMessage(os.date(tag..'Г‘ГҐГЈГ®Г¤Г­ГїГёГ­ГїГї Г¤Г ГІГ : {F9D82F}%d.%m.%Y'), main_color)
 	elseif not array.lang_chat.v then sampAddChatMessage(os.date(tag..'Todays date: {F9D82F}%d.%m.%Y'), main_color) end
 end
 
 function cmd_imgui()
 	array.main_window_state.v = not array.main_window_state.v
 	imgui.Process = main_window_state.v
-	if array.lang_chat.v then sampAddChatMessage(tag..'Вы {F9D82F}открыли/закрыли {888EA0}меню скрипта. Это можно сделать без команды, с помощью клавиши {F9D82F}F10', main_color)
+	if array.lang_chat.v then sampAddChatMessage(tag..'Г‚Г» {F9D82F}Г®ГІГЄГ°Г»Г«ГЁ/Г§Г ГЄГ°Г»Г«ГЁ {888EA0}Г¬ГҐГ­Гѕ Г±ГЄГ°ГЁГЇГІГ . ГќГІГ® Г¬Г®Г¦Г­Г® Г±Г¤ГҐГ«Г ГІГј ГЎГҐГ§ ГЄГ®Г¬Г Г­Г¤Г», Г± ГЇГ®Г¬Г®Г№ГјГѕ ГЄГ«Г ГўГЁГёГЁ {F9D82F}F10', main_color)
 	elseif not array.lang_chat.v then sampAddChatMessage(tag..'You is {F9D82F}open/close {888EA0}script menu. This can be done without a command, using the key {F9D82F}F10', main_color) end
 end
 
@@ -2460,7 +2460,7 @@ function cmd_fakerepair()
 		local myCar = storeCarCharIsInNoSave(PLAYER_PED)
 		fixCar(myCar)
 		markCarAsNoLongerNeeded(myCar)
-		sampAddChatMessage(' Вы починили транспорт!', 16113331)
+		sampAddChatMessage(' Г‚Г» ГЇГ®Г·ГЁГ­ГЁГ«ГЁ ГІГ°Г Г­Г±ГЇГ®Г°ГІ!', 16113331)
 	else
 		if array.lang_chat.v then sampAddChatMessage(errorRUS[6], main_color)
 		elseif not array.lang_chat.v then sampAddChatMessage(errorENG[6], main_color) end
@@ -2470,7 +2470,7 @@ end
 function cmd_coord()
 	if not isPlayerDead(PLAYER_PED) then
 		x,y,z = getCharCoordinates(PLAYER_PED)
-		if array.lang_chat.v then sampAddChatMessage(tag..'Ваши координаты: X: {F9D82F}' .. math.floor(x) .. '{888EA0} | Y: {F9D82F}' .. math.floor(y) .. '{888EA0} | Z: {F9D82F}' .. math.floor (z), main_color)
+		if array.lang_chat.v then sampAddChatMessage(tag..'Г‚Г ГёГЁ ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГ»: X: {F9D82F}' .. math.floor(x) .. '{888EA0} | Y: {F9D82F}' .. math.floor(y) .. '{888EA0} | Z: {F9D82F}' .. math.floor (z), main_color)
 		elseif not array.lang_chat.v then sampAddChatMessage(tag..'You are coords: X: {F9D82F}' .. math.floor(x) .. '{888EA0} | Y: {F9D82F}' .. math.floor(y) .. '{888EA0} | Z: {F9D82F}' .. math.floor (z), main_color) end
 	else
 		if array.lang_chat.v then sampAddChatMessage(errorRUS[1], main_color)
@@ -2483,8 +2483,8 @@ function cmd_setmark()
 	intMark = {getActiveInterior(PLAYER_PED)}
 	local posX, posY, posZ = getCharCoordinates(PLAYER_PED)
 	setmark = {posX, posY, posZ}
-	if array.lang_chat.v then sampAddChatMessage(tag..'Создана метка по координатам: X: {F9D82F}' .. math.floor(setmark[1]) .. '{888EA0} | Y: {F9D82F}' .. math.floor(setmark[2]) .. '{888EA0} | Z: {F9D82F}' .. math.floor(setmark[3]), main_color)
-		sampAddChatMessage(tag..'Интерьер: {F9D82F}' .. interiorMark, main_color)
+	if array.lang_chat.v then sampAddChatMessage(tag..'Г‘Г®Г§Г¤Г Г­Г  Г¬ГҐГІГЄГ  ГЇГ® ГЄГ®Г®Г°Г¤ГЁГ­Г ГІГ Г¬: X: {F9D82F}' .. math.floor(setmark[1]) .. '{888EA0} | Y: {F9D82F}' .. math.floor(setmark[2]) .. '{888EA0} | Z: {F9D82F}' .. math.floor(setmark[3]), main_color)
+		sampAddChatMessage(tag..'Г€Г­ГІГҐГ°ГјГҐГ°: {F9D82F}' .. interiorMark, main_color)
 	elseif not array.lang_chat.v then sampAddChatMessage(tag..'You are create mark by coords: X: {F9D82F}' .. math.floor(setmark[1]) .. '{888EA0} | Y: {F9D82F}' .. math.floor(setmark[2]) .. '{888EA0} | Z: {F9D82F}' .. math.floor(setmark[3]), main_color)
 		sampAddChatMessage(tag..'Interior: {F9D82F}' .. interiorMark, main_color) end
 end
@@ -2496,7 +2496,7 @@ end
 function cmd_tpmark()
 	if setmark then		
 		teleportInterior(PLAYER_PED, setmark[1], setmark[2], setmark[3], intMark[1])	
-		if array.lang_chat.v then sampAddChatMessage(tag..'Вы телепортировались по метке', main_color)
+		if array.lang_chat.v then sampAddChatMessage(tag..'Г‚Г» ГІГҐГ«ГҐГЇГ®Г°ГІГЁГ°Г®ГўГ Г«ГЁГ±Гј ГЇГ® Г¬ГҐГІГЄГҐ', main_color)
 		elseif not array.lang_chat.v then sampAddChatMessage(tag..'You are teleport to mark', main_color) end
 	else
 		if array.lang_chat.v then sampAddChatMessage(errorRUS[14], main_color)
@@ -2508,7 +2508,7 @@ function cmd_getmoney()
 	if not isPlayerDead(PLAYER_PED) then
 		local money = mem.getint32(0xB7CE50)
 		mem.setint32(0xB7CE50, money + 1000, false)
-		if array.lang_chat.v then sampAddChatMessage(tag..'Вам выдано: {F9D82F}1.000$ {888EA0}(Визуально)', main_color)
+		if array.lang_chat.v then sampAddChatMessage(tag..'Г‚Г Г¬ ГўГ»Г¤Г Г­Г®: {F9D82F}1.000$ {888EA0}(Г‚ГЁГ§ГіГ Г«ГјГ­Г®)', main_color)
 		elseif not array.lang_chat.v then sampAddChatMessage(tag..'Issued to you: {F9D82F}1.000$ {888EA0}(Visual)', main_color) end
 	else
 		if array.lang_chat.v then sampAddChatMessage(errorRUS[1], main_color)
@@ -2518,13 +2518,13 @@ end
 
 function cmd_checktime()
 	local time = getTime(0) -- MSK time
-	if array.lang_chat.v then sampAddChatMessage(os.date(tag..'Точное время по МСК: {F9D82F}%H{888EA0}:{F9D82F}%M{888EA0}:{F9D82F}%S', time), main_color)
+	if array.lang_chat.v then sampAddChatMessage(os.date(tag..'Г’Г®Г·Г­Г®ГҐ ГўГ°ГҐГ¬Гї ГЇГ® ГЊГ‘ГЉ: {F9D82F}%H{888EA0}:{F9D82F}%M{888EA0}:{F9D82F}%S', time), main_color)
 	elseif not array.lang_chat.v then sampAddChatMessage(os.date(tag..'Exact time to MSK: {F9D82F}%H{888EA0}:{F9D82F}%M{888EA0}:{F9D82F}%S', time), main_color) end
 end
 
 function cmd_errors()
 	if not sampIsDialogActive() then
-		if array.lang_chat.v then sampShowDialog(1999, tag..'Список {B31A06}ошибок', errorslistRUS, 'Закрыть', '', 0)
+		if array.lang_chat.v then sampShowDialog(1999, tag..'Г‘ГЇГЁГ±Г®ГЄ {B31A06}Г®ГёГЁГЎГ®ГЄ', errorslistRUS, 'Г‡Г ГЄГ°Г»ГІГј', '', 0)
 		elseif not array.lang_chat.v then sampShowDialog(1999, tag..'List {B31A06}errors', errorslistENG, 'Close', '', 0) end
 	else
 		if array.lang_chat.v then sampAddChatMessage(errorRUS[11], main_color)
@@ -2534,7 +2534,7 @@ end
 
 function cmd_helpcmdsamp()
 	if not sampIsDialogActive() then
-		if array.lang_chat.v then sampShowDialog(2005, tag..'Список команд SA-MP', helpcmdsampRUS, 'Закрыть', '', 0)
+		if array.lang_chat.v then sampShowDialog(2005, tag..'Г‘ГЇГЁГ±Г®ГЄ ГЄГ®Г¬Г Г­Г¤ SA-MP', helpcmdsampRUS, 'Г‡Г ГЄГ°Г»ГІГј', '', 0)
 		elseif not array.lang_chat.v then sampShowDialog(2005, tag..'List commands SA-MP', helpcmdsampENG, 'Close', '', 0) end
 	else
 		if array.lang_chat.v then sampAddChatMessage(errorRUS[11], main_color)
@@ -2554,7 +2554,7 @@ function thread_function(option, arg)
 		sampSendChat('/togphone')
 		sampSendChat('/togw')
 		wait(250)
-		sampAddChatMessage(tag..'Всевозможные и доступные для Вас команды {F9D82F}отключены/включены', main_color)
+		sampAddChatMessage(tag..'Г‚Г±ГҐГўГ®Г§Г¬Г®Г¦Г­Г»ГҐ ГЁ Г¤Г®Г±ГІГіГЇГ­Г»ГҐ Г¤Г«Гї Г‚Г Г± ГЄГ®Г¬Г Г­Г¤Г» {F9D82F}Г®ГІГЄГ«ГѕГ·ГҐГ­Г»/ГўГЄГ«ГѕГ·ГҐГ­Г»', main_color)
 	end
 end
 
@@ -2564,7 +2564,7 @@ function cmd_spec(pid)
 		if id ~= nil and id >= 0 and id <= 1000 then
 			sampSendChat('/spec '..id)
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/sp [id]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/sp [id]', main_color)
 		end
 	end
 end
@@ -2575,7 +2575,7 @@ function cmd_freeze(pid)
 		if id ~= nil and id >= 0 and id <= 1000 then
 			sampSendChat('/freeze '..id)
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/fz [id]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/fz [id]', main_color)
 		end
 	end
 end
@@ -2586,7 +2586,7 @@ function cmd_unfreeze(pid)
 		if id ~= nil and id >= 0 and id <= 1000 then
 			sampSendChat('/unfreeze '..id)
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/ufz [id]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/ufz [id]', main_color)
 		end
 	end
 end
@@ -2595,26 +2595,26 @@ function cmd_gg(pid)
 	if array.at_ncmd.v then
 		local id = tonumber(pid)
 		if id ~= nil and id >= 0 and id <= 1000 then
-			sampSendChat('/pm '..id..' Приятной игры и хорошего настроения на Revent Role Play!')
+			sampSendChat('/pm '..id..' ГЏГ°ГЁГїГІГ­Г®Г© ГЁГЈГ°Г» ГЁ ГµГ®Г°Г®ГёГҐГЈГ® Г­Г Г±ГІГ°Г®ГҐГ­ГЁГї Г­Г  Revent Role Play!')
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/gg [id]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/gg [id]', main_color)
 		end
 	end
 end
 
 function cmd_fraklvl(pid)
-	local flvlmsg = {' ОПГ, больница, нац. гвардия, правительство - 1 LVL 2 EXP. Остальное - 2 LVL',
-	' Больница, правительство, нац. гвардия, ОПГ - 1 LVL 2 EXP. Остальное - 2 LVL',
-	' Нац. гвардия, больница, ОПГ, правительство - 1 LVL 2 EXP. Остальное - 2 LVL',
-	' ОПГ, нац. гвардия, правительство, больница - 1 LVL 2 EXP. Остальное - 2 LVL',
-	' Правительство, нац. гвардия, больница, ОПГ - 1 LVL 2 EXP. Остальное - 2 LVL'}
+	local flvlmsg = {' ГЋГЏГѓ, ГЎГ®Г«ГјГ­ГЁГ¶Г , Г­Г Г¶. ГЈГўГ Г°Г¤ГЁГї, ГЇГ°Г ГўГЁГІГҐГ«ГјГ±ГІГўГ® - 1 LVL 2 EXP. ГЋГ±ГІГ Г«ГјГ­Г®ГҐ - 2 LVL',
+	' ГЃГ®Г«ГјГ­ГЁГ¶Г , ГЇГ°Г ГўГЁГІГҐГ«ГјГ±ГІГўГ®, Г­Г Г¶. ГЈГўГ Г°Г¤ГЁГї, ГЋГЏГѓ - 1 LVL 2 EXP. ГЋГ±ГІГ Г«ГјГ­Г®ГҐ - 2 LVL',
+	' ГЌГ Г¶. ГЈГўГ Г°Г¤ГЁГї, ГЎГ®Г«ГјГ­ГЁГ¶Г , ГЋГЏГѓ, ГЇГ°Г ГўГЁГІГҐГ«ГјГ±ГІГўГ® - 1 LVL 2 EXP. ГЋГ±ГІГ Г«ГјГ­Г®ГҐ - 2 LVL',
+	' ГЋГЏГѓ, Г­Г Г¶. ГЈГўГ Г°Г¤ГЁГї, ГЇГ°Г ГўГЁГІГҐГ«ГјГ±ГІГўГ®, ГЎГ®Г«ГјГ­ГЁГ¶Г  - 1 LVL 2 EXP. ГЋГ±ГІГ Г«ГјГ­Г®ГҐ - 2 LVL',
+	' ГЏГ°Г ГўГЁГІГҐГ«ГјГ±ГІГўГ®, Г­Г Г¶. ГЈГўГ Г°Г¤ГЁГї, ГЎГ®Г«ГјГ­ГЁГ¶Г , ГЋГЏГѓ - 1 LVL 2 EXP. ГЋГ±ГІГ Г«ГјГ­Г®ГҐ - 2 LVL'}
 	if array.at_ncmd.v then
 		local id = tonumber(pid)
 		if id ~= nil and id >= 0 and id <= 1000 then
 			math.randomseed(os.time())
 			sampSendChat('/an ' .. id .. flvlmsg[math.random(#flvlmsg)])
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/fraklvl [id]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/fraklvl [id]', main_color)
 		end
 	end
 end
@@ -2625,7 +2625,7 @@ function cmd_gethere(pid)
 		if id ~= nil and id >= 0 and id <= 1000 then
 			sampSendChat('/gethere '..id)
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/gh [id]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/gh [id]', main_color)
 		end
 	end
 end
@@ -2636,7 +2636,7 @@ function cmd_kickinvite(param)
 		if id ~= nil and id >= 0 and id <= 1000 then
 			sampSendChat('/kickinvite '..id)
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/kinv [id]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/kinv [id]', main_color)
 		end
 	end
 end
@@ -2647,7 +2647,7 @@ function cmd_getcar(param)
 		if vId ~= nil and vId >= 0 and vId <= 2000 then
 			sampSendChat('/getcar '..vId)
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/gc [vId]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/gc [vId]', main_color)
 		end
 	end
 end
@@ -2658,7 +2658,7 @@ function cmd_ainvite(param)
 		if idfrac ~= nil and idfrac >= 0 and idfrac <= 25 then
 			sampSendChat('/ainvite '..idfrac)
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/ainv [id frac]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/ainv [id frac]', main_color)
 		end
 	end
 end
@@ -2670,7 +2670,7 @@ function cmd_agiverank(pid, prank)
 		if id ~= nil and id >= 0 and id <= 1000 and rank ~= nil and rank >= 0 and rank <= 18 then
 			sampSendChat('/agiverank '..id..' '..rank)
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/arank [id] [rank]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/arank [id] [rank]', main_color)
 		end
 	end
 end
@@ -2683,7 +2683,7 @@ function cmd_givegun(pid, pidgun, pammo)
 		if id ~= nil and id >= 0 and id <= 1000 and idgun ~= nil and idgun >= 0 and idgun <= 46 and ammo ~= nil and ammo >= 0 then
 			sampSendChat('/givegun '..id..' '..idgun..' '..ammo)
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/ggun [id] [id gun] [ammo]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/ggun [id] [id gun] [ammo]', main_color)
 		end
 	end
 end
@@ -2694,7 +2694,7 @@ function cmd_dm(param)
 		if id ~= nil and id >= 0 and id <= 1000 then
 			sampSendChat('/jail '..id..' 20 DM')
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/dm [id]', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/dm [id]', main_color)
 		end
 	end
 end
@@ -2706,7 +2706,7 @@ function cmd_bike(param)
 		elseif vid ~= nil and vid == 2 then sampSendChat('/veh 481 1 1')
 		elseif vid ~= nil and vid == 3 then sampSendChat('/veh 509 1 1')
 		else
-			sampAddChatMessage(tag..'Используйте: {F9D82F}/bike [num] {0984d2}(1 - Горный; 2 - BMX; 3 - Обычный)', main_color)
+			sampAddChatMessage(tag..'Г€Г±ГЇГ®Г«ГјГ§ГіГ©ГІГҐ: {F9D82F}/bike [num] {0984d2}(1 - ГѓГ®Г°Г­Г»Г©; 2 - BMX; 3 - ГЋГЎГ»Г·Г­Г»Г©)', main_color)
 		end
 	end
 end
@@ -2720,10 +2720,10 @@ function cmd_sethpme()
 end
 
 function cmd_piarask()
-	local amsg = {'Возникли вопросы по игровому процессу? Наши хелперы готовы ответить на Ваши вопросы - /ask',
-	'Есть вопросы по игровому моду? Задавайте их нашим хелперам - /ask',
-	'Возник вопрос по игровому процессу? Задавайте его нашим хелперам - /ask',
-	'Возникли вопросы по игровому процессу? Наши хелперы готовы Вам помочь - /ask'}
+	local amsg = {'Г‚Г®Г§Г­ГЁГЄГ«ГЁ ГўГ®ГЇГ°Г®Г±Г» ГЇГ® ГЁГЈГ°Г®ГўГ®Г¬Гі ГЇГ°Г®Г¶ГҐГ±Г±Гі? ГЌГ ГёГЁ ГµГҐГ«ГЇГҐГ°Г» ГЈГ®ГІГ®ГўГ» Г®ГІГўГҐГІГЁГІГј Г­Г  Г‚Г ГёГЁ ГўГ®ГЇГ°Г®Г±Г» - /ask',
+	'Г…Г±ГІГј ГўГ®ГЇГ°Г®Г±Г» ГЇГ® ГЁГЈГ°Г®ГўГ®Г¬Гі Г¬Г®Г¤Гі? Г‡Г Г¤Г ГўГ Г©ГІГҐ ГЁГµ Г­Г ГёГЁГ¬ ГµГҐГ«ГЇГҐГ°Г Г¬ - /ask',
+	'Г‚Г®Г§Г­ГЁГЄ ГўГ®ГЇГ°Г®Г± ГЇГ® ГЁГЈГ°Г®ГўГ®Г¬Гі ГЇГ°Г®Г¶ГҐГ±Г±Гі? Г‡Г Г¤Г ГўГ Г©ГІГҐ ГҐГЈГ® Г­Г ГёГЁГ¬ ГµГҐГ«ГЇГҐГ°Г Г¬ - /ask',
+	'Г‚Г®Г§Г­ГЁГЄГ«ГЁ ГўГ®ГЇГ°Г®Г±Г» ГЇГ® ГЁГЈГ°Г®ГўГ®Г¬Гі ГЇГ°Г®Г¶ГҐГ±Г±Гі? ГЌГ ГёГЁ ГµГҐГ«ГЇГҐГ°Г» ГЈГ®ГІГ®ГўГ» Г‚Г Г¬ ГЇГ®Г¬Г®Г·Гј - /ask'}
 	if array.at_ncmd.v then
 		math.randomseed(os.time())
 		sampSendChat('/o ' .. amsg[math.random(#amsg)])
@@ -2958,7 +2958,7 @@ end
 			  tHotKeyData.lastTick = os.clock()
 			  tHotKeyData.tickState = not tHotKeyData.tickState
 		   end
-		   sKeys = tHotKeyData.tickState and u8'Нет' or ' '
+		   sKeys = tHotKeyData.tickState and u8'ГЌГҐГІ' or ' '
 		  else
 			  sKeys = table.concat(getKeysName(tKeys), ' + ')
 		  end
@@ -2966,7 +2966,7 @@ end
 	  imgui.PushStyleColor(imgui.Col.Button, imgui.GetStyle().Colors[imgui.Col.Button])
 	  imgui.PushStyleColor(imgui.Col.ButtonHovered, imgui.GetStyle().Colors[imgui.Col.ButtonHovered])
 	  imgui.PushStyleColor(imgui.Col.ButtonActive, imgui.GetStyle().Colors[imgui.Col.ButtonActive])
-	  if imgui.Button((tostring(sKeys):len() == 0 and u8'Нет' or sKeys)..name, imgui.ImVec2(width, 0)) then
+	  if imgui.Button((tostring(sKeys):len() == 0 and u8'ГЌГҐГІ' or sKeys)..name, imgui.ImVec2(width, 0)) then
 		  tHotKeyData.edit = name
 	  end
 	  imgui.PopStyleColor(3)
@@ -3117,20 +3117,20 @@ function autoupdate(json_url, prefix, url)
 					f:close()
 					os.remove(json)
 					if updateversion == version_script then
-						if array.lang_chat.v then sampAddChatMessage(tag..'Вы используете {0E8604}актуальную {888EA0}версию скрипта', main_color)
+						if array.lang_chat.v then sampAddChatMessage(tag..'Г‚Г» ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГІГҐ {0E8604}Г ГЄГІГіГ Г«ГјГ­ГіГѕ {888EA0}ГўГҐГ°Г±ГЁГѕ Г±ГЄГ°ГЁГЇГІГ ', main_color)
 						elseif not array.lang_chat.v then sampAddChatMessage(tag..'You are using {0E8604}the current {888EA0}version of the script', main_color) end
 					elseif updateversion > version_script then
-						if array.lang_chat.v then sampAddChatMessage(tag..'Вы используете {B31A06}неактуальную {888EA0}версию скрипта. Для обновления, введите: {F9D82F}/z_update', main_color)
+						if array.lang_chat.v then sampAddChatMessage(tag..'Г‚Г» ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГІГҐ {B31A06}Г­ГҐГ ГЄГІГіГ Г«ГјГ­ГіГѕ {888EA0}ГўГҐГ°Г±ГЁГѕ Г±ГЄГ°ГЁГЇГІГ . Г„Г«Гї Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї, ГўГўГҐГ¤ГЁГІГҐ: {F9D82F}/z_update', main_color)
 						elseif not array.lang_chat.v then sampAddChatMessage(tag..'You are using an {B31A06}irrelevant {888EA0}version of the script. To update, write: {F9D82F}/z_update', main_color) end
 					elseif updateversion < version_script then
-						if array.lang_chat.v then sampAddChatMessage(tag..'Вы используете{F9D82F} тестовую {888EA0}версию скрипта', main_color)
+						if array.lang_chat.v then sampAddChatMessage(tag..'Г‚Г» ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГІГҐ{F9D82F} ГІГҐГ±ГІГ®ГўГіГѕ {888EA0}ГўГҐГ°Г±ГЁГѕ Г±ГЄГ°ГЁГЇГІГ ', main_color)
 						elseif not array.lang_chat.v then sampAddChatMessage(tag..'You are using {F9D82F}testing {888EA0}version of the script', main_color) end
 					else
 						update = false
 					end
 				end
 			else
-				if array.lang_chat.v then sampAddChatMessage(tag..'{B31A06}Не удалось {888EA0}проверить версию скрипта', main_color)
+				if array.lang_chat.v then sampAddChatMessage(tag..'{B31A06}ГЌГҐ ГіГ¤Г Г«Г®Г±Гј {888EA0}ГЇГ°Г®ГўГҐГ°ГЁГІГј ГўГҐГ°Г±ГЁГѕ Г±ГЄГ°ГЁГЇГІГ ', main_color)
 				elseif not array.lang_chat.v then sampAddChatMessage(tag..'{B31A06}Failed {888EA0}to check the version of the script', main_color) end
 				update = false
 			end
