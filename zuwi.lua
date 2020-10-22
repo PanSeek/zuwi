@@ -1,6 +1,6 @@
 script_name('zuwi')
 script_authors('PanSeek')
-version_script = '1.1.1'
+version_script = '1.1'
 script_properties('work-in-pause')
 
 --ToggleButton 51 last
