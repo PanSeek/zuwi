@@ -20,7 +20,7 @@ local Vector3D = require 'vector3d'
 local inicfg = require 'inicfg'
 local encoding = require 'encoding'
 encoding.default = 'CP1251'
-local function u8(s) return = encoding.UTF8:decode(s) end
+local function u8(s) return encoding.UTF8:decode(s) end
 
 mainIni = inicfg.load({
 	actor = {
